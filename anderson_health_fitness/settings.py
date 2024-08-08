@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.coinbase',
     'allauth.socialaccount.providers.apple',
     'allauth.socialaccount.providers.google',
+    'home',
 
 ]
 
@@ -79,7 +80,10 @@ ROOT_URLCONF = 'anderson_health_fitness.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),  # Custom templates directory
+            os.path.join(BASE_DIR, 'templates', 'allauth'), # Allauth templates directory
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,7 +132,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/success'
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'anderson_health_fitness.wsgi.application'
 
