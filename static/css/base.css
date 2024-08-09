@@ -1,5 +1,40 @@
+/* Resetting body and html padding and margins */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
 }
+
+/* Ensuring the navbar and its container fill the entire width */
+.navbar {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Removing padding from the container-fluid and header-container */
+.container-fluid, .header-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;  /* Ensuring no margin is applied */
+}
+
+/* container padding */
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* navbar to always be at the top without any gap */
+.fixed-top {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Ensuring the delivery banner fills the width too */
+#delivery-banner {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
