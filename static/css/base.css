@@ -46,3 +46,8 @@ body {
     margin-right: 0;
     width: 100%;
 }
+
+/* Custom margin for the navbar brand */
+.navbar-brand {
+    margin-left: 15px;
+}
