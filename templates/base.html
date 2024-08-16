@@ -60,9 +60,18 @@
           </ul>
           <!-- Shopping Basket -->
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="fas fa-shopping-cart"></i>
+            <li class="list-inline-item">
+              <a class="nav-link" href="{% url 'cart_view' %}">
+                <div class="text-center">
+                  <div><i class="fa-regular fa-cart-shopping"></i></div>
+                  <p class="my-0">
+                    {% if cart and cart.grand_total %}
+                      €{{ cart.grand_total|floatformat:2 }}
+                    {% else %}
+                      €0.00
+                    {% endif %}
+                  </p>
+                </div>
               </a>
             </li>
             <!-- Account Section -->
