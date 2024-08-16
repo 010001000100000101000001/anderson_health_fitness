@@ -3,8 +3,8 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
+    font-family: 'Poppins', sans-serif; /* Applying Poppins font */
     color: #555;
-    font-family: 'Lato';
 }
 
 /* Background image for the body */
@@ -40,7 +40,7 @@ body {
     right: 0;
 }
 
-/* Ensuring the delivery banner fills the width too */
+/* Ensuring the delivery banner fills the width */
 #delivery-banner {
     margin-left: 0;
     margin-right: 0;
@@ -61,4 +61,59 @@ body {
 .dropdown.me-3,
 a.btn-outline-light {
     margin-left: 15px;
+}
+
+/* Increase font size for navbar links and icons */
+.navbar-nav .nav-link,
+.navbar-nav .fa-cart-shopping,
+.navbar-nav .fa-user-hair {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Hero text container styles */
+.hero-text-container {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif; /* Fallback font */
+}
+
+/* Hero text headline */
+.hero-text-container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Hero text subheading */
+.hero-text-container p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Hero text background overlay */
+.hero-text-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+/* Custom styles for navbar elements using Poppins */
+.navbar-nav .nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+/* Font Awesome icons (example) */
+.fa-magnifying-glass,
+.fa-cart-shopping {
+    font-size: 1.5rem;
 }
