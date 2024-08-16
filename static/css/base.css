@@ -112,8 +112,69 @@ a.btn-outline-light {
     font-weight: 500;
 }
 
-/* Font Awesome icons (example) */
+/* Font Awesome icons */
 .fa-magnifying-glass,
 .fa-cart-shopping {
     font-size: 1.5rem;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+    /* Adjust the navbar brand spacing */
+    .navbar-brand {
+        margin-left: 10px;
+        font-size: 1.5rem; /* Slightly larger font for better visibility */
+    }
+
+    /* Add padding and margin to nav items */
+    .navbar-nav .nav-item {
+        margin: 10px 0; /* Add vertical margin between items */
+        padding: 10px 20px; /* Add padding for touch-friendly targets */
+        text-align: left; /* Align text to the left for better readability */
+    }
+
+    /* Ensure the search bar fits well */
+    .form-control {
+        width: calc(100% - 40px); /* Full width with some padding */
+        margin: 10px 20px; /* Add margin to the search bar */
+    }
+
+    /* Adjust the search button */
+    .btn-outline-light {
+        margin-left: 0; /* Reset margin for mobile */
+    }
+
+    /* Adjust the account dropdown */
+    .navbar-nav .nav-item.dropdown .nav-link {
+        padding: 10px 20px;
+        font-size: 1.2rem; /* Slightly larger font for better visibility */
+    }
+
+    /* Adjust the shopping cart and account icons */
+    .navbar-nav .fa-cart-shopping,
+    .navbar-nav .fa-user-hair {
+        font-size: 1.5rem; /* Increase icon size for better touch targets */
+    }
+
+    /* Center and space out the dropdown menu */
+    .dropdown-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center; /* Center the dropdown items */
+        padding: 10px 0; /* Add padding for better readability */
+    }
+
+    /* Adjust margin for menu items */
+    .dropdown-menu .dropdown-item {
+        margin: 5px 0; /* Add margin between dropdown items */
+        font-size: 1.2rem; /* Increase font size for better readability */
+    }
+
+    /* Ensure the delivery banner fits well */
+    #delivery-banner {
+        margin: 20px 0;
+        padding: 10px;
+        font-size: 1rem; /* Adjust font size */
+    }
 }
