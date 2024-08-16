@@ -34,84 +34,85 @@
 
   <title>Anderson Health & Fitness {% block extra_title %}{% endblock %}</title>
 </head>
-<header class="container-fluid fixed-top">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
-    <div class="container-fluid">
-      <a class="navbar-brand ms 3" href="{% url 'home' %}"><strong>Anderson Health & Fitness</a></strong>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item me-lg-3">
-            <a class="nav-link" href="">Contact</a>
-          </li>
+<body>
+  <header class="container-fluid fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-3" href="{% url 'home' %}"><strong>Anderson Health & Fitness</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item me-lg-3">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
           <!-- Shopping Basket -->
-          <li class="nav-item">
-            <a class="nav-link" href="">
-              <i class="fa-duotone fa-solid fa-cart-shopping"></i>
-            </a>
-          </li>
-          <!-- Account Section -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="accountDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              <i class="fa-duotone fa-solid fa-user-hair"></i>
-              <i class="fa-duotone fa-solid fa-user-hair-long"></i> Account
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
-              {% if user.is_authenticated %}
-              <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              {% else %}
-              <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
-              <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
-              {% endif %}
-            </ul>
-          </li>
-        </ul>
-        <!-- Search bar -->
-        <form class="d-flex ms-lg-3 mt-3 mt-lg-0 me-lg-3" method="GET" action="">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
-          <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </li>
+            <!-- Account Section -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="fas fa-user"></i> Account
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                {% if user.is_authenticated %}
+                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                {% else %}
+                <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                {% endif %}
+              </ul>
+            </li>
+          </ul>
+          <!-- Search bar -->
+          <form class="d-flex ms-lg-3 mt-3 mt-lg-0 me-lg-3" method="GET" action="">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+            <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
       </div>
+    </nav>
+    <!-- Banner for promotions -->
+    <div class="bg-success text-white text-center py-2">
+      <strong>Free delivery on orders over €50!</strong>
     </div>
-  </nav>
-  <!-- Banner for promotions -->
-  <div class="bg-success text-white text-center py-2">
-    <strong>Free delivery on orders over €50!</strong>
+  </header>
+  
+  {% if messages %}
+  <div class="message-container">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+      {{ message }}
+    </div>
+    {% endfor %}
   </div>
-</header>
-
-{% if messages %}
-<div class="message-container">
-  {% for message in messages %}
-  <div class="alert alert-{{ message.tags }}">
-    {{ message }}
-  </div>
-  {% endfor %}
-</div>
-{% endif %}
-
-{% block page_header %}
-{% endblock %}
-
-{% block content %}
-{% endblock %}
-
-{% block postloadjs %}
-{% endblock %}
-</body>
-
-</html>
+  {% endif %}
+  
+  {% block page_header %}
+  {% endblock %}
+  
+  {% block content %}
+  {% endblock %}
+  
+  {% block postloadjs %}
+  {% endblock %}
+  </body>
+  </html>

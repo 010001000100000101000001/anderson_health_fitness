@@ -9,7 +9,7 @@ body, html {
 
 /* Background image for the body */
 body {
-    background: url('/media/home-page-logo-gym-anderson-health-fitness.webp') no-repeat center center fixed;
+    background: url('/anderson_health_fitness/media/home-page-logo-gym-anderson-health-fitness.webp') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
 }
