@@ -1,0 +1,42 @@
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav me-auto">
+        <!-- Workout Gear Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="gear-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Workout Gear
+            </a>
+            <ul class="dropdown-menu border-0" aria-labelledby="gear-link">
+                <li><a class="dropdown-item" href="">Clothing <i class="fa-regular fa-shirt"></i></a></li>
+                <li><a class="dropdown-item" href="">Accessories <i class="fa-regular fa-notebook"></i> <i class="fa-regular fa-pen"></i></a></li>
+                <li><a class="dropdown-item" href="">Equipment <i class="fa-solid fa-dumbbell"></i></a></li>
+                <li><a class="dropdown-item" href="">All Gear</a></li>
+            </ul>
+        </li>
+    </ul>
+    <!-- Search Bar -->
+    <form class="d-flex me-auto" method="GET" action="">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+        <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <!-- My Account and Checkout -->
+    <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                {% if user.is_authenticated %}
+                <li><a class="dropdown-item" href="">Profile</a></li>
+                <li><a class="dropdown-item" href="">My Orders</a></li>
+                <li><a class="dropdown-item" href="">Logout</a></li>
+                {% else %}
+                <li><a class="dropdown-item" href="">Login</a></li>
+                <li><a class="dropdown-item" href="">Register</a></li>
+                {% endif %}
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href=""><i class="fa-regular fa-cart-shopping"></i> (€0.00)</a>
+        </li>
+    </ul>
+</div>
