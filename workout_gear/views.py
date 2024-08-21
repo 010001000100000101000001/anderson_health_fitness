@@ -1,3 +1,12 @@
 from django.shortcuts import render
+from .models import GearCategory, GearItem
 
-# Create your views here.
+def gear_list(request):
+    categories = GearCategory.objects.all()
+    gear_items = GearItem.objects.all()
+
+    context = {
+        'categories': categories,
+        'gear_items': gear_items,
+    }
+    return render(request, 'workout_gear/workout-gear.html', context)

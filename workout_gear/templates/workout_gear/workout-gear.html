@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+                <h1>Workout Gear!</h1>
+                <p>Find the best gear for your workout needs.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Categories</h2>
+                <ul>
+                    {% for category in categories %}
+                    <li><a href="{% url 'category_gear_list' category.id %}">{{ category.friendly_name }}</a></li>
+                    {% endfor %}
+                </ul>
+
+                <h2>All Gear</h2>
+                <ul>
+                    {% for item in gear_items %}
+                    <li>
+                        <a href="{% url 'gear_detail' item.id %}">{{ item.name }}</a> - {{ item.cost }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
