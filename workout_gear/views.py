@@ -9,4 +9,4 @@ def gear_list(request):
         'categories': categories,
         'gear_items': gear_items,
     }
-    return render(request, 'workout_gear/workout-gear.html', context)
+    return render(request, 'workout_gear/workout_gear.html', context)
