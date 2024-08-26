@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container header-container">
+<div class="container-fluid header-container">
     <div class="row">
         <div class="col">
             <h1>Workout Gear!</h1>
@@ -13,33 +13,32 @@
 {% endblock %}
 
 {% block content %}
-<div class="container content-area">
-    <!-- Categories Section -->
+<div class="container content-area mt-5">
     <div class="row">
-        <div class="col text-center mt-3">
-            <h2 class="logo-font">Categories</h2>
-            <hr class="w-50 mb-1">
-            <ul class="list-unstyled">
+        <div class="col text-center">
+            <h2>Categories</h2>
+            <ul class="list-inline">
                 {% for category in categories %}
-                <li>
-                    <a href="{% url 'category_gear_list' category.id %}" class="btn btn-outline-primary mb-2">{{ category.friendly_name }}</a>
+                <li class="list-inline-item">
+                    <a href="{% url 'category_gear_list' category.id %}" class="btn btn-outline-primary">
+                        {{ category.friendly_name }}
+                    </a>
                 </li>
                 {% endfor %}
             </ul>
         </div>
     </div>
 
-    <!-- All Gear Section -->
-    <div class="row">
-        <div class="col text-center mt-5">
-            <h2 class="logo-font">All Gear</h2>
-            <hr class="w-50 mb-1">
+    <div class="row mt-4">
+        <div class="col text-center">
+            <h2>All Gear</h2>
         </div>
     </div>
+
     <div class="row">
         {% for item in gear_items %}
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
-            <div class="card h-100 border-0 shadow-sm">
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card h-100 border-0">
                 {% if item.image_file %}
                 <a href="{% url 'gear_detail' item.id %}">
                     <img class="card-img-top img-fluid" src="{{ item.image_file.url }}" alt="{{ item.name }}">
@@ -49,9 +48,9 @@
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
                 </a>
                 {% endif %}
-                <div class="card-body pb-0">
+                <div class="card-body text-center">
                     <p class="mb-0">{{ item.name }}</p>
-                    <p class="text-muted">€{{ item.cost }}</p>
+                    <p class="font-weight-bold">€{{ item.cost }}</p>
                 </div>
             </div>
         </div>
