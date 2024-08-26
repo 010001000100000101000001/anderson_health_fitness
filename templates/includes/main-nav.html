@@ -6,10 +6,10 @@
                 Workout Gear
             </a>
             <ul class="dropdown-menu border-0" aria-labelledby="gear-link">
-                <li><a class="dropdown-item" href="">Clothing <i class="fa-regular fa-shirt"></i></a></li>
-                <li><a class="dropdown-item" href="">Accessories <i class="fa-regular fa-notebook"></i> <i class="fa-regular fa-pen"></i></a></li>
-                <li><a class="dropdown-item" href="">Equipment <i class="fa-solid fa-dumbbell"></i></a></li>
-                <li><a class="dropdown-item" href="">All Gear</a></li>
+                <li><a class="dropdown-item" href="{% url 'category_gear_list' 3 %}">Clothing <i class="fa-regular fa-shirt"></i></a></li>
+                <li><a class="dropdown-item" href="{% url 'category_gear_list' 4 %}">Accessories <i class="fa-regular fa-notebook"></i> <i class="fa-regular fa-pen"></i></a></li>
+                <li><a class="dropdown-item" href="{% url 'category_gear_list' 5 %}">Equipment <i class="fa-solid fa-dumbbell"></i></a></li>
+                <li><a class="dropdown-item" href="{% url 'gear_list' %}">All Gear</a></li>
             </ul>
         </li>
     </ul>
