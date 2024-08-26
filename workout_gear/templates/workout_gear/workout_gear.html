@@ -27,7 +27,7 @@
                 <ul>
                     {% for item in gear_items %}
                     <li>
-                        <a href="{% url 'gear_detail' item.id %}">{{ item.name }}</a> - {{ item.cost }}
+                        <a href="{% url 'gear_detail' item.id %}">{{ item.name }}</a> - €{{ item.cost }}
                     </li>
                     {% endfor %}
                 </ul>

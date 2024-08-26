@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import GearCategory, GearItem
 
+
 def gear_list(request):
     categories = GearCategory.objects.all()
     gear_items = GearItem.objects.all()
@@ -10,3 +11,21 @@ def gear_list(request):
         'gear_items': gear_items,
     }
     return render(request, 'workout_gear/workout_gear.html', context)
+
+
+def category_gear_list(request, category_id):
+    category = get_object_or_404(GearCategory, pk=category_id)
+    gear_items = GearItem.objects.filter(category=category)
+    context = {
+        'category': category,
+        'gear_items': gear_items,
+    }
+    return render(request, 'workout_gear/category_gear_list.html', context)
+
+
+def gear_detail(request, item_id):
+    gear_item = get_object_or_404(GearItem, pk=item_id)
+    context = {
+        'gear_item': gear_item,
+    }
+    return render(request, 'workout_gear/gear_detail.html', context)

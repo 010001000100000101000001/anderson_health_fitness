@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ gear_item.name }}</h1>
+        <p>{{ gear_item.details }}</p>
+        <p>Price: €{{ gear_item.cost }}</p>
+        {% if gear_item.image_file %}
+            <img src="{{ gear_item.image_file.url }}" alt="{{ gear_item.name }}">
+        {% endif %}
+    </div>
+{% endblock %}
