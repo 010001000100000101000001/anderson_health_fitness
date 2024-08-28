@@ -186,9 +186,9 @@ body {
     /* Search bar adjustments */
     .form-control {
         width: calc(100% - 40px); /* Full width with padding */
-        margin: 10px 20px; /* Margin for better spacing */
-        font-size: 0.875rem; /* Smaller font for better fit */
-        padding: 8px; /* Adjust padding for touch-friendly targets */
+        margin: 10px 20px;
+        font-size: 0.875rem;
+        padding: 8px;
     }
 
     /* Search button adjustments */
@@ -202,7 +202,7 @@ body {
     .navbar-nav .nav-item.dropdown .nav-link,
     .navbar-nav .fa-cart-shopping,
     .navbar-nav .fa-user {
-        font-size: 1.2rem; /* Consistent font size for better readability */
+        font-size: 1.2rem;
         padding: 10px 20px;
     }
 
@@ -210,9 +210,9 @@ body {
     .dropdown-menu {
         width: 100%;
         text-align: center;
-        padding: 10px 0; /* Padding for readability */
+        padding: 10px 0;
         margin: 5px 0; /* Margin between dropdown items */
-        font-size: 1.2rem; /* Font size for readability */
+        font-size: 1.2rem;
     }
 
     /* Delivery banner */
@@ -225,9 +225,19 @@ body {
     /* Mobile header alignment */
     .list-inline-item {
         background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-        border-radius: 5px; /* Rounded corners for a softer look */
-        padding: 5px 10px; /* Add padding around the icons */
+        border-radius: 5px;
+        padding: 5px 10px; 
         margin-bottom: 10px; /* Space out items */
+    }
+
+    .hero-text-container {
+        margin-top: 500px; /* Default margin for the hero text */
+        transition: margin-top 0.3s ease-in-out; /* Smooth transition */
+    }
+
+    /* When a dropdown menu is open */
+    .menu-open .hero-text-container {
+        margin-top: 700px; /* Adjust the margin when the menu is open */
     }
 
     /* Improve readability of hero text */
