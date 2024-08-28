@@ -224,11 +224,15 @@ body {
 
     /* Mobile header alignment */
     .list-inline-item {
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        border-radius: 5px; /* Rounded corners for a softer look */
+        padding: 5px 10px; /* Add padding around the icons */
         margin-bottom: 10px; /* Space out items */
     }
 
     /* Improve readability of hero text */
     .hero-text-container h1 {
+        color: #ffffff;
         font-size: 2rem;
     }
 
