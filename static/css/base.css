@@ -237,7 +237,7 @@ body {
 
     /* When a dropdown menu is open */
     .menu-open .hero-text-container {
-        margin-top: calc(500px + 200px);
+        margin-top: calc(500px + 500px);
     }
 
     /* Improve readability of hero text */
