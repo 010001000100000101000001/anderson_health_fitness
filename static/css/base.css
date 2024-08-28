@@ -169,61 +169,79 @@ body {
 
 /* Media queries for mobile devices */
 @media (max-width: 768px) {
-    /* Adjust the navbar brand spacing */
+
+    /* Adjust navbar brand */
     .navbar-brand {
         margin-left: 10px;
         font-size: 1.5rem; /* Slightly larger font for better visibility */
     }
 
-    /* Add padding and margin to nav items */
+    /* Adjust nav items */
     .navbar-nav .nav-item {
-        margin: 10px 0; /* Add vertical margin between items */
-        padding: 10px 20px; /* Add padding for touch-friendly targets */
-        text-align: left; /* Align text to the left for better readability */
+        margin: 10px 0; /* Vertical margin between items */
+        padding: 10px 20px; /* Padding for touch-friendly targets */
+        text-align: left; /* Align text for readability */
     }
 
-    /* Ensure the search bar fits well */
+    /* Search bar adjustments */
     .form-control {
-        width: calc(100% - 40px); /* Full width with some padding */
-        margin: 10px 20px; /* Add margin to the search bar */
+        width: calc(100% - 40px); /* Full width with padding */
+        margin: 10px 20px; /* Margin for better spacing */
+        font-size: 0.875rem; /* Smaller font for better fit */
+        padding: 8px; /* Adjust padding for touch-friendly targets */
     }
 
-    /* Adjust the search button */
+    /* Search button adjustments */
     .btn-outline-light {
         margin-left: 0; /* Reset margin for mobile */
+        font-size: 0.875rem;
+        padding: 8px 16px;
     }
 
-    /* Adjust the account dropdown */
-    .navbar-nav .nav-item.dropdown .nav-link {
-        padding: 10px 20px;
-        font-size: 1.2rem; /* Slightly larger font for better visibility */
-    }
-
-    /* Adjust the shopping cart and account icons */
+    /* Dropdown and icons */
+    .navbar-nav .nav-item.dropdown .nav-link,
     .navbar-nav .fa-cart-shopping,
-    .navbar-nav .fa-user-hair {
-        font-size: 1.5rem; /* Increase icon size for better touch targets */
+    .navbar-nav .fa-user {
+        font-size: 1.2rem; /* Consistent font size for better readability */
+        padding: 10px 20px;
     }
 
-    /* Center and space out the dropdown menu */
+    /* Dropdown menu */
     .dropdown-menu {
         width: 100%;
-        left: 0;
-        right: 0;
-        text-align: center; /* Center the dropdown items */
-        padding: 10px 0; /* Add padding for better readability */
+        text-align: center;
+        padding: 10px 0; /* Padding for readability */
+        margin: 5px 0; /* Margin between dropdown items */
+        font-size: 1.2rem; /* Font size for readability */
     }
 
-    /* Adjust margin for menu items */
-    .dropdown-menu .dropdown-item {
-        margin: 5px 0; /* Add margin between dropdown items */
-        font-size: 1.2rem; /* Increase font size for better readability */
-    }
-
-    /* Ensure the delivery banner fits well */
+    /* Delivery banner */
     #delivery-banner {
-        margin: 20px 0;
+        margin: 20px 0; /* Vertical margin */
         padding: 10px;
-        font-size: 1rem; /* Adjust font size */
+        font-size: 1rem;
+    }
+
+    /* Mobile header alignment */
+    .list-inline-item {
+        margin-bottom: 10px; /* Space out items */
+    }
+
+    /* Improve readability of hero text */
+    .hero-text-container h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text-container p {
+        font-size: 1rem;
+    }
+
+    /* Optional: Improve contrast */
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.7); /* Darker background for contrast */
+    }
+
+    #delivery-banner {
+        background-color: rgba(34, 139, 34, 0.9); /* Slightly darker green for readability */
     }
 }
