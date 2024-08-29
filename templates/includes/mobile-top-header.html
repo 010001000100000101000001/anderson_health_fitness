@@ -1,27 +1,29 @@
-<li class="list-inline-item d-lg-none">
-    <!-- User Profile Icon with Dropdown -->
-    <div class="dropdown">
-        <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-user"></i>
+<li class="list-inline-item d-lg-none w-100">
+    <!-- Profile and Cart Container -->
+    <div class="d-flex justify-content-end">
+        <!-- User Profile Icon with Dropdown -->
+        <div class="dropdown me-2">
+            <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                {% if user.is_authenticated %}
+                <li><a class="dropdown-item" href="">Profile</a></li>
+                <li><a class="dropdown-item" href="">My Orders</a></li>
+                <li><a class="dropdown-item" href="">Logout</a></li>
+                {% else %}
+                <li><a class="dropdown-item" href="">Login</a></li>
+                <li><a class="dropdown-item" href="">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <!-- Cart Icon -->
+        <a href="#" class="btn btn-outline-light">
+            <i class="fa-regular fa-cart-shopping"></i>
+            <span class="cart-total">({{ cart.total_price|default:"€0.00" }})</span>
         </a>
-        <ul class="dropdown-menu" aria-labelledby="userDropdown">
-            {% if user.is_authenticated %}
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">My Orders</a></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
-            {% else %}
-            <li><a class="dropdown-item" href="#">Login</a></li>
-            <li><a class="dropdown-item" href="#">Register</a></li>
-            {% endif %}
-        </ul>
     </div>
-</li>
-<li class="list-inline-item d-lg-none">
-    <!-- Cart Icon -->
-    <a href="#" class="btn btn-outline-light">
-        <i class="fa-regular fa-cart-shopping"></i>
-        <span class="cart-total">({{ cart.total_price }})</span>
-    </a>
 </li>
 <li class="list-inline-item w-100 d-lg-none">
     <!-- Search Bar -->

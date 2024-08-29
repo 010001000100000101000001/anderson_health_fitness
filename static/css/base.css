@@ -258,4 +258,19 @@ body {
     #delivery-banner {
         background-color: rgba(34, 139, 34, 0.9); /* Slightly darker green for readability */
     }
+
+    .list-inline-item .btn {
+        background-color: white;
+        color: black;
+        box-shadow: none;
+        display: inline-block; /* Make sure buttons are inline elements */
+        margin-left: 10px;
+        padding: 5px 10px;
+    }
+    
+    .list-inline-item {
+        background-color: transparent; /* Ensure the container has no background color */
+        box-shadow: none; /* Ensure the container has no shadow */
+        width: auto; /* Ensure the width is only as wide as the content */
+    }
 }
