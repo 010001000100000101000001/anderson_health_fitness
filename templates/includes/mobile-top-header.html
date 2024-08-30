@@ -1,4 +1,4 @@
-<li class="list-inline-item d-lg-none w-100">
+<li class="list-inline-item w-100 d-lg-none">
     <!-- Profile and Cart Container -->
     <div class="d-flex justify-content-end">
         <!-- User Profile Icon with Dropdown -->
@@ -19,15 +19,20 @@
         </div>
 
         <!-- Cart Icon -->
-        <a href="#" class="btn btn-outline-light">
+        <a href="#" class="btn btn-outline-light me-2">
             <i class="fa-regular fa-cart-shopping"></i>
             <span class="cart-total">({{ cart.total_price|default:"€0.00" }})</span>
         </a>
+
+        <!-- Search Controls -->
+        <button id="searchToggleBtn" class="btn btn-outline-light me-2">
+            <i id="searchIcon" class="fa-light fa-magnifying-glass-plus"></i>
+        </button>
     </div>
 </li>
 <li class="list-inline-item w-100 d-lg-none">
     <!-- Search Bar -->
-    <form id="mobileSearchForm" class="d-flex mt-2" method="GET" action="">
+    <form id="mobileSearchForm" class="d-none mt-2" method="GET" action="">
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="q">
         <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>

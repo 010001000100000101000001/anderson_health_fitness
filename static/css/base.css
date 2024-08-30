@@ -277,6 +277,17 @@ body {
         box-shadow: none; /* Ensure the container has no shadow */
         width: auto; /* Ensure the width is only as wide as the content */
     }
+
+    /* Ensure the search form is hidden by default */
+    #mobileSearchForm.d-none {
+        display: none;
+    }
+
+    /* Adjust the search toggle button */
+    #searchToggleBtn {
+        padding: 5px 10px;
+        font-size: 1.25rem;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 991px) {
@@ -356,5 +367,15 @@ body {
 
     .hero-text-container p {
         font-size: 1.2rem; /* Adjusted for larger screens */
+    }
+
+    /* Ensure buttons are aligned on the right side of the screen */
+    .search-controls {
+        align-items: center;
+    }
+
+    /* Ensure the search form is hidden by default */
+    #mobileSearchForm.d-none {
+        display: none;
     }
 }

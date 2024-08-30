@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const dropdowns = document.querySelectorAll('.navbar-nav .nav-item.dropdown');
-    
+
     // Adjust hero text when dropdown menu opens
     dropdowns.forEach(dropdown => {
         dropdown.addEventListener('shown.bs.dropdown', function () {
@@ -23,4 +23,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+  // Search bar toggle handling
+  const searchToggleBtn = document.getElementById('searchToggleBtn');
+  const searchForm = document.getElementById('mobileSearchForm');
+  const searchIcon = document.getElementById('searchIcon');
+
+  if (searchToggleBtn && searchForm) {
+      searchToggleBtn.addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the form from submitting
+          if (searchForm.classList.contains('d-none')) {
+              searchForm.classList.remove('d-none');
+              searchIcon.classList.replace('fa-magnifying-glass-plus', 'fa-magnifying-glass-minus');
+          } else {
+              searchForm.classList.add('d-none');
+              searchIcon.classList.replace('fa-magnifying-glass-minus', 'fa-magnifying-glass-plus');
+          }
+      });
+  }
 });
