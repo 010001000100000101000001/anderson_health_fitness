@@ -360,6 +360,16 @@ body {
         width: auto; /* Ensure the width is only as wide as the content */
     }
 
+    .hero-text-container {
+        margin-top: 500px;
+        transition: margin-top 0.3s ease-in-out;
+    }
+
+    /* When a dropdown menu is open */
+    .menu-open .hero-text-container {
+        margin-top: calc(500px + 500px);
+    }
+
     /* Adjust hero text */
     .hero-text-container h1 {
         font-size: 2.5rem;
