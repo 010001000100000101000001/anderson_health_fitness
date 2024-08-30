@@ -11,12 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-     // Adjust hero text when hamburger menu opens
-     navbarToggler.addEventListener('click', function() {
-        if (navbarToggler.getAttribute('aria-expanded') === 'true') {
-            document.body.classList.add('menu-open');
-        } else {
-            document.body.classList.remove('menu-open');
-        }
-    });
+    // Adjust hero text when hamburger menu opens
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    
+    if (navbarToggler) {
+        navbarToggler.addEventListener('click', function() {
+            if (navbarToggler.getAttribute('aria-expanded') === 'true') {
+                document.body.classList.add('menu-open');
+            } else {
+                document.body.classList.remove('menu-open');
+            }
+        });
+    }
 });

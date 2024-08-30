@@ -172,8 +172,10 @@ body {
 
     /* Adjust navbar brand */
     .navbar-brand {
-        margin-left: 10px;
-        font-size: 1.5rem; /* Slightly larger font for better visibility */
+        font-size: 1.25rem;
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     /* Adjust nav items */
@@ -272,5 +274,84 @@ body {
         background-color: transparent; /* Ensure the container has no background color */
         box-shadow: none; /* Ensure the container has no shadow */
         width: auto; /* Ensure the width is only as wide as the content */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+
+    /* Adjust navbar brand */
+    .navbar-brand {
+        margin-left: 10px;
+        font-size: 1.75rem; /* Slightly larger font for tablet visibility */
+    }
+
+    /* Adjust nav items */
+    .navbar-nav .nav-item {
+        margin: 5px 0; /* Vertical margin between items */
+        padding: 8px 15px;
+        text-align: left;
+    }
+
+    /* Adjust the cart icon and profile dropdown size */
+    .navbar-nav .fa-cart-shopping,
+    .navbar-nav .fa-user {
+        font-size: 1.3rem;
+        padding: 10px 20px;
+    }
+
+    /* Adjust search bar */
+    .form-control {
+        width: calc(100% - 40px);
+        margin: 10px 15px;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Adjust button size and padding */
+    .btn-outline-light {
+        margin-left: 0;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    /* Adjust dropdown menu */
+    .dropdown-menu {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        margin: 5px 0;
+        font-size: 1.1rem;
+    }
+
+    /* Adjust delivery banner */
+    #delivery-banner {
+        margin: 15px 0;
+        padding: 8px;
+        font-size: 1rem;
+    }
+
+    /* Adjust profile and cart button styles for tablets */
+    .list-inline-item .btn {
+        background-color: white;
+        color: black;
+        box-shadow: none;
+        display: inline-block; /* Make sure buttons are inline elements */
+        margin-left: 10px;
+        padding: 5px 10px;
+    }
+    
+    .list-inline-item {
+        background-color: transparent; /* Ensure the container has no background color */
+        box-shadow: none; /* Ensure the container has no shadow */
+        width: auto; /* Ensure the width is only as wide as the content */
+    }
+
+    /* Adjust hero text */
+    .hero-text-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text-container p {
+        font-size: 1.2rem; /* Adjusted for larger screens */
     }
 }
