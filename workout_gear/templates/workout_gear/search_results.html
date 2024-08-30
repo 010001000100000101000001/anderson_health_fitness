@@ -1,18 +1,51 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container-fluid header-container">
+    <div class="row">
+        <div class="col">
+            <h1>Search Results</h1>
+            <p>Results for "{{ query }}"</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
 
 {% block content %}
-<h2>Search Results for "{{ query }}"</h2>
+<div class="container content-area mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <h2>Matching Gear Items</h2>
+        </div>
+    </div>
 
-{% if gear_items %}
-    <ul>
-        {% for item in gear_items %}
-            <li>
-                <a href="{% url 'gear_detail' item.id %}">{{ item.name }}</a>
-                - {{ item.cost }} EUR
-            </li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No items found matching your search.</p>
-{% endif %}
+    <div class="row">
+        {% if gear_items %}
+            {% for item in gear_items %}
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 border-0">
+                    {% if item.image_file %}
+                    <a href="{% url 'gear_detail' item.id %}">
+                        <img class="card-img-top img-fluid" src="{{ item.image_file.url }}" alt="{{ item.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'gear_detail' item.id %}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
+                    </a>
+                    {% endif %}
+                    <div class="card-body text-center">
+                        <p class="mb-0">{{ item.name }}</p>
+                        <p class="font-weight-bold">€{{ item.cost }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="col text-center">
+            <p>No results found for "{{ query }}". Please try a different search term.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}

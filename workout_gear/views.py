@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import GearCategory, GearItem
+from django.db.models import Q
 
 
 def gear_list(request):
@@ -33,9 +34,7 @@ def gear_detail(request, item_id):
 
 def search_gear(request):
     query = request.GET.get('q')
-    gear_items = GearItem.objects.filter(
-        Q(name__icontains=query) | Q(details__icontains=query)
-    ) if query else GearItem.objects.none()
+    gear_items = GearItem.objects.filter(Q(name__icontains=query) | Q(details__icontains=query))
 
     context = {
         'query': query,
