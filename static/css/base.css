@@ -45,6 +45,7 @@ body {
     margin-left: 0;
     margin-right: 0;
     width: 100%;
+    background-color: rgba(34, 139, 34, 0.9);
 }
 
 /* Custom margin for the navbar brand */
@@ -219,9 +220,10 @@ body {
 
     /* Delivery banner */
     #delivery-banner {
-        margin: 20px 0; /* Vertical margin */
-        padding: 10px;
-        font-size: 1rem;
+        margin: 0;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        background-color: rgba(34, 139, 34, 0.95);
     }
 
     /* Mobile header alignment */
@@ -325,9 +327,10 @@ body {
 
     /* Adjust delivery banner */
     #delivery-banner {
-        margin: 15px 0;
+        margin: 0;
         padding: 8px;
         font-size: 1rem;
+        background-color: rgba(34, 139, 34, 0.9);
     }
 
     /* Adjust profile and cart button styles for tablets */
