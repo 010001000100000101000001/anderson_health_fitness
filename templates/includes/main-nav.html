@@ -14,7 +14,7 @@
         </li>
     </ul>
     <!-- Search Bar (Visible on larger screens only) -->
-    <form class="d-flex me-auto d-none d-lg-flex" method="GET" action="">
+    <form class="d-flex me-auto d-none d-lg-flex" method="GET" action="{% url 'search_gear' %}">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
         <button class="btn btn-outline-light" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>

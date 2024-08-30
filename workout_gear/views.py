@@ -29,3 +29,16 @@ def gear_detail(request, item_id):
         'gear_item': gear_item,
     }
     return render(request, 'workout_gear/gear_detail.html', context)
+
+
+def search_gear(request):
+    query = request.GET.get('q')
+    gear_items = GearItem.objects.filter(
+        Q(name__icontains=query) | Q(details__icontains=query)
+    ) if query else GearItem.objects.none()
+
+    context = {
+        'query': query,
+        'gear_items': gear_items,
+    }
+    return render(request, 'workout_gear/search_results.html', context)

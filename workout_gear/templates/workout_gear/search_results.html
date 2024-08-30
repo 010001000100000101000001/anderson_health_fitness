@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Search Results for "{{ query }}"</h2>
+
+{% if gear_items %}
+    <ul>
+        {% for item in gear_items %}
+            <li>
+                <a href="{% url 'gear_detail' item.id %}">{{ item.name }}</a>
+                - {{ item.cost }} EUR
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No items found matching your search.</p>
+{% endif %}
+{% endblock %}
