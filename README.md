@@ -53,7 +53,7 @@ As a **Site User**, I can **reset my password if I forget it** so that **I can r
 
 As a **Site User**, I can **browse workout gear by category** so that **I can easily find the type of product I’m looking for**.
 
-- **Acceptance criteria 1**: Categories are prominently displayed on the main workout gear page.
+- **Acceptance criteria 1**: Categories are displayed on the navigation bar with a dropdown menu.
 - **Acceptance criteria 2**: I can click on a category to view all items within that category.
 
 As a **Site User**, I can **search for workout gear** so that **I can quickly find specific items without browsing through categories**.
