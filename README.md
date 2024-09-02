@@ -60,7 +60,7 @@ As a **Site User**, I can **search for workout gear** so that **I can quickly fi
 
 - **Acceptance criteria 1**: The search bar is available on all pages and on various mobile, tablet and desktop screens.
 - **Acceptance criteria 2**: The search returns relevant results based on workout gear item names and detailed descriptions.
-- **Acceptance criteria 3**: The search bar has a button to reveal the search bar on mobile screens to save screen space on smaller devices.
+- **Acceptance criteria 3**: There is a button to reveal and hide the search bar when not in use, on mobile and tablet screen sizes to save screen space on smaller devices.
 
 As a **Site User**, I can **view detailed information about a specific product** so that **I can make an informed decision before purchasing**.
 
