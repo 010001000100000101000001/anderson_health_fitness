@@ -201,16 +201,16 @@ body {
     color: #000000;
 }
 
-/* Style for the right-side content */
-.details-content {
-    display: flex !important;
-    flex-direction !important: column;
-    justify-content: center;
-}
-
 /* Adjustments for the layout to ensure equal height and spacing */
 .gear-item-container {
     margin-top: 70px !important;
+}
+
+/* Style the price to be larger and green */
+.details-section .price {
+    font-size: 20px;
+    color: #009d25;
+    font-weight: bold;
 }
 
 /* Media queries for mobile devices */
