@@ -1,0 +1,180 @@
+[33mcommit f361336575d694442ce3c83d4b8a31d0adf63315[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Mon Sep 2 13:10:27 2024 +0000
+
+    Edited README.md and changed free delivery to €100
+
+[33mcommit 58f78598c8bdc525bcc7adc4b8dbe7e050b77fc3[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Mon Sep 2 12:32:33 2024 +0000
+
+    Add Epics and User Stories to README.md detailing user registration, product browsing, shopping cart, checkout, user profile management, marketing, and site administration functionalities
+
+[33mcommit 045e2d575be711d2c94780bb4c38e3a0a39e3cc8[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Mon Sep 2 11:46:07 2024 +0000
+
+    Update README.md with project introduction, features, technologies used  and credits. Added descriptions of existing features
+
+[33mcommit e4c92a15a9d9e4be13c836d8b7a9f89a60b8ad5f[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Fri Aug 30 16:26:49 2024 +0000
+
+    Add functional search capability and integrate search results template with consistent site design
+
+[33mcommit a18eb2f086be650a188ccd44167ad06a7caa92fa[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Fri Aug 30 16:15:11 2024 +0000
+
+    Added search functionality to workout gear views and templates
+
+[33mcommit c87535204b68bc186c3308c641323c482337628f[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Fri Aug 30 12:23:44 2024 +0000
+
+    Added margin adjustment for hero text container in tablet media query to maintain consistent layout when dropdowns or search bar are opened
+
+[33mcommit 9375fed7772a035ef8ff5f16b21c1662db2b1693[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Fri Aug 30 12:11:38 2024 +0000
+
+    Add toggle functionality for mobile search bar with plus/minus icons and align elements
+
+[33mcommit 2b4a918e07ff48bbe87a6dcd5972e1008bb98de8[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Fri Aug 30 10:53:40 2024 +0000
+
+    Refined delivery banner styling for consistent display across all screen sizes
+
+[33mcommit 3cb0fd5b22bab4c3245ff41808665180afb650d8[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Fri Aug 30 10:39:14 2024 +0000
+
+    Improve navbar responsiveness and enhance mobile and tablet layout styling
+
+[33mcommit 86c38cc57209a092b14623ebdf95c77d547d6bfe[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Thu Aug 29 19:59:59 2024 +0000
+
+    Adjusted button styles for profile and cart icons: set button background to white with black text for improved visibility, and ensured inline-block display without shadows
+
+[33mcommit ae17f57db70ba545cb356dea899d1534e5ba55a7[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Wed Aug 28 15:17:36 2024 +0000
+
+    Increase hero text margin on mobile when menus open for better visibility
+
+[33mcommit 5f56de5cd0e5942cc53e4b4017d20cad5674f7d6[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Wed Aug 28 15:05:34 2024 +0000
+
+    Adjust hero text position on mobile screens when menus open by adding dynamic CSS and JavaScript handling
+
+[33mcommit a881e38c91d005d1240d3bdafa84d105dff5b39f[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Wed Aug 28 14:44:51 2024 +0000
+
+    Fixed folder location of js
+
+[33mcommit 6d6a8b81ad3cae44d6be4a5887d2c2c019b80c35[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Wed Aug 28 14:36:17 2024 +0000
+
+    Adjust hero container  position when dropdown menus are opened on mobile devices
+
+[33mcommit ccee33b947a090d002f783a3386afd34be7a3112[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Wed Aug 28 13:39:56 2024 +0000
+
+    Enhance visibility of icons against background on mobile view
+
+[33mcommit 55aec5df25f7dcb9f4fd049b567720c7ae592fd8[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Wed Aug 28 13:32:31 2024 +0000
+
+    Refine mobile styles for better readability and performance
+
+[33mcommit ef3af18bc07625a32baa1f72cea8ad66e85d7fd9[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Wed Aug 28 13:14:18 2024 +0000
+
+    Fix duplicate elements in mobile top header and adjust visibility based on screen size
+
+[33mcommit 9c6e241c9264031dc71960d8081a77b437bd5b64[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Mon Aug 26 17:30:38 2024 +0000
+
+    Improved workout gear page layout with better spacing, styling tweaks, and a full-width header
+
+[33mcommit 67bc2a589767c6678741f6370e0218b3e8715fe5[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Mon Aug 26 16:54:53 2024 +0000
+
+    Enhanced product display with grid layout and cards in workout_gear.html
+
+[33mcommit c048a41d06143b8852c7aef8b859592f87cbbde8[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Mon Aug 26 16:24:12 2024 +0000
+
+    Added content-area div to workout_gear.html and updated CSS for improved readabil
+    ity
+
+[33mcommit 8c81a5ae53a3c6309883bc589ae72c0c74c28c44[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Mon Aug 26 13:25:26 2024 +0000
+
+    Add get_object_or_404 import to views and update main-nav links with category IDs
+
+[33mcommit 625aa4d1203970d76e02b9236b1639ea83c851aa[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Mon Aug 26 12:57:21 2024 +0000
+
+    Set up views, URLs, and templates for displaying gear items and categories
+
+[33mcommit 402ff2ab99952983c13ec55c58b58ea58b46d039[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Thu Aug 22 11:17:13 2024 +0000
+
+    Added two test products, altered workout-gear.html to workout_gear.html and adjusted the view
+
+[33mcommit 3fd5bb0299f5e697fccdf44d0e3e1180e0e5df5e[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Wed Aug 21 20:13:56 2024 +0000
+
+    Added workout_gear views and templates
+
+[33mcommit d42e48f2b77dd6b8d711edeca27113047d30bfc1[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Wed Aug 21 14:13:27 2024 +0000
+
+    Add workout gear models, admin interface, and initial templates
+
+[33mcommit 0377aa0cbf23c6fd0e875d3d9b3d5cbce127f222[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Wed Aug 21 12:06:53 2024 +0000
+
+    Hide <Anderson Health & Fitness> in mobile view using Bootstrap utility classes
+
+[33mcommit 6118caeb09445e97af2e64feaf3cf30889809649[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Tue Aug 20 14:33:57 2024 +0000
+
+    Updated site layout in base.html and styles, added mobile-top-header and main-nav in includes folder
+
+[33mcommit 2305e6d6a56528c5f176e1b7e1eb0f80f6e04d6d[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Fri Aug 16 15:47:25 2024 +0000
+
+    Enhance mobile menu layout with media queries: increase spacing and font sizes, improve touch targets, and adjust margins for better readability and usability
+
+[33mcommit f949984fcedfe2fbbe581b8e1efc140feb41bac3[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Fri Aug 16 15:24:17 2024 +0000
+
+    Adding settings to include static files correctly, updated the urls.py in settings, added Google fonts and restyled the page for better accessibility with some custom css
+
+[33mcommit bab0ef0d69329673573523eba9430aab96dd369b[m
+Author: David Anderson <davidanderson@live.ie>
+Date:   Fri Aug 16 14:22:15 2024 +0000
+
+    Add cart display and functionality to navbar in base.html

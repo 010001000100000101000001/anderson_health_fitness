@@ -1,0 +1,391 @@
+/* Resetting body and html padding and margins */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif; /* Applying Poppins font */
+    color: #555;
+}
+
+/* Background image for the body */
+body {
+    background: url('/media/home-page-hero-gym-anderson-health-fitness.webp') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+}
+
+/* Ensuring the navbar and its container fill the entire width */
+.navbar {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Removing padding from the container-fluid and header-container */
+.container-fluid, .header-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+}
+
+/* Removing padding from the container */
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Keeping the navbar fixed at the top without any gap */
+.fixed-top {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Ensuring the delivery banner fills the width */
+#delivery-banner {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    background-color: rgba(34, 139, 34, 0.9);
+}
+
+/* Custom margin for the navbar brand */
+.navbar-brand {
+    margin-left: 15px;
+    margin-right: 30px; /* Adding space between "Anderson Health & Fitness" and "Workout Gear" */
+}
+
+/* Adjust spacing between nav items */
+.navbar-nav .nav-item {
+    margin-left: 15px; /* Adding spacing between nav items */
+}
+
+/* Increase spacing between icons in the account section */
+.navbar-nav .nav-item .fa {
+    margin-left: 10px;
+    margin-right: 10px; /* Ensuring even spacing on both sides of icons */
+}
+
+/* Adjust padding for the account dropdown toggle */
+.navbar-nav .nav-item.dropdown .nav-link {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Increase font size for navbar links and icons */
+.navbar-nav .nav-link,
+.navbar-nav .fa-cart-shopping,
+.navbar-nav .fa-user-hair {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Hero image container */
+.hero-image-container {
+    position: relative;
+    background-size: cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero text container styles */
+.hero-text-container {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    max-width: 80%; /* Limit the width for better readability */
+    z-index: 1; /* Ensure text is above the overlay */
+    margin-top: 400px;
+}
+
+/* Hero text headline */
+.hero-text-container h1 {
+    font-size: 3.5rem;
+    font-weight: 700; /* Bold font */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for better contrast */
+    margin-bottom: 15px; /* Space between headline and subheading */
+}
+
+/* Hero text subheading */
+.hero-text-container p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-bottom: 25px; /* Space between subheading and button */
+}
+
+/* Hero text background overlay */
+.hero-text-background {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker background to match the image */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the overlay */
+    display: inline-block;
+}
+
+/* Button styling */
+.hero-text-container .btn {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 30px;
+}
+
+/* Custom styles for navbar elements using Poppins */
+.navbar-nav .nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+/* Font Awesome icons */
+.fa-magnifying-glass,
+.fa-cart-shopping {
+    font-size: 1.5rem;
+}
+
+/* Content area with white background and black text */
+.content-area {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Headings in the content area */
+.content-area h2 {
+    color: #333;
+}
+
+/* Links styling */
+.content-area a {
+    color: #007bff;
+}
+
+.content-area a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+
+    /* Adjust navbar brand */
+    .navbar-brand {
+        font-size: 1.25rem;
+        white-space: nowrap; /* Prevent text from wrapping */
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Adjust nav items */
+    .navbar-nav .nav-item {
+        margin: 10px 0; /* Vertical margin between items */
+        padding: 10px 20px; /* Padding for touch-friendly targets */
+        text-align: left; /* Align text for readability */
+    }
+
+    /* Search bar adjustments */
+    .form-control {
+        width: calc(100% - 40px); /* Full width with padding */
+        margin: 10px 20px;
+        font-size: 0.875rem;
+        padding: 8px;
+    }
+
+    /* Search button adjustments */
+    .btn-outline-light {
+        margin-left: 0; /* Reset margin for mobile */
+        font-size: 0.875rem;
+        padding: 8px 16px;
+    }
+
+    /* Dropdown and icons */
+    .navbar-nav .nav-item.dropdown .nav-link,
+    .navbar-nav .fa-cart-shopping,
+    .navbar-nav .fa-user {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    /* Dropdown menu */
+    .dropdown-menu {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        margin: 5px 0; /* Margin between dropdown items */
+        font-size: 1.2rem;
+    }
+
+    /* Delivery banner */
+    #delivery-banner {
+        margin: 0;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        background-color: rgba(34, 139, 34, 0.95);
+    }
+
+    /* Mobile header alignment */
+    .list-inline-item {
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        border-radius: 5px;
+        padding: 5px 10px; 
+        margin-bottom: 10px; /* Space out items */
+    }
+
+    .hero-text-container {
+        margin-top: 500px; /* Default margin for the hero text */
+        transition: margin-top 0.3s ease-in-out; /* Smooth transition */
+    }
+
+    /* When a dropdown menu is open */
+    .menu-open .hero-text-container {
+        margin-top: calc(500px + 500px);
+    }
+
+    /* Improve readability of hero text */
+    .hero-text-container h1 {
+        color: #ffffff;
+        font-size: 2rem;
+    }
+
+    .hero-text-container p {
+        font-size: 1rem;
+    }
+
+    /* Optional: Improve contrast */
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.7); /* Darker background for contrast */
+    }
+
+    #delivery-banner {
+        background-color: rgba(34, 139, 34, 0.9); /* Slightly darker green for readability */
+    }
+
+    .list-inline-item .btn {
+        background-color: white;
+        color: black;
+        box-shadow: none;
+        display: inline-block; /* Make sure buttons are inline elements */
+        margin-left: 10px;
+        padding: 5px 10px;
+    }
+    
+    .list-inline-item {
+        background-color: transparent; /* Ensure the container has no background color */
+        box-shadow: none; /* Ensure the container has no shadow */
+        width: auto; /* Ensure the width is only as wide as the content */
+    }
+
+    /* Ensure the search form is hidden by default */
+    #mobileSearchForm.d-none {
+        display: none;
+    }
+
+    /* Adjust the search toggle button */
+    #searchToggleBtn {
+        padding: 5px 10px;
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+
+    /* Adjust navbar brand */
+    .navbar-brand {
+        margin-left: 10px;
+        font-size: 1.75rem; /* Slightly larger font for tablet visibility */
+    }
+
+    /* Adjust nav items */
+    .navbar-nav .nav-item {
+        margin: 5px 0; /* Vertical margin between items */
+        padding: 8px 15px;
+        text-align: left;
+    }
+
+    /* Adjust the cart icon and profile dropdown size */
+    .navbar-nav .fa-cart-shopping,
+    .navbar-nav .fa-user {
+        font-size: 1.3rem;
+        padding: 10px 20px;
+    }
+
+    /* Adjust search bar */
+    .form-control {
+        width: calc(100% - 40px);
+        margin: 10px 15px;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Adjust button size and padding */
+    .btn-outline-light {
+        margin-left: 0;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    /* Adjust dropdown menu */
+    .dropdown-menu {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        margin: 5px 0;
+        font-size: 1.1rem;
+    }
+
+    /* Adjust delivery banner */
+    #delivery-banner {
+        margin: 0;
+        padding: 8px;
+        font-size: 1rem;
+        background-color: rgba(34, 139, 34, 0.9);
+    }
+
+    /* Adjust profile and cart button styles for tablets */
+    .list-inline-item .btn {
+        background-color: white;
+        color: black;
+        box-shadow: none;
+        display: inline-block; /* Make sure buttons are inline elements */
+        margin-left: 10px;
+        padding: 5px 10px;
+    }
+    
+    .list-inline-item {
+        background-color: transparent; /* Ensure the container has no background color */
+        box-shadow: none; /* Ensure the container has no shadow */
+        width: auto; /* Ensure the width is only as wide as the content */
+    }
+
+    .hero-text-container {
+        margin-top: 500px;
+        transition: margin-top 0.3s ease-in-out;
+    }
+
+    /* When a dropdown menu is open */
+    .menu-open .hero-text-container {
+        margin-top: calc(500px + 500px);
+    }
+
+    /* Adjust hero text */
+    .hero-text-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text-container p {
+        font-size: 1.2rem; /* Adjusted for larger screens */
+    }
+
+    /* Ensure buttons are aligned on the right side of the screen */
+    .search-controls {
+        align-items: center;
+    }
+
+    /* Ensure the search form is hidden by default */
+    #mobileSearchForm.d-none {
+        display: none;
+    }
+}
