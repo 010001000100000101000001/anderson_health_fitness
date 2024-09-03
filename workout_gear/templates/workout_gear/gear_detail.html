@@ -1,13 +1,38 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
-    <div class="container">
-        <h1>{{ gear_item.name }}</h1>
-        <p>{{ gear_item.details }}</p>
-        <p>Price: €{{ gear_item.cost }}</p>
-        {% if gear_item.image_file %}
-            <img src="{{ gear_item.image_file.url }}" alt="{{ gear_item.name }}">
-        {% endif %}
+{% block page_header %}
+<div class="container-fluid header-container">
+    <div class="row">
+        <div class="col">
+            <h1>{{ gear_item.name }}</h1>
+            <p>{{ gear_item.details|truncatewords:20 }}</p>
+        </div>
     </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-md-6 mb-4">
+            <!-- Display the image of the gear item -->
+            {% if gear_item.image_file %}
+                <img src="{{ gear_item.image_file.url }}" alt="{{ gear_item.name }}" class="img-fluid rounded">
+            {% else %}
+                <p>No image available for this item.</p>
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-6">
+            <h2 class="mb-3">Details</h2>
+            <p>{{ gear_item.details }}</p>
+            <hr>
+            <p><strong>Price:</strong> €{{ gear_item.cost }}</p>
+            <p><strong>Stock:</strong> {{ gear_item.stock_quantity }}</p>
+            <p><strong>Weight:</strong> {{ gear_item.weight }}</p>
+            <p><strong>Material:</strong> {{ gear_item.material_type }}</p>
+            <a href="" class="btn btn-primary btn-lg mt-4">Add to Cart</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
