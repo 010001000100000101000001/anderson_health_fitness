@@ -173,10 +173,11 @@ body {
 
     /* Adjust navbar brand */
     .navbar-brand {
-        font-size: 1.25rem;
+        font-size: 1rem; /* Reduce font size */
         white-space: nowrap; /* Prevent text from wrapping */
-        overflow: hidden;
-        text-overflow: ellipsis;
+        overflow: visible; /* Allow overflow */
+        text-overflow: clip; /* Do not clip the text */
+        max-width: 100%; /* Ensure the logo takes up as much space as possible */
     }
 
     /* Adjust nav items */
