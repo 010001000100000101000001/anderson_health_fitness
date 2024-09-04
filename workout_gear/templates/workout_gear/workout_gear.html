@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container-fluid header-container">
+<div class="container header-container gear-item-container">
     <div class="row">
         <div class="col">
             <h1>Workout Gear!</h1>
@@ -51,6 +51,7 @@
                 <div class="card-body text-center">
                     <p class="mb-0">{{ item.name }}</p>
                     <p class="font-weight-bold">€{{ item.cost }}</p>
+                    <a href="" class="btn btn-primary btn-lg mt-2">Add to Cart</a> <!-- Add to Cart button added -->
                 </div>
             </div>
         </div>
