@@ -355,6 +355,10 @@ body {
         padding: 5px 10px;
         font-size: 1.25rem;
     }
+
+    .content-area {
+        margin-top: 150px !important;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 991px) {
@@ -454,5 +458,9 @@ body {
     /* Ensure the search form is hidden by default */
     #mobileSearchForm.d-none {
         display: none;
+    }
+
+    .content-area {
+        margin-top: 150px !important;
     }
 }
