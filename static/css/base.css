@@ -234,6 +234,17 @@ body {
     visibility: hidden;
 }
 
+/* Back page button styles */
+.back-button {
+    margin-bottom: 20px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.back-button i {
+    font-size: 24px;
+}
+
 /* Media queries for mobile devices */
 @media (max-width: 768px) {
 
