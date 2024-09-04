@@ -5,31 +5,46 @@
     <div class="container header-container">
         <div class="row">
             <div class="col">
-                <h1>{{ gear_item.name }}</h1>
+                <h1>{{ category.friendly_name }}</h1>
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <!-- Display the image of the gear item -->
-                {% if gear_item.image_file %}
-                    <img src="{{ gear_item.image_file.url }}" alt="{{ gear_item.name }}" class="img-fluid">
-                {% else %}
-                    <p>No image available for this item.</p>
-                {% endif %}
-            </div>
-            <div class="col-12 col-md-6">
-                <h2>Details</h2>
-                <p>{{ gear_item.details }}</p>
-                <p><strong>Price:</strong> €{{ gear_item.cost }}</p>
-                <p><strong>Stock:</strong> {{ gear_item.stock_quantity }}</p>
-                <p><strong>Weight:</strong> {{ gear_item.weight }}</p>
-                <p><strong>Material:</strong> {{ gear_item.material_type }}</p>
-            </div>
+<div class="container content-area mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <h2>{{ category.friendly_name }}</h2>
         </div>
     </div>
+
+    <div class="row">
+        {% if gear_items %}
+            {% for item in gear_items %}
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 border-0">
+                    {% if item.image_file %}
+                    <a href="{% url 'gear_detail' item.id %}">
+                        <img class="card-img-top img-fluid" src="{{ item.image_file.url }}" alt="{{ item.name }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'gear_detail' item.id %}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
+                    </a>
+                    {% endif %}
+                    <div class="card-body text-center">
+                        <p class="mb-0">{{ item.name }}</p>
+                        <p class="font-weight-bold">€{{ item.cost }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="col text-center">
+            <p>No items found in this category.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
