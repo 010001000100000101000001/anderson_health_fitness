@@ -101,13 +101,22 @@ As a **Site User**, I can **see a promotional banner on the site** so that **I c
 - **Acceptance criteria 1**: The promotional banner is visible on the homepage and other relevant pages.
 - **Acceptance criteria 2**: The banner highlights free delivery on orders over €100!
 
-
 ### Epic 6: Site Administration
 
 As a **Site Admin**, I can **add, edit, and delete products** so that **the store’s inventory is always up-to-date**.
 
 - **Acceptance criteria 1**: Admins have access to an interface to manage products, including adding new items, editing existing ones, and removing products that are no longer available.
 - **Acceptance criteria 2**: Changes are immediately reflected on the site.
+
+### Epic 7: Product Reviews
+
+As a **Site User**, I can **leave reviews for products** so that **I can share my feedback and experiences with other users**.
+
+- **Acceptance criteria 1**: I can submit a review on a product page, providing a rating and a comment.
+- **Acceptance criteria 2**: Reviews are visible on the product detail page and display the username, rating, and comment.
+- **Acceptance criteria 3**: I can edit or delete my reviews if I change my mind.
+- **Acceptance criteria 4**: The system prevents me from submitting multiple reviews on the same item.
+- **Acceptance criteria 5**: Admins can moderate and remove inappropriate reviews.
 
 
 
