@@ -228,6 +228,12 @@ body {
     color: white;
 }
 
+/* Hide the header visually without affecting SEO or accessibility */
+.header-container h1,
+.header-container p {
+    visibility: hidden;
+}
+
 /* Media queries for mobile devices */
 @media (max-width: 768px) {
 
