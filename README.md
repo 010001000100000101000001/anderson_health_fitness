@@ -4,8 +4,7 @@
 
 ## Introduction
 
-This is my fifth project in Code Institute Diploma in Software Development with eCommerce. The Anderson Health & Fitness project is an e-commerce application designed to allow users to browse, search, and purchase workout gear. The application also includes user authentication, shopping cart functionality, and user profile management.
-
+This is my fifth project in Code Institute Diploma in Software Development with eCommerce. The Anderson Health & Fitness project is an e-commerce application designed to allow users to browse, search, and purchase workout gear. The application also includes user authentication, shopping cart functionality, user profile management and a section for users to leave product reviews.
 
 ## Table of Contents
 
