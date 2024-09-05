@@ -8,15 +8,41 @@ from django.contrib.auth.models import User
 
 def gear_list(request):
     """
-    Displays a list of all gear items along with their categories.
+    Displays a list of all gear items along with their categories, including sorting.
      """
     categories = GearCategory.objects.all()
     gear_items = GearItem.objects.all()
+    sort = None
+    direction = None
+
+    # Check for sorting in the GET request
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                gear_items = gear_items.order_by('name')
+            elif sortkey == 'price':
+                gear_items = gear_items.order_by('cost')
+            elif sortkey == 'rating':
+                gear_items = gear_items.order_by('rating')
+            elif sortkey == 'category':
+                gear_items = gear_items.order_by('category__name')
+
+                # Handle sorting direction
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    gear_items = gear_items.reverse()
+
+    current_sorting = f'{sort}_{direction}'
 
     # Pass the categories and gear items to the template
     context = {
         'categories': categories,
         'gear_items': gear_items,
+        'current_sorting': current_sorting,
+
     }
     return render(request, 'workout_gear/workout_gear.html', context)
 
