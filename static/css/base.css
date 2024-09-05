@@ -250,8 +250,18 @@ body {
     margin-right: 3px;
 }
 
+
+/* Fine-tune for very small screens (320px to 333px) */
+@media (min-width: 320px) and (max-width: 333px) {
+
+    /* Adjust the margin of the content-area */
+    .content-area {
+        margin-top: 120px !important;
+    }
+}
+
 /* Media queries for mobile devices */
-@media (max-width: 768px) {
+@media (min-width: 334px) and (max-width: 768px) {
 
     /* Adjust navbar brand */
     .navbar-brand {
