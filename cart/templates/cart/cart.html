@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Your Shopping Cart</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col">
+                {% if cart_items %}
+                    <p class="lead">You have items in your cart.</p>
+                {% else %}
+                    <p class="lead text-center">Your cart is currently empty.</p>
+                    <div class="text-center">
+                        <a href="{% url 'gear_list' %}" class="btn btn-primary">Continue Shopping</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

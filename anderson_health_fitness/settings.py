@@ -63,7 +63,8 @@ INSTALLED_APPS = [
     'home',
     'workout_gear',
     'crispy_forms',
-     'crispy_bootstrap5',
+    'crispy_bootstrap5',
+    'cart',
 ]
 
 MIDDLEWARE = [

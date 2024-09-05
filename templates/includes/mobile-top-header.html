@@ -19,7 +19,7 @@
         </div>
 
         <!-- Cart Icon -->
-        <a href="#" class="btn btn-outline-light me-2">
+        <a href="{% url 'view_cart' %}" class="btn btn-outline-light me-2">
             <i class="fa-regular fa-cart-shopping"></i>
             <span class="cart-total">({{ cart.total_price|default:"€0.00" }})</span>
         </a>
