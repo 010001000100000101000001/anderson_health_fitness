@@ -256,7 +256,18 @@ body {
 
     /* Adjust the margin of the content-area */
     .content-area {
-        margin-top: 120px !important;
+        margin-top: 155px !important;
+    }
+
+    /* Ensure buttons (profile, cart, and magnifying glass) have proper spacing and background color */
+    .btn-outline-light {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+    }
+
+    /* Adjust the hero-text-container margin */
+    .hero-text-container {
+        margin-top: 580px !important;
     }
 }
 
