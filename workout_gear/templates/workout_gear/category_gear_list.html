@@ -22,6 +22,18 @@
         </div>
     </div>
 
+     <!-- Sort By Section -->
+     <div class="row mb-3">
+        <div class="col text-center">
+            <h4>Sort by:</h4>
+            <a href="?sort=name&direction=asc" class="btn btn-outline-secondary btn-sm">Name (A-Z)</a>
+            <a href="?sort=name&direction=desc" class="btn btn-outline-secondary btn-sm">Name (Z-A)</a>
+            <a href="?sort=price&direction=asc" class="btn btn-outline-secondary btn-sm">Price (Low-High)</a>
+            <a href="?sort=price&direction=desc" class="btn btn-outline-secondary btn-sm">Price (High-Low)</a>
+            <a href="?sort=rating&direction=desc" class="btn btn-outline-secondary btn-sm">Rating (High-Low)</a>
+        </div>
+    </div>
+
     <div class="row">
         {% if gear_items %}
             {% for item in gear_items %}
