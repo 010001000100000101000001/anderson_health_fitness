@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
 <div class="container header-container gear-item-container">
@@ -67,7 +68,7 @@
                 <h4>Submit Your Review</h4>
                 <form action="{% url 'submit_review' gear_item.id %}" method="POST">
                     {% csrf_token %}
-                    {{ form.as_p }} <!-- Form for submitting a review -->
+                    {{ form|crispy }}
                     <button type="submit" class="btn btn-success">Submit Review</button>
                 </form>
             </div>
