@@ -5,8 +5,7 @@
 <div class="container header-container gear-item-container">
     <div class="row">
         <div class="col">
-            <h1>Workout Gear!</h1>
-            <p>Find the best gear for your workout needs.</p>
+            <h1>{{ gear_item.name }}</h1>
         </div>
     </div>
 </div>
@@ -15,61 +14,66 @@
 {% block content %}
 <div class="container content-area mt-5">
     <div class="row">
-        <div class="col text-center">
-            <h2>Categories</h2>
-            <ul class="list-inline">
-                {% for category in categories %}
-                <li class="list-inline-item">
-                    <a href="{% url 'category_gear_list' category.id %}" class="btn btn-outline-primary">
-                        {{ category.friendly_name }}
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
+        <div class="col-md-6">
+            <!-- Display gear item image -->
+            {% if gear_item.image_file %}
+                <img class="img-fluid" src="{{ gear_item.image_file.url }}" alt="{{ gear_item.name }}">
+            {% else %}
+                <img class="img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ gear_item.name }}">
+            {% endif %}
         </div>
-    </div>
+        <div class="col-md-6">
+            <!-- Gear item details -->
+            <h2>{{ gear_item.name }}</h2>
+            <p>{{ gear_item.details }}</p>
+            <p>Price: €{{ gear_item.cost }}</p>
 
-    <!-- Sort By Section -->
-    <div class="row mb-3">
-        <div class="col text-center">
-            <h4>Sort by:</h4>
-            <a href="?sort=name&direction=asc" class="btn btn-outline-secondary btn-sm">Name (A-Z)</a>
-            <a href="?sort=name&direction=desc" class="btn btn-outline-secondary btn-sm">Name (Z-A)</a>
-            <a href="?sort=price&direction=asc" class="btn btn-outline-secondary btn-sm">Price (Low-High)</a>
-            <a href="?sort=price&direction=desc" class="btn btn-outline-secondary btn-sm">Price (High-Low)</a>
-            <a href="?sort=rating&direction=desc" class="btn btn-outline-secondary btn-sm">Rating (High-Low)</a>
-            <a href="?sort=category&direction=asc" class="btn btn-outline-secondary btn-sm">Category</a>
-        </div>
-    </div>
-
-    <!-- All Gear Section -->
-    <div class="row mt-4">
-        <div class="col text-center">
-            <h2>All Gear</h2>
-        </div>
-    </div>
-
-    <div class="row">
-        {% for item in gear_items %}
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card h-100 border-0">
-                {% if item.image_file %}
-                <a href="{% url 'gear_detail' item.id %}">
-                    <img class="card-img-top img-fluid" src="{{ item.image_file.url }}" alt="{{ item.name }}">
-                </a>
-                {% else %}
-                <a href="{% url 'gear_detail' item.id %}">
-                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.name }}">
-                </a>
-                {% endif %}
-                <div class="card-body text-center">
-                    <p class="mb-0">{{ item.name }}</p>
-                    <p class="font-weight-bold">€{{ item.cost }}</p>
-                    <a href="" class="btn btn-primary btn-lg mt-2">Add to Cart</a> <!-- Add to Cart button added -->
+            <!-- Add to Cart Form -->
+            <form class="form" action="{% url 'add_to_cart' gear_item.id %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="quantity"><strong>Quantity:</strong></label>
+                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" id="id_qty_{{ gear_item.id }}">
                 </div>
+                <input type="submit" class="btn btn-primary mt-3" value="Add to Cart">
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </form>
+        </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="row mt-5">
+        <div class="col">
+            <h3>Customer Reviews</h3>
+            {% if reviews %}
+                {% for review in reviews %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <strong>{{ review.user.username }}:</strong>
+                            <p>{{ review.text }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No reviews yet. Be the first to review this product!</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Submit a Review Section (only for logged-in users) -->
+    {% if user.is_authenticated %}
+        <div class="row mt-5">
+            <div class="col">
+                <h4>Submit Your Review</h4>
+                <form action="{% url 'submit_review' gear_item.id %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }} <!-- Form for submitting a review -->
+                    <button type="submit" class="btn btn-success">Submit Review</button>
+                </form>
             </div>
         </div>
-        {% endfor %}
-    </div>
+    {% else %}
+        <p class="mt-4">You must be <a href="">logged in</a> to submit a review.</p>
+    {% endif %}
 </div>
 {% endblock %}
