@@ -94,6 +94,7 @@ TEMPLATES = [
                 'django.template.context_processors.request', # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.contexts.cart_contents',  # The cart context processor
             ],
         },
     },
@@ -197,3 +198,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Cart settings
+FREE_DELIVERY_THRESHOLD = 100  # Free delivery for orders over €100
+STANDARD_DELIVERY_PERCENTAGE = 10  # 10% delivery charge if below threshold
