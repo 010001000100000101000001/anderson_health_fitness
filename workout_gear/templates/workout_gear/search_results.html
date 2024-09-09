@@ -37,6 +37,8 @@
                     <div class="card-body text-center">
                         <p class="mb-0">{{ item.name }}</p>
                         <p class="font-weight-bold">€{{ item.cost }}</p>
+                        <!-- Add to Cart Button -->
+                        <a href="{% url 'add_to_cart' item.id %}" class="btn btn-primary btn-lg mt-2">Add to Cart</a>
                     </div>
                 </div>
             </div>
