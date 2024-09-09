@@ -55,4 +55,26 @@ def add_to_cart(request, item_id):
 
     # Save the updated cart to the session
     request.session['cart'] = cart
+    return redirect('redirect_url')
+
+
+# Update the quantity of an item in the cart
+def update_cart(request, item_id):
+    """
+    Update the quantity of a specific item in the shopping cart.
+    """
+    quantity = int(request.POST.get('quantity'))
+
+    # Fetch the cart from the session
+    cart = request.session.get('cart', {})
+
+    if str(item_id) in cart:
+        if quantity > 0:
+            cart[str(item_id)]['quantity'] = quantity
+        else:
+            # Remove the item if quantity is zero
+            cart.pop(str(item_id))
+
+    # Save the updated cart to the session
+    request.session['cart'] = cart
     return redirect('view_cart')
