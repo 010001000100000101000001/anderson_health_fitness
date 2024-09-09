@@ -30,7 +30,7 @@
             <p>Price: €{{ gear_item.cost }}</p>
 
             <!-- Add to Cart Form -->
-            <form class="form" action="{% url 'add_to_cart' gear_item.id %}" method="POST">
+            <form class="form" action="{% url 'add_to_cart' gear_item.id.pk %}" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="quantity"><strong>Quantity:</strong></label>
