@@ -3,6 +3,7 @@ from workout_gear.models import GearItem
 
 # Create your views here.
 
+
 def view_cart(request):
     """ A view that renders the cart contents page
         and displays all items in the cart.
@@ -27,7 +28,7 @@ def view_cart(request):
     # Prepare the context
     context = {
         'cart_items': cart_items,
-        'cart_total': cart_total, # Pass cart_total to the template
+        'cart_total': cart_total,  # Pass cart_total to the template
     }
 
     return render(request, 'cart/cart.html', context)
@@ -37,7 +38,9 @@ def add_to_cart(request, item_id):
     """
     Add a specified quantity of a gear item to the shopping cart.
     """
-    quantity = int(request.POST.get('quantity', 1)) # Default to 1 if not specified
+
+    # Default to 1 if not specified
+    quantity = int(request.POST.get('quantity', 1))
     redirect_url = request.POST.get('redirect_url', '/')
 
     # Fetch the gear item
@@ -54,12 +57,15 @@ def add_to_cart(request, item_id):
             'quantity': quantity,
             'name': gear_item.name,
             'price': str(gear_item.cost),
-            'image_url': gear_item.image_file.url if gear_item.image_file else None,
+            'image_url': (
+                gear_item.image_file.url
+                if gear_item.image_file else None
+            ),
         }
 
     # Save the updated cart to the session
     request.session['cart'] = cart
-    return redirect('redirect_url')
+    return redirect(redirect_url)
 
 
 # Update the quantity of an item in the cart
