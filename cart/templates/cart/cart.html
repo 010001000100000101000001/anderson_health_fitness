@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
+
 
 {% block page_header %}
 <div class="container header-container">
@@ -37,17 +39,17 @@
                                 <h5>{{ item.product.name }}</h5>
                                 <p class="text-muted">Price: €{{ item.product.cost }}</p>
                                 <p class="text-muted">Quantity: {{ item.quantity }}</p>
-                                <!-- Add Subtotal for each item -->
-                                <p class="text-muted">Subtotal: €{{ item.subtotal }}</p>
+                                <!-- calc_subtotal filter to calculate the subtotal for each item -->
+                                <p class="text-muted">Subtotal: €{{ item.product.cost|calc_subtotal:item.quantity }}</p>
                             </div>
                         </div>
                         <div class="cart-item-actions">
-                            <form method="POST" action="{% url 'update_cart' item.product.id %}">
+                            <form class="form update-form" method="POST" action="{% url 'update_cart' item.product.id %}">
                                 {% csrf_token %}
                                 <input type="number" name="quantity" value="{{ item.quantity }}" class="form-control w-50" min="1">
                                 <button type="submit" class="btn btn-primary mt-2">Update</button>
                             </form>
-                            <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger mt-2">Remove</a>
+                            <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger mt-2 remove-item" data-product_size="{{ item.size }}" id="remove_{{ item.product.id }}">Remove</a>
                         </div>
                     </div>
                     {% endfor %}
@@ -64,4 +66,30 @@
         {% endif %}
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/cart/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();  // Reload the page after the item is removed
+         });
+    });
+</script>
 {% endblock %}
