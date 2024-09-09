@@ -78,3 +78,19 @@ def update_cart(request, item_id):
     # Save the updated cart to the session
     request.session['cart'] = cart
     return redirect('view_cart')
+
+
+def remove_from_cart(request, item_id):
+    """
+    Remove a gear item from the shopping cart.
+    """
+    # Fetch the cart from the session
+    cart = request.session.get('cart', {})
+
+    # Remove the item if it exists in the cart
+    if str(item_id) in cart:
+        cart.pop(str(item_id))
+
+    # Save the updated cart back into the session
+    request.session['cart'] = cart
+    return redirect('view_cart')
