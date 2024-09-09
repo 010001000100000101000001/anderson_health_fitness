@@ -4,16 +4,36 @@ from workout_gear.models import GearItem
 # Create your views here.
 
 def view_cart(request):
-    """ A view that renders the cart contents page """
+    """ A view that renders the cart contents page
+        and displays all items in the cart.
+    """
 
-    return render(request, 'cart/cart.html')
+    # Retrieve the cart from the session
+    cart = request.session.get('cart', {})
+    cart_items = []
+
+    # Loop through items in the cart and prepare them for rendering
+    for item_id, item_data in cart.items():
+        gear_item = get_object_or_404(GearItem, pk=item_id)
+        cart_items.append({
+            'product': gear_item,
+            'quantity': item_data['quantity'],
+            'subtotal': gear_item.cost * item_data['quantity'],
+        })
+
+    # Prepare the context
+    context = {
+        'cart_items': cart_items,
+    }
+
+    return render(request, 'cart/cart.html', context)
 
 
 def add_to_cart(request, item_id):
     """
     Add a specified quantity of a gear item to the shopping cart.
     """
-    quantity = int(request.POST.get('quantity', 1))
+    quantity = int(request.POST.get('quantity', 1)) # Default to 1 if not specified
     redirect_url = request.POST.get('redirect_url', '/')
 
     # Fetch the gear item
@@ -35,4 +55,4 @@ def add_to_cart(request, item_id):
 
     # Save the updated cart to the session
     request.session['cart'] = cart
-    return redirect(redirect_url)
+    return redirect('view_cart')
