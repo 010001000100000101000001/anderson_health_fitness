@@ -5,10 +5,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 
-
 def gear_list(request):
     """
-    Displays a list of all gear items along with their categories, including sorting.
+    Displays a list of all gear items along with their categories,
+    including sorting.
      """
     categories = GearCategory.objects.all()
     gear_items = GearItem.objects.all()
@@ -68,7 +68,8 @@ def category_gear_list(request, category_id):
 
 def gear_detail(request, item_id):
     """
-    Displays detailed information about a specific gear item, including user reviews.
+    Displays detailed information about a specific gear item,
+    including user reviews.
     """
     # Get the specific gear item based on the item_id from the URL
     gear_item = get_object_or_404(GearItem, pk=item_id)
@@ -85,14 +86,17 @@ def gear_detail(request, item_id):
 
 def search_gear(request):
     """
-    Handles the search functionality, allowing users to search for gear items by name or description.
+    Handles the search functionality,
+    allowing users to search for gear items by name or description.
     """
     # Get the search query from the request's GET parameters
     query = request.GET.get('q')
-    
-     # If there's a query, filter the gear items by name or details
+
+    # If there's a query, filter the gear items by name or details
     if query:
-        gear_items = GearItem.objects.filter(Q(name__icontains=query) | Q(details__icontains=query))
+        gear_items = GearItem.objects.filter(
+            Q(name__icontains=query) | Q(details__icontains=query)
+        )
     else:
         gear_items = GearItem.objects.all()  # Show all items if no query
 
