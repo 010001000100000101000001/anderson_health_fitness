@@ -15,8 +15,10 @@ def cart_contents(request):
 
     # Loop through the items in the session cart
     for item_id, item_data in cart.items():
-        gear_item = get_object_or_404(GearItem, pk=item_id)
-        quantity = item_data
+
+        # Convert item_id back to an integer when querying the database
+        gear_item = get_object_or_404(GearItem, pk=int(item_id))
+        quantity = item_data['quantity']
         total += quantity * gear_item.cost
         product_count += quantity
 
