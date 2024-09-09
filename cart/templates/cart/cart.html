@@ -37,6 +37,8 @@
                                 <h5>{{ item.product.name }}</h5>
                                 <p class="text-muted">Price: €{{ item.product.cost }}</p>
                                 <p class="text-muted">Quantity: {{ item.quantity }}</p>
+                                <!-- Add Subtotal for each item -->
+                                <p class="text-muted">Subtotal: €{{ item.subtotal }}</p>
                             </div>
                         </div>
                         <div class="cart-item-actions">
