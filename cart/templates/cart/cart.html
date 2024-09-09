@@ -22,36 +22,6 @@
         </div>
     </div>
 
-    <!-- Gear Items Section (Add to Cart) -->
-    <div class="row mt-4">
-        <div class="col-lg-12">
-            <h2>Select Gear Items</h2>
-            <div class="row">
-                {% for gear_item in gear_items %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <img src="{{ gear_item.image_file.url }}" class="card-img-top" alt="{{ gear_item.name }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ gear_item.name }}</h5>
-                            <p class="card-text">{{ gear_item.details }}</p>
-                            <p>Price: €{{ gear_item.cost }}</p>
-                            <form class="form" action="{% url 'add_to_cart' gear_item.id %}" method="POST">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <label for="quantity"><strong>Quantity:</strong></label>
-                                    <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" id="id_qty_{{ gear_item.id }}">
-                                </div>
-                                <input type="submit" class="btn btn-primary mt-3" value="Add to Cart">
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
     <!-- Cart Items Section -->
     <div class="row mt-4">
         {% if cart_items %}
