@@ -11,19 +11,23 @@ def view_cart(request):
     # Retrieve the cart from the session
     cart = request.session.get('cart', {})
     cart_items = []
+    cart_total = 0
 
     # Loop through items in the cart and prepare them for rendering
     for item_id, item_data in cart.items():
         gear_item = get_object_or_404(GearItem, pk=item_id)
+        subtotal = gear_item.cost * item_data['quantity']
+        cart_total += subtotal
         cart_items.append({
             'product': gear_item,
             'quantity': item_data['quantity'],
-            'subtotal': gear_item.cost * item_data['quantity'],
+            'subtotal': subtotal,
         })
 
     # Prepare the context
     context = {
         'cart_items': cart_items,
+        'cart_total': cart_total, # Pass cart_total to the template
     }
 
     return render(request, 'cart/cart.html', context)
