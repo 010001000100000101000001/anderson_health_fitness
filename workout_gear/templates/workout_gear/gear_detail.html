@@ -44,7 +44,7 @@
                 <p><strong>Stock:</strong> {{ gear_item.stock_quantity }}</p>
                 <p><strong>Weight:</strong> {{ gear_item.weight }}</p>
                 <p><strong>Material:</strong> {{ gear_item.material_type }}</p>
-                <a href="{% url 'add_to_cart' item.id %}" class="btn btn-primary btn-lg mt-4">Add to Cart</a>
+                <a href="{% url 'add_to_cart' gear_item.id %}" class="btn btn-primary btn-lg mt-4">Add to Cart</a>
             </div>
         </div>
     </div>
