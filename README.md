@@ -10,6 +10,7 @@ This is my fifth project in Code Institute Diploma in Software Development with 
 
 - [Introduction](#introduction)
 - [Epics and User Stories](#epics-and-user-stories)
+- [Database Schema](#database-schema)
 - [Features](#features)
   - [Existing Features](#existing-features)
 - [Technologies Used](#technologies-used)
@@ -117,6 +118,65 @@ As a **Site User**, I can **leave reviews for products** so that **I can share m
 - **Acceptance criteria 4**: The system prevents me from submitting multiple reviews on the same item.
 - **Acceptance criteria 5**: Admins can moderate and remove inappropriate reviews.
 
+
+## Database Schema
+
+### GearCategory
+
+| Attribute         | Data Type   | Description                                                                                  |
+|-------------------|-------------|----------------------------------------------------------------------------------------------|
+| **id**            | AutoField   | Each category's unique primary key is automatically generated.                                         |
+| **name**          | CharField   | A condensed name for the group. 100 characters is the maximum length allowed. Needs to be distinct (no duplicates). |
+| **friendly_name** | CharField   | A more easily understood name for the group. There is a 254 character maximum. This is an optional field that can be left empty. |
+| **overview**      | TextField   | A synopsis or synopsis of the category. This is an optional field that can be left empty. |
+
+#### Relationships:
+- One-to-Many with 'GearItem' (A category can have multiple gear items)
+
+---
+
+
+### GearItem
+
+| Attribute          | Data Type           | Description                                                                                 |
+|--------------------|---------------------|---------------------------------------------------------------------------------------------|
+| **id**             | AutoField           | A primary key generated automatically by AutoField for every gear item.                                       |
+| **category**       | ForeignKey          | Connects a "GearCategory" to the gear item. All associated products will be deleted along with the category (CASCADE). |
+| **name**           | CharField           | The gear item's name. up to 255 characters in length.                                 |
+| **details**        | TextField           | A detailed description of the product along with benefits in some cases and sizing charts in others.                                                   |
+| **cost**           | DecimalField        | The price of the item. It can store up to 8 digits, with 2 digits after the decimal point.|
+| **stock_quantity** | PositiveIntegerField | The number of how many products that are kept in stock. The default value is 0, and it must be a positive integer.              |
+| **weight**         | CharField           | The item's weight (for example, "2kg"). 20 characters at most in length. This is an optional field that can be left empty. |
+| **material_type**  | CharField           | The item's composition (for example, "Cotton"). 100 characters is the maximum length allowed. This is an optional field that can be left empty. |
+| **image_url**      | URLField            | The web address at which the products image is hosted. Ten twenty-four characters maximum. This is an optional field that can be left empty. |
+| **image_file**     | ImageField          | Uploading an image file for the product is possible with ImageField. The folder titled "gear_images/" contains the images. This is an optional field that can be left empty. |
+| **highlight**      | BooleanField        | A true/false value to indicate whether the item should be highlighted. A number that indicates whether or not the item should be highlighted (for example, on a page featuring featured products). False is the default. |
+| **created_on**     | DateTimeField       | The time and date of the products initial creation. At the time the item is created, this is automatically set. |
+| **modified_on**    | DateTimeField       | The date and time when the product was last updated. This is automatically updated whenever changes are made to the item. |
+| **rating**         | DecimalField        | The products average customer rating. able to hold two digits, one of which comes after the decimal point (e.g., 4.5). This is an optional field that can be left empty.
+
+#### Relationships:
+- One-to-Many with 'ProductReview' (A gear item can have multiple reviews)
+
+---
+
+
+### ProductReview
+
+| Attribute          | Data Type           | Description                                                                                 |
+|--------------------|---------------------|---------------------------------------------------------------------------------------------|
+| **id**             | AutoField           | Auto-generated unique primary key for each review.                                           |
+| **gear_item**      | ForeignKey          | Links the review to a 'GearItem'. If the gear item is deleted, all related reviews will be deleted too (CASCADE). |
+| **user**           | ForeignKey          | Links the review to a 'User'. If the user is deleted, all related reviews will be deleted too (CASCADE). |
+| **rating**         | PositiveIntegerField | The rating given by the user to the gear item. Must be a number between 1 and 5.             |
+| **comment**        | TextField           | The written review or comment about the gear item.                                           |
+| **created_at**     | DateTimeField       | The date and time when the review was first created. This is automatically set when the review is submitted. |
+| **updated_at**     | DateTimeField       | The date and time when the review was last updated. This is automatically updated whenever changes are made to the review. |
+
+
+#### Relationships:
+- Many-to-One with 'GearItem' (A gear item can have many reviews, but a review belongs to one gear item)
+- Many-to-One with 'User' (A user can write many reviews, but a review belongs to one user)
 
 
 
