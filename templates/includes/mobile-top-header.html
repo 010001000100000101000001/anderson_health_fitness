@@ -21,7 +21,8 @@
         <!-- Cart Icon -->
         <a href="{% url 'view_cart' %}" class="btn btn-outline-light me-2">
             <i class="fa-regular fa-cart-shopping"></i>
-            <span class="cart-total">({{ cart.total_price|default:"€0.00" }})</span>
+             <!-- Add a span to dynamically display the cart total -->
+             <span class="cart-total">({{ grand_total|floatformat:2|default:"€0.00" }})</span>
         </a>
 
         <!-- Search Controls -->

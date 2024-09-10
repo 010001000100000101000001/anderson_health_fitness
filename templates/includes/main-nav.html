@@ -2,13 +2,17 @@
     <ul class="navbar-nav me-auto">
         <!-- Workout Gear Dropdown -->
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="gear-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="" id="gear-link" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 Workout Gear
             </a>
             <ul class="dropdown-menu border-0" aria-labelledby="gear-link">
-                <li><a class="dropdown-item" href="{% url 'category_gear_list' 3 %}">Clothing <i class="fa-regular fa-shirt"></i></a></li>
-                <li><a class="dropdown-item" href="{% url 'category_gear_list' 4 %}">Accessories <i class="fa-regular fa-notebook"></i> <i class="fa-regular fa-pen"></i></a></li>
-                <li><a class="dropdown-item" href="{% url 'category_gear_list' 5 %}">Equipment <i class="fa-solid fa-dumbbell"></i></a></li>
+                <li><a class="dropdown-item" href="{% url 'category_gear_list' 3 %}">Clothing <i
+                            class="fa-regular fa-shirt"></i></a></li>
+                <li><a class="dropdown-item" href="{% url 'category_gear_list' 4 %}">Accessories <i
+                            class="fa-regular fa-notebook"></i> <i class="fa-regular fa-pen"></i></a></li>
+                <li><a class="dropdown-item" href="{% url 'category_gear_list' 5 %}">Equipment <i
+                            class="fa-solid fa-dumbbell"></i></a></li>
                 <li><a class="dropdown-item" href="{% url 'gear_list' %}">All Gear</a></li>
             </ul>
         </li>
@@ -21,7 +25,8 @@
     <!-- My Account and Checkout (Visible on larger screens only) -->
     <ul class="navbar-nav ms-auto d-none d-lg-flex">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="" id="accountDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
                 <i class="fa-solid fa-user"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
@@ -36,7 +41,11 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{% url 'view_cart' %}"><i class="fa-regular fa-cart-shopping"></i> (€0.00)</a>
+            <a class="nav-link" href="{% url 'view_cart' %}">
+                <i class="fa-regular fa-cart-shopping"></i>
+                <span id="cart-total">({{ grand_total|floatformat:2 }})</span>
+            </a>
+
         </li>
     </ul>
 </div>
