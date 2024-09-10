@@ -190,7 +190,7 @@ As a **Site User**, I can **leave reviews for products** so that **I can share m
 - **Product Browsing**: Users can browse workout gear by category, view product details, and add items to their cart.
 - **Shopping Cart**: Users can add items to their cart, view the cart, and proceed to checkout.
 - **Search Functionality**: Users can search for products based on names and details.
-- **Promotional Banners**: The site features a promotional banner to highlight free delivery of orders over €50.
+- **Promotional Banners**: The site features a promotional banner to highlight free delivery of orders over €100.
 
 
  ## Technologies Used
