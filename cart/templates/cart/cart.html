@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col text-center">
             <h2>Your Cart</h2>
-            <a href="javascript:history.back()" class="btn btn-outline-secondary back-button">
+            <a href="{% url 'gear_list' %}" class="btn btn-outline-secondary back-button">
                 <i class="fa-solid fa-square-arrow-left"></i> Continue Shopping
             </a>
         </div>
@@ -27,42 +27,45 @@
     <!-- Cart Items Section -->
     <div class="row mt-4">
         {% if cart_items %}
-            <div class="col-lg-8">
-                <div class="list-group">
-                    {% for item in cart_items %}
-                    <div class="list-group-item d-flex justify-content-between align-items-center">
-                        <div class="cart-item-details">
-                            <a href="{% url 'gear_detail' item.product.id %}">
-                                <img src="{{ item.product.image_file.url }}" alt="{{ item.product.name }}" class="img-thumbnail me-3" style="max-width: 100px;">
-                            </a>
-                            <div class="item-info">
-                                <h5>{{ item.product.name }}</h5>
-                                <p class="text-muted">Price: €{{ item.product.cost }}</p>
-                                <p class="text-muted">Quantity: {{ item.quantity }}</p>
-                                <!-- calc_subtotal filter to calculate the subtotal for each item -->
-                                <p class="text-muted">Subtotal: €{{ item.product.cost|calc_subtotal:item.quantity }}</p>
-                            </div>
-                        </div>
-                        <div class="cart-item-actions">
-                            <form class="form update-form" method="POST" action="{% url 'update_cart' item.product.id %}">
-                                {% csrf_token %}
-                                <input type="number" name="quantity" value="{{ item.quantity }}" class="form-control w-50" min="1">
-                                <button type="submit" class="btn btn-primary mt-2">Update</button>
-                            </form>
-                            <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger mt-2 remove-item" data-product_size="{{ item.size }}" id="remove_{{ item.product.id }}">Remove</a>
+        <div class="col-lg-8">
+            <div class="list-group">
+                {% for item in cart_items %}
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="cart-item-details">
+                        <a href="{% url 'gear_detail' item.product.id %}">
+                            <img src="{{ item.product.image_file.url }}" alt="{{ item.product.name }}"
+                                class="img-thumbnail me-3" style="max-width: 100px;">
+                        </a>
+                        <div class="item-info">
+                            <h5>{{ item.product.name }}</h5>
+                            <p class="text-muted">Price: €{{ item.product.cost }}</p>
+                            <p class="text-muted">Quantity: {{ item.quantity }}</p>
+                            <!-- calc_subtotal filter to calculate the subtotal for each item -->
+                            <p class="text-muted">Subtotal: €{{ item.product.cost|calc_subtotal:item.quantity }}</p>
                         </div>
                     </div>
-                    {% endfor %}
+                    <div class="cart-item-actions">
+                        <form class="form update-form" method="POST" action="{% url 'update_cart' item.product.id %}">
+                            {% csrf_token %}
+                            <input type="number" name="quantity" value="{{ item.quantity }}" class="form-control w-50"
+                                min="1">
+                            <button type="submit" class="btn btn-primary mt-2">Update</button>
+                        </form>
+                        <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger mt-2 remove-item"
+                            data-product_size="{{ item.size }}" id="remove_{{ item.product.id }}">Remove</a>
+                    </div>
                 </div>
-                <!-- Add overall cart total -->
-                <div class="mt-4">
-                    <h4>Total: €{{ cart_total }}</h4>
-                </div>
+                {% endfor %}
             </div>
+            <!-- Add overall cart total -->
+            <div class="mt-4">
+                <h4>Total: €{{ cart_total }}</h4>
+            </div>
+        </div>
         {% else %}
-            <div class="col">
-                <p>Your cart is currently empty.  Get fit and start adding items!</p>
-            </div>
+        <div class="col">
+            <p>Your cart is currently empty. Get fit and start adding items!</p>
+        </div>
         {% endif %}
     </div>
 </div>
@@ -73,23 +76,26 @@
 
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function(e) {
+    $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
     // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+    $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('product_size');
         var url = `/cart/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'product_size': size
+        };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();  // Reload the page after the item is removed
-         });
+            .done(function () {
+                location.reload(); // Reload the page after the item is removed
+            });
     });
 </script>
 {% endblock %}
