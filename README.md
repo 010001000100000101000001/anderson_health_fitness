@@ -144,7 +144,7 @@ As a **Site User**, I can **see a promotional banner on the site** so that **I c
 
 ---
 
-#### Epic 9: Search Enhancement
+### Epic 9: Search Enhancement
 
 As a **Site User**, I can **view a list of the items that were found overall in the search results summary.** so that **I can quickly decide if I need to refine my search or browse the results**.
 
