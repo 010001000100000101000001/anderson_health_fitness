@@ -49,6 +49,8 @@ As a **Site User**, I can **reset my password if I forget it** so that **I can r
 - **Acceptance criteria 1**: I can request a password reset link via my registered email.
 - **Acceptance criteria 2**: The system sends a secure link to reset the password, and I can update it as a site user.
 
+---
+
 ### Epic 2: Product Browsing and Search
 
 As a **Site User**, I can **browse workout gear by category** so that **I can easily find the type of product I’m looking for**.
@@ -66,7 +68,23 @@ As a **Site User**, I can **view detailed information about a specific product**
 
 - **Acceptance criteria 1**: I can click on a product to view its details, including name, price, description, image, stock availability, and other specifications like material and weight.
 
-### Epic 3: Shopping Cart and Checkout
+---
+
+### Epic 3: Sorting and Filtering
+
+As a **Site User**, I can **easily locate the highest rated, cheapest or alphabetical (A-Z or Z-A)** so that **I can quickly find the best-rated, lowest-priced, or find products alphabetically**.
+
+- **Acceptance criteria 1**: Items can be sorted alphabetically (A-Z or Z-A), by price (ascending or descending), or by rating.
+- **Acceptance criteria 2**: The workout out gear category page makes sorting choices easily accessible and visible..
+
+As a **Site User**, I can **select things that meet my personal interests by filtering fitness gear items by category, price range, or rating.** so that **I can find products that fit my specific preferences**.
+
+- **Acceptance criteria 1**: Users can filter by category (Clothing, Accessories, Equipment).
+- **Acceptance criteria 2**: Filter options are presented clearly and the user has a clearly visible backpage arrow to return to the previous page.
+
+---
+
+### Epic 4: Shopping Cart and Checkout
 
 As a **Site User**, I can **add items to my shopping cart** so that **I can purchase multiple items in one transaction**.
 
@@ -84,7 +102,9 @@ As a **Site User**, I can **securely checkout and pay for my items** so that **I
 - **Acceptance criteria 2**: Payment processing is handled securely, using Stripe.
 - **Acceptance criteria 3**: Upon successful payment, I receive a confirmation email with order details.
 
-### Epic 4: User Profile and Order Management
+---
+
+### Epic 5: User Profile and Order Management
 
 As a **Site User**, I can **view my past orders** so that **I can track my purchase history and reorder items if needed**.
 
@@ -94,12 +114,7 @@ As a **Site User**, I can **update my personal information** so that **my accoun
 
 - **Acceptance criteria 1**: I can update my name, email, password, and other personal details from my profile page.
 
-### Epic 5: Marketing and Promotions
-
-As a **Site User**, I can **see a promotional banner on the site** so that **I can take advantage of free delivery**.
-
-- **Acceptance criteria 1**: The promotional banner is visible on the homepage and other relevant pages.
-- **Acceptance criteria 2**: The banner highlights free delivery on orders over €100!
+---
 
 ### Epic 6: Site Administration
 
@@ -107,6 +122,8 @@ As a **Site Admin**, I can **add, edit, and delete products** so that **the stor
 
 - **Acceptance criteria 1**: Admins have access to an interface to manage products, including adding new items, editing existing ones, and removing products that are no longer available.
 - **Acceptance criteria 2**: Changes are immediately reflected on the site.
+
+---
 
 ### Epic 7: Product Reviews
 
@@ -117,6 +134,33 @@ As a **Site User**, I can **leave reviews for products** so that **I can share m
 - **Acceptance criteria 3**: I can edit or delete my reviews if I change my mind.
 - **Acceptance criteria 4**: The system prevents me from submitting multiple reviews on the same item.
 - **Acceptance criteria 5**: Admins can moderate and remove inappropriate reviews.
+
+### Epic 8: Marketing and Promotions
+
+As a **Site User**, I can **see a promotional banner on the site** so that **I can take advantage of free delivery**.
+
+- **Acceptance criteria 1**: The promotional banner is visible on the homepage and other relevant pages.
+- **Acceptance criteria 2**: The banner highlights free delivery on orders over €100!
+
+---
+
+#### Epic 9: Search Enhancement
+
+As a **Site User**, I can **view a list of the items that were found overall in the search results summary.** so that **I can quickly decide if I need to refine my search or browse the results**.
+
+- **Acceptance criteria 1**: The total number of matching products is displayed on the search results page.
+- **Acceptance criteria 2**: It is simple to perform a new search and refine the results.
+
+---
+
+#### Epic 10: Order Management
+
+As a **Site User**, I can **view a history of my past purchases** so that **track how much I've spent and review past orders**.
+
+- **Acceptance criteria 1**: An overview of previous orders, including the total amount paid, is included in the user profile.
+- **Acceptance criteria 2**: Users are able to read information about specific products as well as the order date and total amount.
+
+---
 
 
 ## Database Schema
