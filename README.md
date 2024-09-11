@@ -153,7 +153,7 @@ As a **Site User**, I can **view a list of the items that were found overall in 
 
 ---
 
-#### Epic 10: Order Management
+### Epic 10: Order Management
 
 As a **Site User**, I can **view a history of my past purchases** so that **track how much I've spent and review past orders**.
 
