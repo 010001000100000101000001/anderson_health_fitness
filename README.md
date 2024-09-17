@@ -163,6 +163,16 @@ As a **Site User**, I can **view a history of my past purchases** so that **trac
 ---
 
 
+### Epic 11: Mobile Experience
+
+As a **Mobile Site User**, I can **view my profile on the go by simply accessing the website from my mobile device** so that **I can quickly explore, shop, browse, make purchases and view my profile on the go**.
+
+- **Acceptance criteria 1**: The website's mobile version functions flawlessly across all screen sizes and is fully responsive.
+- **Acceptance criteria 2**: Important features such as the navigation menu, search bar, and shopping cart are easily navigable and useable on mobile devices.
+- **Acceptance criteria 3**: Product photos and descriptions are displayed as best they can on smaller screens thanks to the mobile layout.
+---
+
+
 ## Database Schema
 
 ### GearCategory
