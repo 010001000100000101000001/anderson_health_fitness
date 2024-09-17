@@ -1,9 +1,17 @@
-<div class="toast position-fixed top-0 end-0 mt-5 bg-warning text-white border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
-    <div class="toast-header bg-warning text-white border-bottom-0">
+{% load static %}
+<div class="toast position-fixed top-0 end-0 mt-5 bg-warning text-dark border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+    <div class="toast-header bg-warning text-dark border-bottom-0">
         <strong class="me-auto">Warning</strong>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
+        <!-- Warning Message Section -->
         {{ message }}
+
+        <!-- Cart Button -->
+        <hr>
+        <a href="{% url 'view_cart' %}" class="btn btn-dark btn-block rounded-0 mt-2">
+            Review Cart <i class="fa-solid fa-exclamation-circle"></i>
+        </a>
     </div>
 </div>
