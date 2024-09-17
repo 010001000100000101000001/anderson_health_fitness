@@ -1,36 +1,16 @@
 {% load static %}
-<div class="toast position-fixed top-0 end-0 mt-5 bg-info text-white border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="10000">
+<div class="toast position-fixed top-0 end-0 mt-5 bg-info text-white border-0 shadow" role="alert" aria-live="assertive"
+    aria-atomic="true" data-bs-delay="10000">
     <div class="toast-header bg-info text-white border-bottom-0">
-        <strong class="me-auto">Info</strong>
+        <strong class="me-auto">Information</strong>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
         <!-- Message Section -->
         {{ message }}
 
-        <!-- Cart Notification Section -->
-        <div class="bag-notification-wrapper mt-2">
-            {% for item in cart_items %}
-            <div class="row align-items-center mb-2">
-                <div class="col-3">
-                    <img src="{% if item.image_url %}{{ item.image_url }}{% else %}{% static 'media/gear_images/placeholder-for-no-product-image.webp' %}{% endif %}" alt="{{ item.product_name }}" class="img-fluid">
-                </div>
-                <div class="col-9">
-                    <p class="mb-0"><strong>{{ item.product_name }}</strong></p>
-                    <p class="small">Qty: {{ item.quantity }}</p>
-                    <p class="small text-muted">Subtotal: €{{ item.subtotal|floatformat:2 }}</p>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-        <!-- Total Info -->
-        <hr>
-        <p class="mb-1">Total: €{{ total|floatformat:2 }}</p>
-
-        <!-- Checkout Button -->
-        <a href="{% url 'view_cart' %}" class="btn btn-dark btn-block rounded-0 mt-2">
-            Sprint to Secure Checkout <i class="fa-sharp fa-solid fa-lock-a"></i>
-        </a>
+        <!-- Cart Button -->
+        <a href="{% url 'view_cart' %}" class="btn btn-dark btn-block rounded-0 mt-2">Go to Cart <i
+                class="fa-regular fa-cart-shopping"></i></a>
     </div>
 </div>

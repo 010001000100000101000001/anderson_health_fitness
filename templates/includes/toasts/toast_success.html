@@ -1,5 +1,6 @@
 {% load static %}
-<div class="toast position-fixed top-0 end-0 mt-5 bg-success text-white border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="10000">
+<div class="toast position-fixed top-0 end-0 mt-5 bg-success text-white border-0 shadow" role="alert"
+    aria-live="assertive" aria-atomic="true" data-bs-delay="10000">
     <div class="toast-header bg-success text-white border-bottom-0">
         <strong class="me-auto">Success!</strong>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -13,7 +14,8 @@
             {% for item in cart_items %}
             <div class="row align-items-center mb-2">
                 <div class="col-3">
-                    <img src="{% if item.image_url %}{{ item.image_url }}{% else %}{% static 'media/gear_images/placeholder-for-no-product-image.webp' %}{% endif %}" alt="{{ item.product_name }}" class="img-fluid">
+                    <img src="{% if item.image_url %}{{ item.image_url }}{% else %}{% static 'media/gear_images/placeholder-for-no-product-image.webp' %}{% endif %}"
+                        alt="{{ item.product_name }}" class="img-fluid">
                 </div>
                 <div class="col-9">
                     <p class="mb-0"><strong>{{ item.product.name }}</strong></p>
@@ -28,7 +30,8 @@
         <hr>
         <p class="mb-1">Total: €{{ total|floatformat:2 }}</p>
         {% if free_delivery_delta > 0 %}
-        <p class="small bg-warning text-dark p-2">Spend €{{ free_delivery_delta|floatformat:2 }} more to qualify for free delivery!</p>
+        <p class="small bg-warning text-dark p-2">Spend €{{ free_delivery_delta|floatformat:2 }} more to qualify for
+            free delivery!</p>
         {% endif %}
 
         <!-- Checkout Button -->
