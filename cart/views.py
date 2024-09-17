@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from workout_gear.models import GearItem
 from django.contrib import messages
+from .contexts import cart_contents
 
 # Create your views here.
 
@@ -67,6 +68,13 @@ def add_to_cart(request, item_id):
 
     # Save the updated cart to the session
     request.session['cart'] = cart
+
+    # Retrieve cart contents for toast notifications
+    cart_data = cart_contents(request)
+    request.session['cart_items'] = cart_data['cart_items']
+    request.session['total'] = cart_data['total']
+    request.session['free_delivery_delta'] = cart_data['free_delivery_delta']
+
     return redirect(redirect_url)
 
 
@@ -91,6 +99,13 @@ def update_cart(request, item_id):
 
     # Save the updated cart to the session
     request.session['cart'] = cart
+
+    # Retrieve cart contents for toast notifications
+    cart_data = cart_contents(request)
+    request.session['cart_items'] = cart_data['cart_items']
+    request.session['total'] = cart_data['total']
+    request.session['free_delivery_delta'] = cart_data['free_delivery_delta']
+
     return redirect('view_cart')
 
 
@@ -110,4 +125,11 @@ def remove_from_cart(request, item_id):
 
     # Save the updated cart back into the session
     request.session['cart'] = cart
+
+    # Retrieve cart contents for toast notifications
+    cart_data = cart_contents(request)
+    request.session['cart_items'] = cart_data['cart_items']
+    request.session['total'] = cart_data['total']
+    request.session['free_delivery_delta'] = cart_data['free_delivery_delta']
+
     return redirect('view_cart')
