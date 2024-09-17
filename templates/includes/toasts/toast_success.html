@@ -1,5 +1,5 @@
 {% load static %}
-<div class="toast position-fixed top-0 end-0 mt-5 bg-success text-white border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+<div class="toast position-fixed top-0 end-0 mt-5 bg-success text-white border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="10000">
     <div class="toast-header bg-success text-white border-bottom-0">
         <strong class="me-auto">Success!</strong>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -18,7 +18,7 @@
                 <div class="col-9">
                     <p class="mb-0"><strong>{{ item.product.name }}</strong></p>
                     <p class="small">Qty: {{ item.quantity }}</p>
-                    <p class="small text-muted">Subtotal: €{{ item.subtotal|floatformat:2 }}</p>
+                    <p class="small text-white">Subtotal: €{{ item.subtotal|floatformat:2 }}</p>
                 </div>
             </div>
             {% endfor %}
