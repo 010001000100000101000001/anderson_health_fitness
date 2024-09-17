@@ -6,6 +6,19 @@ from .contexts import cart_contents
 # Create your views here.
 
 
+def update_cart_session(request):
+    view_cart(request)
+    """
+    Function to update cart session data after each action
+    """
+    cart_data = cart_contents(request)
+    request.session['cart_items'] = cart_data['cart_items']
+    request.session['total'] = cart_data['total']
+    request.session['free_delivery_delta'] = cart_data['free_delivery_delta']
+    # Add grand total to session
+    request.session['grand_total'] = cart_data['grand_total']
+
+
 def view_cart(request):
     """ A view that renders the cart contents page
         and displays all items in the cart.
@@ -59,18 +72,20 @@ def add_to_cart(request, item_id):
             'quantity': quantity,
             'name': gear_item.name,
             'price': str(gear_item.cost),
-            'image_url': gear_item.image_file.url if gear_item.image_file else '/media/gear_images/placeholder-for-no-product-image.webp',
+            'image_url': (
+                gear_item.image_file.url
+                if gear_item.image_file
+                else '/media/gear_images/placeholder-for-no-product-image.webp'
+            ),
         }
-        messages.success(request, f'Added {gear_item.name} to cart.')
+    messages.success(
+        request,
+        f'Added {gear_item.name} to cart.'
+    )
 
-    # Save the updated cart to the session
+    # Update session with the new cart data
     request.session['cart'] = cart
-
-    # Retrieve cart contents for toast notifications
-    cart_data = cart_contents(request)
-    request.session['cart_items'] = cart_data['cart_items']
-    request.session['total'] = cart_data['total']
-    request.session['free_delivery_delta'] = cart_data['free_delivery_delta']
+    update_cart_session(request)
 
     return redirect(redirect_url)
 
