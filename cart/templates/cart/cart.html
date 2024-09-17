@@ -59,7 +59,9 @@
             </div>
             <!-- Add overall cart total -->
             <div class="mt-4">
-                <h4>Total: €{{ cart_total }}</h4>
+                <h4>Total: €{{ cart_total|floatformat:2 }}</h4>
+                <h4>Delivery Fee: €{{ delivery|floatformat:2 }}</h4>
+                <h4>Grand Total: €{{ grand_total|floatformat:2 }}</h4>
             </div>
         </div>
         {% else %}
