@@ -16,10 +16,11 @@ def cart_contents(request):
 
     # Loop through the items in the session cart
     for item_id, item_data in cart.items():
+        # Convert item_id back to an integer when querying the database
         gear_item = get_object_or_404(GearItem, pk=int(item_id))
         quantity = item_data['quantity']
         cost = Decimal(gear_item.cost)  # Ensure cost is a Decimal
-        subtotal = cost * quantity  # Calculate subtotal
+        subtotal = cost * quantity  # Do the multiplication using Decimal
 
         total += subtotal
         product_count += quantity
@@ -41,7 +42,6 @@ def cart_contents(request):
 
     # Calculate delivery cost
     if total < settings.FREE_DELIVERY_THRESHOLD:
-        # Keep as Decimal
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE) / 100
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
@@ -51,13 +51,9 @@ def cart_contents(request):
     # Calculate grand total
     grand_total = total + delivery
 
-    """
-    Return context data, but make sure to convert Decimals to float
-    for session storage or templates
-    """
+    # Return context data, but make sure to convert Decimals to float
     context = {
         'cart_items': cart_items,
-        # Convert to float for serialisation
         'total': float(total),
         'product_count': product_count,
         'delivery': float(delivery),
