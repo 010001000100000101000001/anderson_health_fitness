@@ -59,10 +59,7 @@ def add_to_cart(request, item_id):
             'quantity': quantity,
             'name': gear_item.name,
             'price': str(gear_item.cost),
-            'image_url': (
-                gear_item.image_file.url
-                if gear_item.image_file else None
-            ),
+            'image_url': gear_item.image_file.url if gear_item.image_file else '/media/gear_images/placeholder-for-no-product-image.webp',
         }
         messages.success(request, f'Added {gear_item.name} to cart.')
 
