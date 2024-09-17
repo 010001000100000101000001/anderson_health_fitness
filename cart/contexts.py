@@ -22,10 +22,14 @@ def cart_contents(request):
         total += quantity * gear_item.cost
         product_count += quantity
 
+        # Handling image URLs
+        image_url = gear_item.image_file.url if gear_item.image_file else gear_item.image_url
+
         cart_items.append({
             'product': gear_item,
             'quantity': quantity,
             'subtotal': quantity * gear_item.cost,
+            'image_url': image_url,
         })
 
     # Calculate delivery cost
