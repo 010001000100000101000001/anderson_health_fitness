@@ -12,7 +12,7 @@
             {% for item in cart_items %}
             <div class="row align-items-center mb-2">
                 <div class="col-3">
-                    <img src="{{ item.product.image_file.url }}" alt="{{ item.product.name }}" class="img-fluid">
+                    <img src="{% if item.image_url %}{{ item.image_url }}{% else %}{% static 'media/gear_images/placeholder-for-no-product-image.webp' %}{% endif %}" alt="{{ item.product_name }}" class="img-fluid">
                 </div>
                 <div class="col-9">
                     <p class="mb-0"><strong>{{ item.product.name }}</strong></p>
