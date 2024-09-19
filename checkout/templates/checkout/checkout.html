@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            <h1>Checkout</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container content-area mt-5">
+    <div class="row">
+        <div class="col text-center">
+            <h2>Review Your Order</h2>
+            <a href="{% url 'view_cart' %}" class="btn btn-outline-secondary back-button">
+                <i class="fa-solid fa-square-arrow-left"></i> Back to Cart
+            </a>
+        </div>
+    </div>
+
+    <!-- Order Form Section -->
+    <div class="row mt-4">
+        <div class="col-lg-8">
+            <form method="POST" action="{% url 'checkout' %}">
+                {% csrf_token %}
+                {{ order_form|crispy }}
+                
+                <div class="mt-4">
+                    <h4>Cart Summary</h4>
+                    <ul class="list-group">
+                        {% for item in cart_items %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>{{ item.product.name }}</strong>
+                                <p class="text-muted">Quantity: {{ item.quantity }}</p>
+                                <p class="text-muted">Subtotal: €{{ item.subtotal|floatformat:2 }}</p>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="mt-4">
+                    <h4>Summary</h4>
+                    <p>Total: €{{ total|floatformat:2 }}</p>
+                    <p>Delivery Fee: €{{ delivery|floatformat:2 }}</p>
+                    <h4>Grand Total: €{{ grand_total|floatformat:2 }}</h4>
+                </div>
+
+                <button type="submit" class="btn btn-success btn-block mt-4">
+                    Complete Purchase <i class="fa-sharp fa-solid fa-lock-a"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

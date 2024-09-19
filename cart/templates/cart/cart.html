@@ -62,6 +62,11 @@
                 <h4>Total: €{{ cart_total|floatformat:2 }}</h4>
                 <h4>Delivery Fee: €{{ delivery|floatformat:2 }}</h4>
                 <h4>Grand Total: €{{ grand_total|floatformat:2 }}</h4>
+
+                <!-- Proceed to Checkout Button -->
+                <a href="{% url 'checkout' %}" class="btn btn-success mt-3 text-white">
+                    Sprint to Secure Checkout and Get Your Gains <i class="fa-solid fa-running"></i>
+                </a>
             </div>
         </div>
         {% else %}
