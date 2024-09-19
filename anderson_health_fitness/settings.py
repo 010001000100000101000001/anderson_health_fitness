@@ -86,13 +86,13 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),  # Custom templates directory
-            os.path.join(BASE_DIR, 'templates', 'allauth'), # Allauth templates directory
+            os.path.join(BASE_DIR, 'templates', 'allauth'),  # Allauth templates directory
         ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'cart.contexts.cart_contents',  # The cart context processor
@@ -115,7 +115,7 @@ SOCIALACCOUNT_PROVIDERS = {
         'APP': {
             'client_id': '126294583732-44a6kal5bsgga9clrh02c1soh7dp84rv.apps.googleusercontent.com',
             'secret': 'YOUR_GOOGLE_CLIENT_SECRET',
-            'key': '' # This can be left empty for Google OAuth
+            'key': ''  # This can be left empty for Google OAuth
         },
         'SCOPE': [
             'email',
@@ -193,6 +193,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Crispy Forms Settings
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # Default primary key field type
