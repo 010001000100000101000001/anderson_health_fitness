@@ -6,10 +6,13 @@
   background-color: #f9f9f9;
   border: 1px solid #ccc;
 }
+
 .form-control:focus {
-  border-color: #2ecc71
+  border-color: #2ecc71;
   box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
 }
+
+
 button {
   background-color: #2ecc71;
   border: none;
@@ -19,6 +22,32 @@ button {
   border-radius: 0;
   transition: background-color 0.3s ease;
 }
+
 button:hover {
   background-color: #27ae60;
+}
+
+/* Stripe Element and input field styling */
+.StripeElement,
+.stripe-style-input {
+    height: 45px;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus {
+    border-color: #2ecc71;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
 }
