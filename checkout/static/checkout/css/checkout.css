@@ -75,3 +75,18 @@ button:hover {
   background-color: #2ecc71;
   color: white;
 }
+
+/* Cart summary styling */
+.list-group-item {
+  border: none;
+  padding: 15px;
+  background-color: #f5f5f5;
+}
+
+.list-group-item strong {
+  color: #2ecc71;
+}
+
+.list-group-item .text-muted {
+  color: #7f8c8d;
+}
