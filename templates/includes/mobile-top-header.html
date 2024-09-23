@@ -19,10 +19,10 @@
         </div>
 
         <!-- Cart Icon -->
-        <a href="{% url 'view_cart' %}" class="btn btn-outline-light me-2">
+        <a href="{% url 'view_cart' %}" class="btn icon-btn me-2">
             <i class="fa-regular fa-cart-shopping"></i>
              <!-- Add a span to dynamically display the cart total -->
-             <span class="cart-total">({{ grand_total|floatformat:2|default:"€0.00" }})</span>
+             <span class="cart-total">(&euro;{{ grand_total|floatformat:2|default:"€0.00" }})</span>
         </a>
 
         <!-- Search Controls -->

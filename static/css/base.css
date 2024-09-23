@@ -143,6 +143,30 @@ body {
     font-size: 1.5rem;
 }
 
+/* Consistent styling for Profile, Cart, and Search buttons */
+.icon-btn {
+    background-color: #fff; /* White background */
+    border: 2px solid #000; /* Black border */
+    padding: 10px; /* Ensure enough padding */
+    border-radius: 8px; /* Rounded corners */
+    color: #000; /* Black icon color */
+    font-size: 1.5rem; /* Icon size */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Add hover effect for icon buttons */
+.icon-btn:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+    border-color: #007bff; /* Blue border on hover */
+}
+
+/* Active state for icon buttons */
+.icon-btn:active {
+    background-color: #ddd; /* Darker gray when active */
+    border-color: #0056b3; /* Darker blue when clicked */
+}
+
+
 /* Content area with white background and black text */
 .content-area {
     background-color: white;
@@ -255,6 +279,10 @@ body {
     margin-top: 350px !important;
 }
 
+.cart-total {
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Fine-tune for very small screens (320px to 333px) */
 @media (min-width: 320px) and (max-width: 333px) {
 
@@ -263,21 +291,20 @@ body {
         margin-top: 155px !important;
     }
 
-    /* Ensure buttons (profile, cart, and magnifying glass) have proper spacing and background color */
-    .btn-outline-light {
-        background-color: #ffffff;
-        color: rgb(0, 0, 0);
-    }
-
     /* Adjust the hero-text-container margin */
     .hero-text-container {
         margin-top: 580px !important;
+    }
+
+    .cart-total {
+        font-family: 'Poppins', sans-serif;
+        color: #000;
+        line-height: 1.2;
     }
 }
 
 /* Media queries for mobile devices */
 @media (min-width: 334px) and (max-width: 768px) {
-
     /* Adjust navbar brand */
     .navbar-brand {
         font-size: 1rem;
@@ -400,6 +427,10 @@ body {
     .content-area {
         margin-top: 150px !important;
     }
+
+    .cart-total {
+        font-family: 'Poppins', sans-serif;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 991px) {
@@ -503,5 +534,9 @@ body {
 
     .content-area {
         margin-top: 150px !important;
+    }
+
+    .cart-total {
+        font-family: 'Poppins', sans-serif;
     }
 }
