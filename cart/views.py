@@ -3,12 +3,11 @@ from workout_gear.models import GearItem
 from django.contrib import messages
 from .contexts import cart_contents
 
-# Create your views here.
 
-
+# View to render the cart contents page
 def view_cart(request):
-    """ A view that renders the cart contents page
-        and displays all items in the cart.
+    """A view that renders the cart contents page and displays
+        all items in the cart.
     """
 
     # Retrieve the cart from the session
@@ -22,36 +21,35 @@ def view_cart(request):
         subtotal = gear_item.cost * item_data['quantity']
         cart_total += subtotal
         cart_items.append({
+            'item_id': item_id,
             'product': gear_item,
+            'product_name': gear_item.name,
             'quantity': item_data['quantity'],
             'subtotal': subtotal,
+            'image_url': (
+                gear_item.image_file.url if gear_item.image_file else
+                '/media/gear_images/placeholder-for-no-product-image.webp'
+                ),
         })
 
     # Prepare the context
     context = {
         'cart_items': cart_items,
-        'cart_total': cart_total,  # Pass cart_total to the template
+        'cart_total': cart_total,
     }
 
     return render(request, 'cart/cart.html', context)
 
 
 def add_to_cart(request, item_id):
-    """
-    Add a specified quantity of a gear item to the shopping cart.
-    """
+    """Add a specified quantity of a gear item to the shopping cart."""
 
-    # Default to 1 if not specified
     quantity = int(request.POST.get('quantity', 1))
     redirect_url = request.POST.get('redirect_url', '/')
-
-    # Fetch the gear item
     gear_item = get_object_or_404(GearItem, pk=item_id)
-
-    # Fetch the cart from the session
     cart = request.session.get('cart', {})
 
-    # Check if the item is already in the cart and update quantity
+    # Add or update item in cart
     if str(item_id) in cart:
         cart[str(item_id)]['quantity'] += quantity
     else:
@@ -60,17 +58,13 @@ def add_to_cart(request, item_id):
             'name': gear_item.name,
             'price': str(gear_item.cost),
             'image_url': (
-                gear_item.image_file.url
-                if gear_item.image_file
-                else '/media/gear_images/placeholder-for-no-product-image.webp'
-            ),
+                gear_item.image_file.url if gear_item.image_file else
+                '/media/gear_images/placeholder-for-no-product-image.webp'
+                ),
         }
-    messages.success(
-        request,
-        f'Added {gear_item.name} to cart.'
-        )
+    messages.success(request, f'Added {gear_item.name} to cart.')
 
-    # Save the updated cart to the session
+    # Save updated cart to session
     request.session['cart'] = cart
 
     # Retrieve cart contents for toast notifications
@@ -82,26 +76,26 @@ def add_to_cart(request, item_id):
     return redirect(redirect_url)
 
 
-# Update the quantity of an item in the cart
 def update_cart(request, item_id):
-    """
-    Update the quantity of a specific item in the shopping cart.
-    """
-    quantity = int(request.POST.get('quantity'))
+    """Update the quantity of a specific item in the shopping cart."""
 
-    # Fetch the cart from the session
+    quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
     if str(item_id) in cart:
         if quantity > 0:
             cart[str(item_id)]['quantity'] = quantity
+            cart[str(item_id)]['image_url'] = (
+                get_object_or_404(GearItem, pk=item_id).image_file.url
+                if get_object_or_404(GearItem, pk=item_id).image_file else
+                '/media/gear_images/placeholder-for-no-product-image.webp'
+            )
             messages.success(request, 'Cart updated successfully.')
         else:
-            # Remove the item if quantity is zero
             cart.pop(str(item_id))
             messages.info(request, 'Item removed from cart.')
 
-    # Save the updated cart to the session
+    # Save updated cart to session
     request.session['cart'] = cart
 
     # Retrieve cart contents for toast notifications
@@ -114,20 +108,17 @@ def update_cart(request, item_id):
 
 
 def remove_from_cart(request, item_id):
-    """
-    Remove a gear item from the shopping cart.
-    """
-    # Fetch the cart from the session
+    """Remove a gear item from the shopping cart."""
+
     cart = request.session.get('cart', {})
 
-    # Remove the item if it exists in the cart
     if str(item_id) in cart:
         cart.pop(str(item_id))
         messages.success(request, 'Item removed from cart.')
     else:
         messages.error(request, 'Item not found in cart.')
 
-    # Save the updated cart back into the session
+    # Save updated cart to session
     request.session['cart'] = cart
 
     # Retrieve cart contents for toast notifications

@@ -5,23 +5,19 @@ from workout_gear.models import GearItem
 
 
 def cart_contents(request):
-    """
-    Context processor to handle cart contents
-    """
+    """Context processor to handle cart contents."""
 
     cart_items = []
-    total = Decimal(0)  # Initialize total as Decimal
+    total = Decimal(0)
     product_count = 0
     cart = request.session.get('cart', {})
 
     # Loop through the items in the session cart
     for item_id, item_data in cart.items():
-        # Convert item_id back to an integer when querying the database
         gear_item = get_object_or_404(GearItem, pk=int(item_id))
         quantity = item_data['quantity']
-        cost = Decimal(gear_item.cost)  # Ensure cost is a Decimal
-        subtotal = cost * quantity  # Do the multiplication using Decimal
-
+        cost = Decimal(gear_item.cost)
+        subtotal = cost * quantity
         total += subtotal
         product_count += quantity
 
@@ -32,11 +28,12 @@ def cart_contents(request):
             else '/media/gear_images/placeholder-for-no-product-image.webp'
         )
 
-        # Append the processed item to cart_items
+        # Append processed item to cart_items
         cart_items.append({
+            'item_id': item_id,
             'product_name': gear_item.name,
             'quantity': quantity,
-            'subtotal': float(subtotal),  # Convert subtotal to float
+            'subtotal': float(subtotal),
             'image_url': image_url,
         })
 
@@ -51,7 +48,7 @@ def cart_contents(request):
     # Calculate grand total
     grand_total = total + delivery
 
-    # Return context data, but make sure to convert Decimals to float
+    # Return context data
     context = {
         'cart_items': cart_items,
         'total': float(total),

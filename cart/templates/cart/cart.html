@@ -2,7 +2,6 @@
 {% load static %}
 {% load cart_tools %}
 
-
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -32,27 +31,26 @@
                 {% for item in cart_items %}
                 <div class="list-group-item d-flex justify-content-between align-items-center">
                     <div class="cart-item-details">
-                        <a href="{% url 'gear_detail' item.product.id %}">
-                            <img src="{{ item.product.image_file.url }}" alt="{{ item.product.name }}"
+                        <!-- Updated URL to use item.item_id -->
+                        <a href="{% url 'gear_detail' item.item_id %}">
+                            <img src="{{ item.image_url }}" alt="{{ item.product_name }}"
                                 class="img-thumbnail me-3" style="max-width: 100px;">
                         </a>
                         <div class="item-info">
-                            <h5>{{ item.product.name }}</h5>
-                            <p class="text-muted">Price: €{{ item.product.cost }}</p>
+                            <h5>{{ item.product_name }}</h5>
                             <p class="text-muted">Quantity: {{ item.quantity }}</p>
-                            <!-- calc_subtotal filter to calculate the subtotal for each item -->
-                            <p class="text-muted">Subtotal: €{{ item.product.cost|calc_subtotal:item.quantity }}</p>
+                            <!-- Using the subtotal value passed in the context -->
+                            <p class="text-muted">Subtotal: €{{ item.subtotal|floatformat:2 }}</p>
                         </div>
                     </div>
                     <div class="cart-item-actions">
-                        <form class="form update-form" method="POST" action="{% url 'update_cart' item.product.id %}">
+                        <form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
                             {% csrf_token %}
-                            <input type="number" name="quantity" value="{{ item.quantity }}" class="form-control w-50"
-                                min="1">
+                            <input type="number" name="quantity" value="{{ item.quantity }}" class="form-control w-50" min="1">
                             <button type="submit" class="btn btn-primary mt-2">Update</button>
                         </form>
-                        <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger mt-2 remove-item"
-                            data-product_size="{{ item.size }}" id="remove_{{ item.product.id }}">Remove</a>
+                        <a href="{% url 'remove_from_cart' item.item_id %}" class="btn btn-danger mt-2 remove-item"
+                            data-product_size="{{ item.size }}" id="remove_{{ item.item_id }}">Remove</a>
                     </div>
                 </div>
                 {% endfor %}
@@ -86,7 +84,7 @@
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
-    })
+    });
 
     // Remove item and reload on click
     $('.remove-item').click(function (e) {

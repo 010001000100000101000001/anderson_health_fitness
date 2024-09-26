@@ -14,11 +14,10 @@
             {% for item in cart_items %}
             <div class="row align-items-center mb-2">
                 <div class="col-3">
-                    <img src="{% if item.image_url %}{{ item.image_url }}{% else %}{% static 'media/gear_images/placeholder-for-no-product-image.webp' %}{% endif %}"
-                        alt="{{ item.product_name }}" class="img-fluid">
+                    <img src="{{ item.image_url }}" alt="{{ item.product_name }}" class="img-fluid">
                 </div>
                 <div class="col-9">
-                    <p class="mb-0"><strong>{{ item.product.name }}</strong></p>
+                    <p class="mb-0"><strong>{{ item.product_name }}</strong></p>
                     <p class="small">Qty: {{ item.quantity }}</p>
                     <p class="small text-white">Subtotal: €{{ item.subtotal|floatformat:2 }}</p>
                 </div>
@@ -30,8 +29,7 @@
         <hr>
         <p class="mb-1">Total: €{{ total|floatformat:2 }}</p>
         {% if free_delivery_delta > 0 %}
-        <p class="small bg-warning text-dark p-2">Spend €{{ free_delivery_delta|floatformat:2 }} more to qualify for
-            free delivery!</p>
+        <p class="small bg-warning text-dark p-2">Spend €{{ free_delivery_delta|floatformat:2 }} more to qualify for free delivery!</p>
         {% endif %}
 
         <!-- Checkout Button -->
