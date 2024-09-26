@@ -46,7 +46,7 @@ class Order(models.Model):
         accounting for delivery costs.
         """
         self.order_total = (
-            self.lineitems.aggregate(Sum('lineitem_total'))[
+            self.order_lineitems.aggregate(Sum('lineitem_total'))[
                 'lineitem_total__sum'
             ] or Decimal('0.00')
         )
@@ -91,7 +91,7 @@ class OrderLineItem(models.Model):
         Override the save method to set the lineitem total and
         update the order total.
         """
-        self.lineitem_total = Decimal(self.product.price) * self.quantity
+        self.lineitem_total = Decimal(self.product.cost) * self.quantity
         super().save(*args, **kwargs)
         self.order.update_total()
 
