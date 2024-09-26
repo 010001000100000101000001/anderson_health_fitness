@@ -48,7 +48,7 @@ class Order(models.Model):
         self.order_total = (
             self.order_lineitems.aggregate(Sum('lineitem_total'))[
                 'lineitem_total__sum'
-            ] or Decimal('0.00')
+            ] or Decimal('0.00') or 0
         )
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
@@ -96,7 +96,7 @@ class OrderLineItem(models.Model):
         self.order.update_total()
 
     def __str__(self):
-        return f'SKU {self.product.sku} on order {self.order.order_number}'
+        return f'{self.product.name} on order {self.order.order_number}'
 
     class Meta:
         ordering = ['product__name']
