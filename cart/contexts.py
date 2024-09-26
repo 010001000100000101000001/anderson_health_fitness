@@ -5,7 +5,9 @@ from workout_gear.models import GearItem
 
 
 def cart_contents(request):
-    """Context processor to handle cart contents."""
+    """
+        Context processor to handle cart contents.
+    """
 
     cart_items = []
     total = Decimal(0)

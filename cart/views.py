@@ -6,7 +6,8 @@ from .contexts import cart_contents
 
 # View to render the cart contents page
 def view_cart(request):
-    """A view that renders the cart contents page and displays
+    """
+        A view that renders the cart contents page and displays
         all items in the cart.
     """
 
@@ -42,7 +43,9 @@ def view_cart(request):
 
 
 def add_to_cart(request, item_id):
-    """Add a specified quantity of a gear item to the shopping cart."""
+    """
+        Add a specified quantity of a gear item to the shopping cart.
+    """
 
     quantity = int(request.POST.get('quantity', 1))
     redirect_url = request.POST.get('redirect_url', '/')
@@ -77,7 +80,9 @@ def add_to_cart(request, item_id):
 
 
 def update_cart(request, item_id):
-    """Update the quantity of a specific item in the shopping cart."""
+    """
+        Update the quantity of a specific item in the shopping cart.
+    """
 
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
@@ -108,7 +113,9 @@ def update_cart(request, item_id):
 
 
 def remove_from_cart(request, item_id):
-    """Remove a gear item from the shopping cart."""
+    """
+        Remove a gear item from the shopping cart.
+    """
 
     cart = request.session.get('cart', {})
 
