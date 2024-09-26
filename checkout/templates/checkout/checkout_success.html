@@ -42,6 +42,20 @@
                 {% endfor %}
             </ul>
 
+            <!-- Delivery Information Section -->
+            <div class="mt-4">
+                <h4>Delivering To</h4>
+                <p>{{ order.full_name }}</p>
+                <p>{{ order.street_address1 }}</p>
+                {% if order.street_address2 %}
+                <p>{{ order.street_address2 }}</p>
+                {% endif %}
+                <p>{{ order.town_or_city }}, {{ order.county }}</p>
+                <p>{{ order.postcode }}</p>
+                <p>{{ order.country }}</p>
+                <p>Phone: {{ order.phone_number }}</p>
+            </div>
+
             <!-- Order Totals -->
             <div class="mt-4">
                 <h4 class="mb-0">Order Total: €{{ order.order_total|floatformat:2 }}</h4>
