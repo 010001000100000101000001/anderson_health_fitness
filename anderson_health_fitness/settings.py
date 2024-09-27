@@ -51,21 +51,13 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.paypal',
-    'allauth.socialaccount.providers.twitter',
-    'allauth.socialaccount.providers.twitter_oauth2',
-    'allauth.socialaccount.providers.snapchat',
-    'allauth.socialaccount.providers.instagram',
-    'allauth.socialaccount.providers.coinbase',
-    'allauth.socialaccount.providers.apple',
-    'allauth.socialaccount.providers.google',
     'home',
     'workout_gear',
     'crispy_forms',
     'crispy_bootstrap5',
     'cart',
     'checkout',
+    'django_countries',
 ]
 
 MIDDLEWARE = [

@@ -2,6 +2,8 @@ from django import forms
 from .models import Order
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
+from django_countries.fields import CountryField
+from django_countries.widgets import CountrySelectWidget
 
 
 class OrderForm(forms.ModelForm):
@@ -16,15 +18,19 @@ class OrderForm(forms.ModelForm):
             'full_name': forms.TextInput(attrs={'placeholder': 'Full Name'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Email Address'}),
             'phone_number': forms.TextInput(
-                attrs={'placeholder': 'Phone Number'}),
-            'country': forms.TextInput(attrs={'placeholder': 'Country'}),
+                attrs={'placeholder': 'Phone Number'}
+            ),
+            'country': CountrySelectWidget(attrs={'placeholder': 'Country'}),
             'postcode': forms.TextInput(attrs={'placeholder': 'Postal Code'}),
             'town_or_city': forms.TextInput(
-                attrs={'placeholder': 'Town or City'}),
+                attrs={'placeholder': 'Town or City'}
+            ),
             'street_address1': forms.TextInput(
-                attrs={'placeholder': 'Street Address 1'}),
+                attrs={'placeholder': 'Street Address 1'}
+            ),
             'street_address2': forms.TextInput(
-                attrs={'placeholder': 'Street Address 2'}),
+                attrs={'placeholder': 'Street Address 2'}
+            ),
             'county': forms.TextInput(attrs={'placeholder': 'County'}),
         }
 

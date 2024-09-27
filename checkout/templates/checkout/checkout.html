@@ -41,8 +41,15 @@
                     <div id="card-element" class="form-control">
                         <!-- A Stripe Element will be inserted here. -->
                     </div>
+
+                    <!-- Used to display form errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+
+                    <!-- Pass the client secret to the view so we can get the payment intent id -->
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </div>
 
+                <!-- Cart Summary -->
                 <div class="mt-4">
                     <h4>Cart Summary</h4>
                     <ul class="list-group">
@@ -64,6 +71,7 @@
                     </ul>
                 </div>
 
+                <!-- Summary Section -->
                 <div class="mt-4">
                     <h4>Summary</h4>
                     <p>Total: €{{ total|floatformat:2 }}</p>
@@ -71,6 +79,7 @@
                     <h4>Grand Total: €{{ grand_total|floatformat:2 }}</h4>
                 </div>
 
+                <!-- Submit Button -->
                 <button type="submit" class="btn btn-success btn-block mt-4" id="submit-button">
                     Complete Purchase <i class="fa-sharp fa-solid fa-lock-a"></i>
                 </button>
@@ -90,9 +99,9 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

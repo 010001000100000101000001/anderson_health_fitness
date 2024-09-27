@@ -1,23 +1,22 @@
 import uuid
 from decimal import Decimal
-
+from django_countries.fields import CountryField
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from workout_gear.models import GearItem
 
-# Create your models here.
 
 
 class Order(models.Model):
-    # 33 is my lucky number and this won't cause a real-world perfomance issue
+    # 33 is my lucky number and this won't cause a real-world performance issue
     order_number = models.CharField(
         max_length=33, null=False, editable=False, unique=True
     )
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
-    country = models.CharField(max_length=40, null=False, blank=False)
+    country = CountryField(blank_label='Select country')
     postcode = models.CharField(max_length=20, null=True, blank=True)
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
@@ -32,6 +31,13 @@ class Order(models.Model):
     )
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=Decimal('0.00')
+    )
+    original_cart = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(
+        max_length=254,
+        null=False,
+        blank=False,
+        default=''
     )
 
     def _generate_order_number(self):
@@ -48,7 +54,7 @@ class Order(models.Model):
         self.order_total = (
             self.order_lineitems.aggregate(Sum('lineitem_total'))[
                 'lineitem_total__sum'
-            ] or Decimal('0.00') or 0
+            ] or Decimal('0.00')
         )
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
@@ -74,7 +80,7 @@ class OrderLineItem(models.Model):
         on_delete=models.CASCADE,
         related_name='order_lineitems'
     )
-    product = models.ForeignKey(
+    gear_item = models.ForeignKey(
         GearItem, null=False, blank=False, on_delete=models.CASCADE
     )
     quantity = models.IntegerField(null=False, blank=False, default=0)
@@ -91,12 +97,12 @@ class OrderLineItem(models.Model):
         Override the save method to set the lineitem total and
         update the order total.
         """
-        self.lineitem_total = Decimal(self.product.cost) * self.quantity
+        self.lineitem_total = Decimal(self.gear_item.cost) * self.quantity
         super().save(*args, **kwargs)
         self.order.update_total()
 
     def __str__(self):
-        return f'{self.product.name} on order {self.order.order_number}'
+        return f'{self.gear_item.name} on order {self.order.order_number}'
 
     class Meta:
-        ordering = ['product__name']
+        ordering = ['gear_item__name']

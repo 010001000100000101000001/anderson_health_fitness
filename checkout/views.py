@@ -1,5 +1,7 @@
 from django.conf import settings
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from .forms import OrderForm
@@ -9,6 +11,7 @@ from cart.contexts import cart_contents
 from decimal import Decimal
 import stripe
 import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -22,8 +25,11 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment cannot be \
-            processed right now. Please try again later.')
+        messages.error(
+            request,
+            'Sorry, your payment cannot be processed right now. '
+            'Please try again later.'
+        )
         return HttpResponse(content=e, status=400)
 
 
@@ -37,7 +43,7 @@ def checkout(request):
 
     cart = request.session.get('cart', {})
 
-    # If the cart is empty, show an error and redirect back to products page
+    # If the cart is empty, show an error and redirect to products page
     if not cart:
         messages.error(request, "Your cart is currently empty.")
         return redirect(reverse('workout_gear_list'))
@@ -56,26 +62,44 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_cart = json.dumps(cart)
+
+            # Calculate delivery cost and assign to order
+            current_cart = cart_contents(request)
+            order.delivery_cost = Decimal(current_cart['delivery'])
+            order.order_total = Decimal(current_cart['total'])
+            order.grand_total = Decimal(current_cart['grand_total'])
+
+            order.save()
             for item_id, item_data in cart.items():
                 try:
                     gear_item = get_object_or_404(GearItem, pk=int(item_id))
                     order_line_item = OrderLineItem(
                         order=order,
-                        product=gear_item,
+                        gear_item=gear_item,
                         quantity=item_data['quantity'],
                     )
                     order_line_item.save()
                 except GearItem.DoesNotExist:
-                    messages.error(request, "One of the items in your cart was not found in our database.")
+                    messages.error(
+                        request,
+                        "One of the items in your cart was not found in our "
+                        "database."
+                    )
                     order.delete()
                     return redirect(reverse('view_cart'))
-            
+
             # Clear the cart from the session
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, 'There was an error with your form. Please double-check your information.')
+            messages.error(
+                request, 'There was an error with your form. '
+                'Please double-check your information.'
+            )
 
     # GET request: Set up the Stripe payment intent and context
     current_cart = cart_contents(request)
@@ -105,7 +129,11 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order successfully processed! Your order number is {order_number}. A confirmation email will be sent to {order.email}.')
+    messages.success(
+        request,
+        f'Order successfully processed! Your order number is {order_number}. '
+        f'A confirmation email will be sent to {order.email}.'
+    )
 
     # Clear the cart from the session
     if 'cart' in request.session:
