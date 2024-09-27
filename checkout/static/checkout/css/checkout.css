@@ -84,7 +84,7 @@ button:hover {
 }
 
 .list-group-item strong {
-  color: #2ecc71;
+  color: #000;
 }
 
 .list-group-item .text-muted {
@@ -108,4 +108,42 @@ button:hover {
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+
+/* Media Query for smaller screens (up to 400px) */
+@media (max-width: 400px) {
+  .badge {
+      font-size: 0.875rem;
+      padding: 5px 10px;
+      width: auto;
+      text-align: center;
+  }
+
+  .list-group-item {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .list-group-item .d-flex {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .list-group-item img {
+      max-width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .cart-item-actions {
+      text-align: left;
+      width: 100%;
+  }
+
+  .item-info {
+      margin-bottom: 10px;
+  }
+
+  .container.content-area {
+      padding: 10px;
+  }
 }
