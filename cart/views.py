@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from workout_gear.models import GearItem
 from django.contrib import messages
 from .contexts import cart_contents
@@ -48,7 +49,7 @@ def add_to_cart(request, item_id):
     """
 
     quantity = int(request.POST.get('quantity', 1))
-    redirect_url = request.POST.get('redirect_url', '/')
+    redirect_url = request.POST.get('redirect_url', reverse('gear_list'))
     gear_item = get_object_or_404(GearItem, pk=item_id)
     cart = request.session.get('cart', {})
 
