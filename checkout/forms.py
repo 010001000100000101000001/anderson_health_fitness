@@ -36,11 +36,16 @@ class OrderForm(forms.ModelForm):
         # Set placeholders and other attributes for each field
         for field in self.fields:
             if field != 'country':
-                self.fields[field].widget.attrs['placeholder'] = \
-                    placeholders.get(field, '')
+                placeholder = (
+                    f"{placeholders.get(field, '')} *"
+                    if self.fields[field].required
+                    else placeholders.get(field, '')
+                )
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'form-control'
             self.fields[field].label = False
 
+        # Update the 'country' field's widget attributes
         self.fields['country'].widget.attrs.update({'class': 'form-control'})
 
         # Crispy Forms integration for Bootstrap 5
@@ -51,6 +56,5 @@ class OrderForm(forms.ModelForm):
             Submit(
                 'thissubmit',
                 'Complete Purchase',
-                css_class='btn btn-primary w-100'
             )
         )
