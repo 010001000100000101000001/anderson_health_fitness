@@ -38,7 +38,7 @@
                         <div>
                             <strong>{{ item.product.name }}</strong>
                             <p class="text-muted mb-0">Quantity: {{ item.quantity }}</p>
-                            <p class="text-muted mb-0">Price: €{{ item.product.cost }}</p>
+                            <p class="text-muted mb-0">Price: €{{ item.gear_item.cost }}</p>
                         </div>
                     </div>
                     <span class="badge bg-success rounded-pill">Subtotal: €{{ item.lineitem_total|floatformat:2 }}</span>
