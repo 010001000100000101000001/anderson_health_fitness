@@ -1,29 +1,33 @@
-{% extends "account/base_entrance.html" %}
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
 {% load allauth %}
 {% load i18n %}
-{% block head_title %}
-    {% trans "Confirm Access" %}
-{% endblock head_title %}
-{% block content %}
-    {% element h1 %}
-        {% trans "Confirm Access" %}
-    {% endelement %}
-    {% element p %}
-        {% blocktranslate %}Please reauthenticate to safeguard your account.{% endblocktranslate %}
-    {% endelement %}
+
+{% block head_title %}{% trans "Confirm Access" %}{% endblock head_title %}
+
+{% block inner_content %}
+    <hr>
+    <h2 class="logo-font mb-4 text-center">{% trans "Confirm Access" %}</h2>
+    <hr>
+
+    <p class="text-center">
+        {% blocktrans %}Please reauthenticate to safeguard your account.{% endblocktrans %}
+    </p>
+
+    <!-- Reauthentication Form -->
     {% block reauthenticate_content %}{% endblock %}
+    
+    <!-- Alternative Options -->
     {% if reauthentication_alternatives %}
-        {% element hr %}
-        {% endelement %}
-        {% element h2 %}
-            {% translate "Alternative options" %}
-        {% endelement %}
-        {% element button_group %}
-            {% for alt in reauthentication_alternatives %}
-                {% element button href=alt.url tags="primary,outline" %}
-                    {{ alt.description }}
-                {% endelement %}
-            {% endfor %}
-        {% endelement %}
+        <hr>
+        <h3 class="text-center">{% trans "Alternative options" %}</h3>
+        
+        <div class="d-flex justify-content-center mt-3">
+            <div class="btn-group" role="group">
+                {% for alt in reauthentication_alternatives %}
+                    <a href="{{ alt.url }}" class="btn btn-outline-primary">{{ alt.description }}</a>
+                {% endfor %}
+            </div>
+        </div>
     {% endif %}
-{% endblock content %}
+{% endblock inner_content %}
