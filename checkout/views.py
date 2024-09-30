@@ -8,6 +8,7 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 from workout_gear.models import GearItem
 from cart.contexts import cart_contents
+from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from decimal import Decimal
 import stripe
@@ -95,7 +96,9 @@ def checkout(request):
 
             # Clear the cart from the session
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number])
+                )
         else:
             messages.error(
                 request, 'There was an error with your form. '
@@ -114,7 +117,33 @@ def checkout(request):
         currency=stripe_currency,
     )
 
-    order_form = OrderForm()
+    if request.user.is_authenticated:
+        try:
+            profile = UserProfile.objects.get(user=request.user)
+            order_form = OrderForm(initial={
+                'full_name': profile.user.get_full_name(),
+                'email': profile.user.email,
+                'phone_number': profile.default_phone_number,
+                'country': profile.default_country,
+                'postcode': profile.default_postcode,
+                'town_or_city': profile.default_town_or_city,
+                'street_address1': profile.default_street_address1,
+                'street_address2': profile.default_street_address2,
+                'county': profile.default_county,
+            })
+        except UserProfile.DoesNotExist:
+            # If the profile does not exist, use a blank form
+            order_form = OrderForm()
+    else:
+        # If the user is not authenticated, use a blank form
+        order_form = OrderForm()
+
+    if not stripe_public_key:
+        messages.warning(
+            request,
+            'Stripe public key is missing. '
+            'Did you forget to set it in your environment?')
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
@@ -152,7 +181,6 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-
 
     messages.success(
         request,
