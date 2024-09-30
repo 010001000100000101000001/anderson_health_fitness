@@ -8,6 +8,7 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 from workout_gear.models import GearItem
 from cart.contexts import cart_contents
+from profiles.models import UserProfile
 from decimal import Decimal
 import stripe
 import json
