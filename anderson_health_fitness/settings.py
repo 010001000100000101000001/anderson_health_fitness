@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-01000100010-andersonhea-0xa2lsw1mgo.ws.codeinstitute-ide.net',
-    'https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/',
+    'anderson-health-fitness-a9ed3634ac2d.herokuapp.com/',
     'localhost'
     ]
 
