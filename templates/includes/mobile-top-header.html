@@ -9,7 +9,6 @@
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
                 {% if user.is_authenticated %}
                 <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
-                <li><a class="dropdown-item" href="">My Orders</a></li>
                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
                 <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
@@ -21,8 +20,7 @@
         <!-- Cart Icon -->
         <a href="{% url 'view_cart' %}" class="btn icon-btn me-2">
             <i class="fa-regular fa-cart-shopping"></i>
-             <!-- Add a span to dynamically display the cart total -->
-             <span class="cart-total">(&euro;{{ grand_total|floatformat:2|default:"€0.00" }})</span>
+            <span class="cart-total">(€{{ grand_total|floatformat:2|default:"€0.00" }})</span>
         </a>
 
         <!-- Search Controls -->
