@@ -26,10 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # Security settings
-SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')  # Fallback to 'default-secret-key' if not set
+SECRET_KEY = os.getenv('SECRET_KEY', '')  # Fallback to 'default-secret-key' if not set
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-01000100010-andersonhea-0xa2lsw1mgo.ws.codeinstitute-ide.net',
