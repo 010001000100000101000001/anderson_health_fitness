@@ -34,6 +34,23 @@
                 {% csrf_token %}
                 {{ order_form|crispy }}
 
+                <!-- Save Info Checkbox -->
+                <div class="form-check form-check-inline mt-3">
+                    {% if user.is_authenticated %}
+                    <!-- Checkbox to save information to user's profile -->
+                    <label class="form-check-label" for="id-save-info">
+                        Save this delivery information to my profile
+                    </label>
+                    <input class="form-check-input ml-2" type="checkbox" id="id-save-info" name="save-info" checked>
+                    {% else %}
+                    <!-- Prompt for non-authenticated users to create an account or log in -->
+                    <label class="form-check-label" for="id-save-info">
+                        <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
+                        <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                    </label>
+                    {% endif %}
+                </div>
+
                 <!-- Stripe Card Element -->
                 <div class="mt-4">
                     <h4>Payment Details</h4>
