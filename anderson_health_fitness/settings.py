@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+import dj_database_url
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -30,7 +31,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')  # Fallback to 'defau
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-01000100010-andersonhea-0xa2lsw1mgo.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = [
+    '8000-01000100010-andersonhea-0xa2lsw1mgo.ws.codeinstitute-ide.net',
+    'https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/',
+    'localhost'
+    ]
 
 # Trusted origins for CSRF protection
 CSRF_TRUSTED_ORIGINS = [
@@ -139,12 +144,18 @@ WSGI_APPLICATION = 'anderson_health_fitness.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation

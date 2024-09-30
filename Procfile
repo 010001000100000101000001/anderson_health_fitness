@@ -1,0 +1,1 @@
+web: gunicorn anderson_health_fitness.wsgi:application
