@@ -203,3 +203,4 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 STRIPE_CURRENCY = os.getenv('STRIPE_CURRENCY')
 FREE_DELIVERY_THRESHOLD = 100  # Free delivery for orders over €100
 STANDARD_DELIVERY_PERCENTAGE = 10  # 10% delivery charge if below threshold
+DEFAULT_FROM_EMAIL = 'healthfitnessanderson@gmail.com'
