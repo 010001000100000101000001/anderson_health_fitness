@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', '')  # Fallback to 'default-secret-key' if not set
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-01000100010-andersonhea-0xa2lsw1mgo.ws.codeinstitute-ide.net',
@@ -39,6 +39,7 @@ ALLOWED_HOSTS = [
 # Trusted origins for CSRF protection
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-01000100010-andersonhea-0xa2lsw1mgo.ws.codeinstitute-ide.net',
+    'https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com'
 ]
 
 
