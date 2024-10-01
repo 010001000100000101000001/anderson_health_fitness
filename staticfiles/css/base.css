@@ -143,6 +143,30 @@ body {
     font-size: 1.5rem;
 }
 
+/* Consistent styling for Profile, Cart, and Search buttons */
+.icon-btn {
+    background-color: #fff; /* White background */
+    border: 2px solid #000; /* Black border */
+    padding: 10px; /* Ensure enough padding */
+    border-radius: 8px; /* Rounded corners */
+    color: #000; /* Black icon color */
+    font-size: 1.5rem; /* Icon size */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Add hover effect for icon buttons */
+.icon-btn:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+    border-color: #007bff; /* Blue border on hover */
+}
+
+/* Active state for icon buttons */
+.icon-btn:active {
+    background-color: #ddd; /* Darker gray when active */
+    border-color: #0056b3; /* Darker blue when clicked */
+}
+
+
 /* Content area with white background and black text */
 .content-area {
     background-color: white;
@@ -168,20 +192,202 @@ body {
     text-decoration: underline;
 }
 
-/* Media queries for mobile devices */
-@media (max-width: 768px) {
+/* Product Detail Page */
+/* Style the Add to Cart button */
+.details-section .btn {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
 
+.details-section .btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Style the price and other text */
+.details-section h2,
+.details-section p {
+    margin-bottom: 15px;
+}
+
+.details-section h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.details-section p {
+    font-size: 1.1rem;
+    color: #000000;
+}
+
+/* Adjustments for the layout to ensure equal height and spacing */
+.gear-item-container {
+    margin-top: 70px !important; /* Consistent top margin for all pages */
+}
+
+/* Style the price to be larger and green */
+.details-section .price {
+    font-size: 20px;
+    color: #009d25;
+    font-weight: bold;
+}
+
+/* Button styling for consistency */
+.details-section .btn, .card-body .btn {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.details-section .btn:hover, .card-body .btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Hide the header visually without affecting SEO or accessibility */
+.header-container h1,
+.header-container p {
+    visibility: hidden;
+}
+
+/* Back page button styles */
+.back-button {
+    margin-bottom: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    border: 2px solid #007bff;
+    color: #007bff;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.back-button i {
+    font-size: 24px;
+    margin-right: 3px;
+}
+
+/* Toast positioning */
+.toast-container {
+    margin-top: 350px !important;
+}
+
+.cart-total {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Custom styling for allauth forms */
+.allauth-form-inner-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Adjust form elements */
+.allauth-form-inner-content input,
+.allauth-form-inner-content button {
+    border-radius: 0;
+    border-color: #000;
+    box-shadow: none;
+}
+
+/* Placeholder styling */
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+/* Hide labels to match the style */
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+/* Button styling */
+.allauth-form-inner-content button,
+.allauth-form-inner-content .btn-primary {
+    display: inline-block;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Adjust form-group margin */
+.allauth-form-inner-content .form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Align text to center */
+.allauth-form-inner-content p {
+    color: #555;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .allauth-form-inner-content {
+        margin-top: 200px;
+    }
+}
+
+@media (min-width: 768px) {
+    .allauth-form-inner-content {
+        margin-top: 130px;
+    }
+}
+
+/* Fine-tune for very small screens (320px to 333px) */
+@media (min-width: 320px) and (max-width: 333px) {
+
+    /* Adjust the margin of the content-area */
+    .content-area {
+        margin-top: 155px !important;
+    }
+
+    /* Adjust the hero-text-container margin */
+    .hero-text-container {
+        margin-top: 580px !important;
+    }
+
+    .cart-total {
+        font-family: 'Poppins', sans-serif;
+        color: #000;
+        line-height: 1.2;
+    }
+}
+
+/* Media queries for mobile devices */
+@media (min-width: 334px) and (max-width: 768px) {
     /* Adjust navbar brand */
     .navbar-brand {
-        font-size: 1.25rem;
-        white-space: nowrap; /* Prevent text from wrapping */
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 1rem;
+        white-space: nowrap;
+        overflow: visible; 
+        text-overflow: clip; /* Do not clip the text */
+        max-width: 100%; 
     }
 
     /* Adjust nav items */
     .navbar-nav .nav-item {
-        margin: 10px 0; /* Vertical margin between items */
+        margin: 10px 0;
         padding: 10px 20px; /* Padding for touch-friendly targets */
         text-align: left; /* Align text for readability */
     }
@@ -254,7 +460,7 @@ body {
         font-size: 1rem;
     }
 
-    /* Optional: Improve contrast */
+    /* Improve contrast */
     .navbar {
         background-color: rgba(0, 0, 0, 0.7); /* Darker background for contrast */
     }
@@ -274,8 +480,8 @@ body {
     
     .list-inline-item {
         background-color: transparent; /* Ensure the container has no background color */
-        box-shadow: none; /* Ensure the container has no shadow */
-        width: auto; /* Ensure the width is only as wide as the content */
+        box-shadow: none;
+        width: auto;
     }
 
     /* Ensure the search form is hidden by default */
@@ -287,6 +493,14 @@ body {
     #searchToggleBtn {
         padding: 5px 10px;
         font-size: 1.25rem;
+    }
+
+    .content-area {
+        margin-top: 150px !important;
+    }
+
+    .cart-total {
+        font-family: 'Poppins', sans-serif;
     }
 }
 
@@ -387,5 +601,13 @@ body {
     /* Ensure the search form is hidden by default */
     #mobileSearchForm.d-none {
         display: none;
+    }
+
+    .content-area {
+        margin-top: 150px !important;
+    }
+
+    .cart-total {
+        font-family: 'Poppins', sans-serif;
     }
 }
