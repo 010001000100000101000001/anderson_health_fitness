@@ -115,6 +115,16 @@ def submit_review(request, item_id):
     """
     gear_item = get_object_or_404(GearItem, pk=item_id)
 
+    # Check if the user has already submitted a review for this item
+    existing_review = ProductReview.objects.filter(
+        gear_item=gear_item,
+        user=request.user
+        ).first()
+
+    if existing_review:
+        messages.error(request, "You have already reviewed this product.")
+        return redirect('gear_detail', item_id=item_id)
+
     if request.method == 'POST':
         form = ProductReviewForm(request.POST)
         if form.is_valid():
@@ -122,6 +132,9 @@ def submit_review(request, item_id):
             review.gear_item = gear_item
             review.user = request.user
             review.save()
+            messages.success(
+                request,
+                "Your review has been submitted successfully.")
             return redirect('gear_detail', item_id=item_id)
     else:
         form = ProductReviewForm()
