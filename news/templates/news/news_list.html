@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>News</h1>
-<ul>
-    {% for post in news_posts %}
-    <li><a href="{% url 'news_detail' post.id %}">{{ post.title }}</a> - {{ post.created_at }}</li>
-    {% endfor %}
-</ul>
-<a href="{% url 'add_news_post' %}">Add News Post</a>
+<div class="container mt-5">
+    <h2>Latest News</h2>
+    <ul>
+        {% for post in news_posts %}
+        <li>
+            <a href="{% url 'news_detail' post.id %}">{{ post.title }}</a> - {{ post.created_at|date:"F j, Y" }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% if not news_posts %}
+    <p>No news posts available at the moment.</p>
+    {% endif %}
+</div>
 {% endblock %}

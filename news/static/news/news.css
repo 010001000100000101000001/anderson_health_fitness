@@ -1,0 +1,5 @@
+/* Ensure main content is not overlapped by the fixed header */
+.content-area {
+    margin-top: 150px;
+    padding: 20px;
+}
