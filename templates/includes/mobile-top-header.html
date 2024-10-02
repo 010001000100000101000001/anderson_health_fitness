@@ -1,38 +1,43 @@
 <li class="list-inline-item w-100 d-lg-none">
-    <!-- Profile and Cart Container -->
-    <div class="d-flex justify-content-end">
-        <!-- User Profile Icon with Dropdown -->
-        <div class="dropdown me-2">
-            <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="userDropdown"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa-solid fa-user"></i>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                {% if user.is_authenticated %}
-                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
-                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-                {% else %}
-                <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
-                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
-                {% endif %}
-            </ul>
+    <!-- Navigation Container -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Profile and Cart Container -->
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <!-- User Profile Icon with Dropdown -->
+                <div class="dropdown me-2">
+                    <a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="userDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                        {% if user.is_authenticated %}
+                        <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                        {% else %}
+                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+                <!-- Cart Icon -->
+                <a href="{% url 'view_cart' %}" class="btn icon-btn me-2">
+                    <i class="fa-regular fa-cart-shopping"></i>
+                    <span class="cart-total">(€{{ grand_total|floatformat:2|default:"€0.00" }})</span>
+                </a>
+
+                <!-- Search Controls -->
+                <button id="searchToggleBtn" class="btn btn-outline-light me-2">
+                    <i id="searchIcon" class="fa-light fa-magnifying-glass-plus"></i>
+                </button>
+            </div>
         </div>
-
-        <!-- Cart Icon -->
-        <a href="{% url 'view_cart' %}" class="btn icon-btn me-2">
-            <i class="fa-regular fa-cart-shopping"></i>
-            <span class="cart-total">(€{{ grand_total|floatformat:2|default:"€0.00" }})</span>
-        </a>
-
-        <!-- Search Controls -->
-        <button id="searchToggleBtn" class="btn btn-outline-light me-2">
-            <i id="searchIcon" class="fa-light fa-magnifying-glass-plus"></i>
-        </button>
-    </div>
+    </nav>
 </li>
 
 <li class="list-inline-item w-100 d-lg-none">
-    <!-- News Link -->
+    <!-- News Link in Mobile Navbar -->
     <a href="{% url 'news_list' %}" class="btn btn-outline-light w-100 text-start">News</a>
 </li>
 

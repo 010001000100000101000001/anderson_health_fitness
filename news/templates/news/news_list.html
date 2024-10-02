@@ -1,16 +1,30 @@
 {% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<link rel="stylesheet" href="{% static 'news/news.css' %}">
 
 {% block content %}
-<div class="container mt-5">
+<div class="container news-list-container">
     <h2>Latest News</h2>
+    
+    <!-- Add News Post Button (visible to logged-in users only) -->
+    {% if user.is_authenticated %}
+    <div class="mb-3 text-end">
+        <a href="{% url 'add_news_post' %}" class="btn btn-primary">Add News Post</a>
+    </div>
+    {% endif %}
+    
+    {% if news_posts %}
     <ul>
         {% for post in news_posts %}
         <li>
-            <a href="{% url 'news_detail' post.id %}">{{ post.title }}</a> - {{ post.created_at|date:"F j, Y" }}
+            <a href="{% url 'news_detail' post.id %}">{{ post.title }}</a>
+            <p>{{ post.created_at|date:"F j, Y" }}</p>
         </li>
         {% endfor %}
     </ul>
-    {% if not news_posts %}
+    {% else %}
     <p>No news posts available at the moment.</p>
     {% endif %}
 </div>
