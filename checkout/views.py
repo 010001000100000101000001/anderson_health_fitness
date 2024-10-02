@@ -39,6 +39,9 @@ def checkout(request):
     """
     A view to handle the checkout page and display the order form.
     """
+    # Set the Stripe API key at the start of the function
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     stripe_currency = settings.STRIPE_CURRENCY
