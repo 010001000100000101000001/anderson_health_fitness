@@ -616,12 +616,76 @@ Apply Database Migrations.
 
 ## Credits 
 
-### Content
+#### Links and Resources
 
+#### Official Documentation
 
-#### Links and sources
+- [Django Documentation](https://docs.djangoproject.com/en/stable/)  
+  The official Django documentation, providing a comprehensive guide to all of Django's features, including models, views, templates, and the Django admin.
 
+- [Django REST Framework](https://www.django-rest-framework.org/)  
+  A powerful toolkit for building Web APIs with Django. This is useful for implementing an API backend if the project expands to include features like mobile app integration.
 
+- [Stripe API Documentation](https://stripe.com/docs/api)  
+  Official Stripe documentation, including guides for implementing payments, subscriptions, and webhooks. Vital for ensuring a secure and seamless payment experience within the application.
+
+- [Stripe Webhooks](https://stripe.com/docs/webhooks)  
+  Comprehensive information on setting up and handling webhooks with Stripe. This is essential for tasks like payment confirmation, refund processing, and order fulfillment.
+
+- [Stripe Integration with Django](https://stripe.com/docs/payments/integration-builder)  
+  Step-by-step guides for integrating Stripe payments within a Django application. This includes handling events like `payment_intent.succeeded` and setting up secure payments.
+
+#### Tutorials & Learning Resources
+
+- [Django Allauth Documentation](https://django-allauth.readthedocs.io/en/latest/)  
+  Documentation for `django-allauth`, which manages user registration, login, and account management. It provides helpful insights into social authentication and more complex user flows.
+
+- [Django Crispy Forms Documentation](https://django-crispy-forms.readthedocs.io/en/latest/)  
+  A guide to styling Django forms with Crispy Forms, which is integrated into the Anderson Health & Fitness project for a polished, user-friendly interface.
+
+- [Django Deployment with Heroku](https://devcenter.heroku.com/articles/deploying-python)  
+  A detailed guide to deploying Django applications on Heroku. It covers setting up PostgreSQL, environment variables, and handling static files, which is crucial for project deployment.
+
+- [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)  
+  Official Bootstrap 5 documentation, which includes information on using the grid system, components, utilities, and customization for building responsive designs.
+
+#### Stripe Payment Integration
+
+- [Test Card Numbers for Stripe](https://stripe.com/docs/testing)  
+  A useful guide to Stripe's test card numbers and how to simulate different payment scenarios, which is important for testing various payment outcomes without processing real transactions.
+
+- [Testing Stripe Webhooks Locally](https://stripe.com/docs/webhooks/test)  
+  Instructions for testing webhooks locally with the Stripe CLI. This guide explains how to receive webhook events on your local server during development.
+
+#### Community & Blogs
+
+- [Real Python](https://realpython.com/)  
+  A comprehensive platform offering Python tutorials and articles. Contains many guides related to Django, Stripe integration, and improving the overall application performance.
+
+- [Simple is Better Than Complex](https://simpleisbetterthancomplex.com/)  
+  A blog with in-depth Django tutorials and guides, covering everything from basic model setup to complex form handling and deployment.
+
+- [Django Packages](https://djangopackages.org/)  
+  A directory of reusable Django packages. Useful for finding third-party packages that can add additional functionality to the project, like image galleries, email handling, and more.
+
+#### Tools & Utilities
+
+- [PythonAnywhere](https://www.pythonanywhere.com/)  
+  A beginner-friendly platform for deploying small-scale Django projects. While Heroku is used for Anderson Health & Fitness, PythonAnywhere is a good alternative for practice and learning.
+
+- [Postman](https://www.postman.com/)  
+  An API testing tool to validate Stripe's API responses and ensure that the webhook handlers are functioning correctly.
+
+#### Additional Reading
+
+- [Improving Django Performance](https://docs.djangoproject.com/en/stable/topics/performance/)  
+  Best practices and tips for improving the performance of Django applications, such as using caching, database optimization, and query efficiency.
+
+- [Security Best Practices in Django](https://docs.djangoproject.com/en/stable/topics/security/)  
+  A must-read guide on securing a Django application, including the use of CSRF tokens, secure password storage, and best practices for handling sensitive data.
+  
+- [W3Schools: HTML, CSS, JavaScript](https://www.w3schools.com/)  
+  A helpful resource for learning or refreshing your knowledge on HTML, CSS, and JavaScript, which are fundamental to customizing the frontend components of the project.
 
 
 ### Media
