@@ -26,7 +26,6 @@
     <div class="row">
         <!-- Gear Item Image -->
         <div class="col-12 col-md-6 mb-4">
-            <!-- Display the image of the gear item -->
             {% if gear_item.image_file %}
             <img src="{{ gear_item.image_file.url }}" alt="{{ gear_item.name }}" class="img-fluid rounded shadow">
             {% else %}
@@ -85,17 +84,19 @@
                 <h3>Submit a Review</h3>
 
                 {% if user.is_authenticated %}
-                <form method="post" class="mt-4">
+                <!-- Review Submission Form -->
+                <form method="post" action="{% url 'submit_review' gear_item.id %}" class="mt-4">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <!-- Use Crispy Forms for rendering the form with Bootstrap 5 -->
                     <button type="submit" class="btn btn-primary">Submit Review</button>
                 </form>
                 {% else %}
+                <!-- Link to Login if User is Not Authenticated -->
                 <p>Please <a href="{% url 'account_login' %}?next={{ request.path }}">log in</a> to submit a review.</p>
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
+
 {% endblock %}

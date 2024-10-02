@@ -1,5 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
+from django.db.models import Avg
+
 
 class GearCategory(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -48,3 +53,15 @@ class ProductReview(models.Model):
 
     def __str__(self):
         return f'Review by {self.user.username} on {self.gear_item.name}'
+
+# Signals to update the average rating of GearItem when reviews are created, updated, or deleted
+@receiver(post_save, sender=ProductReview)
+@receiver(post_delete, sender=ProductReview)
+def update_gear_item_rating(sender, instance, **kwargs):
+    gear_item = instance.gear_item
+    reviews = ProductReview.objects.filter(gear_item=gear_item)
+    if reviews.exists():
+        gear_item.rating = reviews.aggregate(avg_rating=Avg('rating'))['avg_rating']
+    else:
+        gear_item.rating = None  # Set to None if no reviews exist
+    gear_item.save()

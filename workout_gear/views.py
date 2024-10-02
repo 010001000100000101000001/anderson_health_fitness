@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Q, Avg
 from .models import GearCategory, GearItem, ProductReview
-from django.db.models import Q
+from .forms import ProductReviewForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
 
 
 def gear_list(request):
@@ -80,10 +81,13 @@ def gear_detail(request, item_id):
     average_rating = reviews.aggregate(
         avg_rating=Avg('rating'))['avg_rating'] or 0
 
+    form = ProductReviewForm()
+
     context = {
         'gear_item': gear_item,
         'reviews': reviews,
         'average_rating': average_rating,
+        'form': form,
     }
     return render(request, 'workout_gear/gear_detail.html', context)
 
