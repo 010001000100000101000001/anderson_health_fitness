@@ -289,6 +289,11 @@ Mobile: iphone & android:
 
 ![image](https://github.com/user-attachments/assets/d80a9b98-62e9-412e-8106-f4931bc44c9d)
 
+ **Message to show no results**
+
+  ![image](https://github.com/user-attachments/assets/f2b724dd-3677-4bba-b503-7b475fed12a9)
+
+
 
 - **Promotional Banners**: The site features a promotional banner to highlight free delivery of orders over €100.
 
@@ -313,7 +318,93 @@ Mobile: iphone & android:
 
 
 
+### Manual Tests
 
+### Navigation Bar
+
+| Feature Tested                 | Expected Outcome                                                   | Testing Performed        | Actual Outcome                                | Result   |
+|------------------------------- |--------------------------------------------------------------------|--------------------------|-----------------------------------------------|----------|
+| Anderson Health & Fitness logo | Directs user to the home page                                      | Click "Anderson Health & Fitness" logo | Directed to home page                         | Pass     |
+| Home link                      | Directs user to the home page                                      | Click "Home"             | Directed to home page                         | Pass     |
+| Shop link                      | Directs user to the shop page                                      | Click "Shop"             | Directed to shop page                         | Pass     |
+| Cart icon                      | Directs user to the cart page                                      | Click "Cart" icon        | Directed to cart page                         | Pass     |
+| Search icon                    | Opens the search bar                                               | Click "Search" icon      | Search bar is revealed                        | Pass     |
+| Profile link (logged out)      | Directs user to the login page                                     | Click "Profile"          | Directed to login page                        | Pass     |
+| Profile link (logged in)       | Directs user to the profile page                                   | Click "Profile"          | Directed to profile page                      | Pass     |
+| Register link                  | Directs user to the sign-up page                                   | Click "Register"         | Directed to sign-up page                      | Pass     |
+| Login link                     | Directs user to the login page                                     | Click "Login"            | Directed to login page                        | Pass     |
+| Logout link (signed in)        | Directs user to the home page / Displays feedback message          | Click "Logout"           | Directed to home page, displays feedback message | Pass     |
+| Responsive Navbar              | Navbar collapses into a menu on smaller screens                    | Change screen size (DevTools) | Navbar collapses correctly                    | Pass     |
+
+### Home Page
+
+| Feature Tested                 | Expected Outcome                                                   | Testing Performed        | Actual Outcome                                | Result   |
+|------------------------------- |--------------------------------------------------------------------|--------------------------|-----------------------------------------------|----------|
+| Responsive Design              | The page adjusts content to fit all screen sizes                   | Change sizes (DevTools)  | The page is responsive, content fits          | Pass     |
+| Text Readability               | Text is readable at all screen sizes                               | Read all text blocks     | The text is readable at all breakpoints       | Pass     |
+| Featured Products Click        | Clicking a featured product redirects to product detail page       | Click product image      | Redirected to the product detail page         | Pass     |
+| Shop Now Button                | Redirects user to the All Gear page                                    | Click "Shop Now" button  | Redirected to shop page                       | Pass     |
+
+### Shop Page
+
+| Feature Tested                 | Expected Outcome                                                   | Testing Performed        | Actual Outcome                                | Result   |
+|------------------------------- |--------------------------------------------------------------------|--------------------------|-----------------------------------------------|----------|
+| Product Categories             | Allows filtering by categories                                     | Click on a category      | Products filtered by selected category        | Pass     |
+| Sort Products                  | Sorts products based on selected criteria (price, rating, etc.)    | Use sort dropdown        | Products sorted correctly                    | Pass     |
+| Search Products                | Displays relevant products based on search query                   | Enter search term        | Correct products are displayed                | Pass     |
+| Add to Cart                    | Adds product to the cart                                           | Click "Add to Cart" button | Product added to cart successfully           | Pass     |
+| Product Image Click            | Clicking product image redirects to product detail page            | Click product image      | Redirected to product detail page             | Pass     |
+
+### Cart Page
+
+| Feature Tested                 | Expected Outcome                                                   | Testing Performed        | Actual Outcome                                | Result   |
+|------------------------------- |--------------------------------------------------------------------|--------------------------|-----------------------------------------------|----------|
+| View Cart Items                | Displays all added items in the cart                               | Open cart page           | Cart displays all added items                 | Pass     |
+| Update Item Quantity           | Updates the item quantity in the cart                              | Change item quantity     | Quantity updated and total recalculated       | Pass     |
+| Remove Item                    | Removes an item from the cart                                      | Click "Remove" button    | Item is removed from the cart                 | Pass     |
+| Proceed to Checkout Button     | Redirects user to the checkout page                                | Click "Checkout" button  | Redirected to checkout page                   | Pass     |
+
+### Checkout Page
+
+| Feature Tested                 | Expected Outcome                                                   | Testing Performed        | Actual Outcome                                | Result   |
+|------------------------------- |--------------------------------------------------------------------|--------------------------|-----------------------------------------------|----------|
+| Form Validation                | Shows validation errors for incorrect form inputs                  | Submit with invalid input | Validation errors displayed                   | Pass     |
+| Payment Processing             | Processes payment securely using Stripe                            | Enter valid card details | Payment processed successfully                | Pass     |
+| Save Information Checkbox      | Saves user shipping information to their profile                   | Check "Save Info" box    | Information saved to user profile             | Pass     |
+| Order Confirmation             | Displays order confirmation message                                | Complete checkout        | Order confirmation displayed                  | Pass     |
+
+### Profile Page
+
+| Feature Tested                 | Expected Outcome                                                   | Testing Performed        | Actual Outcome                                | Result   |
+|------------------------------- |--------------------------------------------------------------------|--------------------------|-----------------------------------------------|----------|
+| View Order History             | Displays a list of past orders                                     | Open profile page        | Order history is displayed                   | Pass     |
+| Update Profile Information     | Updates user profile details                                       | Submit updated info      | Profile information updated successfully     | Pass     |
+| Saved Shipping Info            | Displays saved shipping information                                | Open profile page        | Shipping info is displayed                   | Pass     |
+
+### Product Detail Page
+
+| Feature Tested                 | Expected Outcome                                                   | Testing Performed        | Actual Outcome                                | Result   |
+|------------------------------- |--------------------------------------------------------------------|--------------------------|-----------------------------------------------|----------|
+| Add Review                     | Allows logged-in user to add a review                              | Submit review form       | Review added successfully                    | Pass     |
+| Edit Review                    | Allows user to edit their existing review                          | Edit review              | Review updated successfully                  | Pass     |
+| Delete Review                  | Allows user to delete their existing review                        | Delete review            | Review deleted successfully                  | Pass     |
+| Rating System                  | Displays average rating for the product                            | View product detail      | Average rating is displayed                  | Pass     |
+
+### Search Functionality
+
+| Feature Tested                 | Expected Outcome                                                   | Testing Performed        | Actual Outcome                                | Result   |
+|------------------------------- |--------------------------------------------------------------------|--------------------------|-----------------------------------------------|----------|
+| Search Bar Visibility          | Search bar is visible and functional                               | Open search bar          | Search bar is visible                         | Pass     |
+| Search Results                 | Displays products matching search criteria                         | Enter search term        | Relevant products displayed                   | Pass     |
+| No Results Message             | Shows message when no products match the search                    | Enter non-existent product | "No results" message displayed               | Pass     |
+
+
+### Stripe Webhooks
+
+![image](https://github.com/user-attachments/assets/4f4e85a6-b85f-44e2-b327-07e3ceff0e31)
+
+
+![image](https://github.com/user-attachments/assets/bd6f9aaa-c5ee-4060-9f53-7ceb31dd3456)
 
 
 
