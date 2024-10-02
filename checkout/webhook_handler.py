@@ -9,6 +9,8 @@ from profiles.models import UserProfile
 
 import json
 import time
+import stripe
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
@@ -65,18 +67,17 @@ class StripeWH_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
-        # Convert country name to 2-character country code
-        country_name = shipping_details.address.country
-        country_code = dict(countries).get(country_name, country_name)
+        # Directly use the country code from shipping details
+        country_code = shipping_details.address.country
 
         # Update Profile information if save_info was checked
-        profile- None
+        profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
                 profile.default_phone_number = shipping_details.phone
-                profile.default_country = shipping_details.address.country
+                profile.default_country = country_code
                 profile.default_postcode = shipping_details.address.postal_code
                 profile.default_town_or_city = shipping_details.address.city
                 profile.default_street_address1 = shipping_details.address.line1
