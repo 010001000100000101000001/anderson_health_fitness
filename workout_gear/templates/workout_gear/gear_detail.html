@@ -48,18 +48,25 @@
             </div>
         </div>
     </div>
+
     <!-- Reviews Section -->
     <div class="row mt-5">
         <div class="col-12">
             <div class="p-4 bg-light rounded shadow reviews-section">
                 <h2 class="mb-4">Customer Reviews</h2>
 
-                <!-- Display Reviews -->
+                <!-- Display Average Rating -->
                 {% if reviews %}
+                <div class="mb-3">
+                    <strong>Average Rating: </strong>
+                    <span>{{ gear_item.reviews.aggregate(avg_rating=Avg('rating')).avg_rating|floatformat:1 }} /
+                        5</span>
+                </div>
                 <ul class="list-group mb-4">
                     {% for review in reviews %}
                     <li class="list-group-item">
-                        <strong>{{ review.user.username }}</strong> rated it <strong>{{ review.rating }} / 5</strong>
+                        <strong>{{ review.user.username }}</strong> rated it
+                        <strong>{{ review.rating }} / 5</strong>
                         <p>{{ review.comment }}</p>
                         <small class="text-muted">Reviewed on {{ review.created_at|date:"F j, Y" }}</small>
                     </li>
