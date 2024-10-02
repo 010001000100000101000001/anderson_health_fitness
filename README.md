@@ -408,6 +408,116 @@ Mobile: iphone & android:
 
 
 
+### Lighthouse Tests
+
+#### Home
+
+Desktop:
+![image](https://github.com/user-attachments/assets/fbdb556e-d59d-4f96-9fca-1620fb5761ed)
+
+
+Mobile:
+![image](https://github.com/user-attachments/assets/99255cd1-5cbb-4ef9-8b7e-18cc782e5e24)
+
+
+#### All Gear Page
+
+Desktop:
+![image](https://github.com/user-attachments/assets/4416b1c5-82d0-42c6-a5bc-b239ac0a763c)
+
+Mobile:
+![image](https://github.com/user-attachments/assets/e972c588-c96c-43ec-a900-5d46e26bcad7)
+
+
+#### Clothing
+
+Desktop:
+![image](https://github.com/user-attachments/assets/29c0788c-382b-4ab1-8198-676f1f56543d)
+
+
+Mobile:
+![image](https://github.com/user-attachments/assets/077239db-a3c8-4a9d-a26f-57dd622b1c02)
+
+
+#### Accessories
+
+Desktop:
+![image](https://github.com/user-attachments/assets/f613f2c5-211a-4036-96eb-27e24651970b)
+
+
+Mobile: 
+![image](https://github.com/user-attachments/assets/a5cd7c65-53db-4eef-bc65-8f667c7ecdbd)
+
+
+
+#### Equipment
+
+Desktop:
+![image](https://github.com/user-attachments/assets/bbb2a5ce-19d8-4156-b02b-bad8bd70dc3c)
+
+
+Mobile:
+![image](https://github.com/user-attachments/assets/58db260d-fcb9-4e45-abd9-6bb34cebf00b)
+
+
+#### Cart
+
+Desktop:
+![image](https://github.com/user-attachments/assets/f358f476-fd6b-4d25-bf63-f2adb1d470cc)
+
+
+
+Mobile:
+![image](https://github.com/user-attachments/assets/a2290d3d-67cb-4a1b-94b3-da555e072f26)
+
+
+
+#### Checkout
+
+Desktop:
+![image](https://github.com/user-attachments/assets/8c89051f-46f9-4a7c-881e-d7fb81e6b29f)
+
+
+Mobile:
+![image](https://github.com/user-attachments/assets/116a669f-f112-4d23-9ebc-b94b84434528)
+
+
+
+#### Login
+
+Desktop:
+![image](https://github.com/user-attachments/assets/3f7faa83-da80-4669-801a-e2faf37aa708)
+
+
+Mobile:
+![image](https://github.com/user-attachments/assets/869864f8-fea6-4aa2-b8cb-d2851c703454)
+
+
+#### Signup
+
+Destop:
+![image](https://github.com/user-attachments/assets/2bc21053-3af6-4782-8c83-528c42d39950)
+
+
+
+Mobile:
+![image](https://github.com/user-attachments/assets/87b4f699-9d6b-4d67-97ba-61bf9898d052)
+
+
+
+#### Search Results
+
+Desktop:
+![image](https://github.com/user-attachments/assets/4ece3ae8-a671-48d8-a216-b3cbb5033feb)
+
+
+
+Mobile:
+![image](https://github.com/user-attachments/assets/8198440e-27d0-4589-a4a6-3a78b0b4afc9)
+
+
+
+
  ## Technologies Used
 
 - **Django**: The web framework used to build the application.
