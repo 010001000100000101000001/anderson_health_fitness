@@ -4,7 +4,8 @@
 
 ## Introduction
 
-This is my fifth project in Code Institute Diploma in Software Development with eCommerce. The Anderson Health & Fitness project is an e-commerce application designed to allow users to browse, search, and purchase workout gear. The application also includes user authentication, shopping cart functionality, user profile management and a section for users to leave product reviews.
+This is my fifth project in Code Institute Diploma in Software Development with eCommerce. The Anderson Health & Fitness project is an e-commerce application designed to allow users to browse, search, and purchase workout gear. The application also includes user authentication, shopping cart functionality, user profile management and a section for users to leave product reviews. The application is built with Django and follows best practices for user interface design, focusing on user-friendliness and mobile responsiveness. The application is styled using Bootstrap 5 and utilizes the Stripe payment gateway for secure transactions.
+
 
 ## Table of Contents
 
@@ -172,6 +173,24 @@ As a **Mobile Site User**, I can **view my profile on the go by simply accessing
 - **Acceptance criteria 3**: Product photos and descriptions are displayed as best they can on smaller screens thanks to the mobile layout.
 ---
 
+## Wire Frames
+
+Laptop & Desktop:
+
+![image](https://github.com/user-attachments/assets/032ec8cc-d179-4cde-b208-dccace734417)
+
+![image](https://github.com/user-attachments/assets/a4587cba-e2ca-4b94-a233-f96d11188f2e)
+
+Tablet:
+
+![image](https://github.com/user-attachments/assets/6c996062-ede7-41e9-b31f-c2e4e7d95593)
+
+
+Mobile: iphone & android:
+
+![image](https://github.com/user-attachments/assets/8419fa17-a877-4de5-bd5d-d074081fe80d)
+
+
 
 ## Database Schema
 
@@ -239,12 +258,62 @@ As a **Mobile Site User**, I can **view my profile on the go by simply accessing
 ### Existing Features
 
 - **Navigation Bar**: Allows users to navigate through different sections of the site, including Workout Gear, Search, Profile  and Cart.
+
+![image](https://github.com/user-attachments/assets/8b3e0324-f481-4f43-90c9-33678b52b030)
+
+
+
 - **Responsive Design**: The site is fully responsive, ensuring it looks and functions well on mobiles, tablets and desktops.
-- **User Authentication**: Users can register, log in, and manage their profiles. Social authentication is also supported.
+
+![image](https://github.com/user-attachments/assets/5c919f4f-a5b6-4c32-91ea-25134add3e4c)    ![image](https://github.com/user-attachments/assets/a9e7bb1e-4bce-4b94-9626-fbd2af46bf40)
+
+
+- **User Authentication**: Users can register, log in, and manage their profiles.
+
+![image](https://github.com/user-attachments/assets/56ac5ce1-96ac-4872-9ce7-4dae73563edb)
+
+
+
 - **Product Browsing**: Users can browse workout gear by category, view product details, and add items to their cart.
+
+![image](https://github.com/user-attachments/assets/8be3f132-cea4-4381-80c4-ad3157b81e92)
+
+
+
 - **Shopping Cart**: Users can add items to their cart, view the cart, and proceed to checkout.
+
+![image](https://github.com/user-attachments/assets/15dea3f8-01fe-4efb-9d9f-77b9c107b61a)
+
 - **Search Functionality**: Users can search for products based on names and details.
+
+![image](https://github.com/user-attachments/assets/d80a9b98-62e9-412e-8106-f4931bc44c9d)
+
+
 - **Promotional Banners**: The site features a promotional banner to highlight free delivery of orders over €100.
+
+
+![image](https://github.com/user-attachments/assets/99cc4758-48b1-440a-9bd9-2251fcde49af)
+
+
+- **Order Management**: Users can view past orders in their profile and track their purchase history. The application integrates with Stripe to handle payment processing, ensuring secure transactions.
+
+  ![image](https://github.com/user-attachments/assets/b55ca428-ad83-4032-a88c-d433101d49ef)
+
+
+- **Toast Notifications**: The site provides real-time toast notifications for actions like adding items to the cart, submitting a review, and order completion. These notifications enhance the user experience by providing instant feedback.
+
+ 
+![image](https://github.com/user-attachments/assets/c5c28283-aa05-4c5e-b158-56376c5172ca)    ![image](https://github.com/user-attachments/assets/a8d5f06a-50d0-4030-a05e-9631477574a9)  ![image](https://github.com/user-attachments/assets/e4411eae-168a-474c-8f16-05d49815245c)
+
+
+- **Review Order at Checkout**: Review your order details at the checkout.
+
+  ![image](https://github.com/user-attachments/assets/8abb2dc7-c401-4579-b3a2-6734d1b864ca)
+
+
+
+
+
 
 
  ## Technologies Used
@@ -255,11 +324,19 @@ As a **Mobile Site User**, I can **view my profile on the go by simply accessing
 - **SQLite**: The database used for development.
 - **Pillow**: Used for image processing in the application.
 - **Django Allauth**: Handles user authentication, including social logins.
+- **Crispy Forms**: For better form rendering and styling using Bootstrap 5.
+- **django-countries**: Provides a country field in forms, enhancing user experience during checkout.
+- **Stripe**: Used for processing payments securely and handling webhooks for order verification.
+- **Custom CSS & JavaScript**: Additional styling and interactivity tailored to the fitness e-commerce theme.
+
 
 
 
 
 ## Deployment
+
+
+
 
 
 ### Set Up the Application Locally
@@ -283,7 +360,7 @@ As a **Mobile Site User**, I can **view my profile on the go by simply accessing
 
 ### Media
 
-- The media content for products was created specifically for this project using AI tools such as DALL·E 2 on sites such as [Link](https://picsart.com/) and [Link](https://chatgpt.com/) and are to serve as an example of real world products only.
+- The media content for products was created specifically for this project using AI tools such as DALL·E 2 on sites such as [Link](https://picsart.com/) and [Link](https://chatgpt.com/) and are to serve as an example of real world products only. The Hero image was taken from Pixabay on free usage licence.
 
 
 
