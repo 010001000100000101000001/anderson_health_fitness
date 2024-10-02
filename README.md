@@ -11,6 +11,7 @@ This is my fifth project in Code Institute Diploma in Software Development with 
 
 - [Introduction](#introduction)
 - [Epics and User Stories](#epics-and-user-stories)
+- [Wire Fames](#wire-frames)
 - [Database Schema](#database-schema)
 - [Features](#features)
   - [Existing Features](#existing-features)
@@ -335,14 +336,78 @@ Mobile: iphone & android:
 
 ## Deployment
 
+### Fork the Repository
 
+1. Click the "Fork" button at the top right corner of the GitHub repository page.
+2. This action creates a copy of the repository under your GitHub account.
 
+### Clone the Repository Locally
 
+1. Go to your GitHub account and open the forked repository.
+2. Click the "Code" button and copy the provided URL.
+3. Open your command line interface (CLI) and navigate to the directory where you want to clone the repository.
+4. Run the command: git clone *copied-URL*
 
-### Set Up the Application Locally
+Move into the cloned directory: cd anderson-health-fitness
+
+Set Up the Application Locally
+Install Dependencies:
+
+Ensure you have Python and pip installed.
+Run the following command to install the required packages: pip install -r requirements.txt
+
+Set Up Environment Variables:
+
+Create a .env file in the project root.
+Add the following environment variables:
+
+STRIPE_PUBLIC_KEY=*your-stripe-public-key*
+STRIPE_SECRET_KEY=*your-stripe-secret-key*
+EMAIL_HOST_USER=*your-email*
+SECRET_KEY=*your-secret-key*
+DATABASE_URL=*your-database-url*
+CLOUDINARY_URL=*your-cloudinary-url*
+
+Run Migrations:
+
+Apply database migrations to set up the local database: python manage.py migrate
+
+Run the Application:
+
+Start the development server: python manage.py runserver
+
 
 
 ### Deploy to Heroku
+
+Open Heroku:
+
+Go to Heroku and log in to your account.
+Create a New Application:
+
+Click on "New" in the top right corner and select "Create new app".
+Choose a unique app name and select your region.
+Press "Create app".
+Configure the Application:
+
+Config Vars:
+Navigate to the "Settings" tab.
+Under "Config Vars", click "Reveal Config Vars".
+Add the required environment variables such as DATABASE_URL, CLOUDINARY_URL, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, EMAIL_HOST_USER, and SECRET_KEY.
+Buildpacks:
+Scroll to the "Buildpacks" section and click "Add buildpack".
+Select "Python" and press "Save changes".
+Deploy the Application:
+
+Connect to GitHub:
+Go to the "Deploy" tab.
+In the "Deployment method" section, select "GitHub".
+Search for your forked repository and press "Connect".
+Manual Deploy:
+Scroll down to the "Manual deploy" section.
+Select the branch you want to deploy and click "Deploy Branch".
+Heroku will now build and deploy the application.
+Apply Database Migrations.
 
 
 
@@ -371,4 +436,6 @@ Font awesome icons are used througout the site. [Link](https://fontawesome.com/)
 
 
 ## Acknowledgements
+
+Thanks to the Code Institute tutors staff and my mentor Matt Bodden for their support.
 
