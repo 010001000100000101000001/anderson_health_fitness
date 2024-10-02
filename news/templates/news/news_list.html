@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>News</h1>
+<ul>
+    {% for post in news_posts %}
+    <li><a href="{% url 'news_detail' post.id %}">{{ post.title }}</a> - {{ post.created_at }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_news_post' %}">Add News Post</a>
+{% endblock %}

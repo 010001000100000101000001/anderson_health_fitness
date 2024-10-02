@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ news_post.title }}</h1>
+<p>{{ news_post.content }}</p>
+<p><strong>Author:</strong> {{ news_post.author }}</p>
+<p><strong>Published on:</strong> {{ news_post.created_at }}</p>
+<a href="{% url 'edit_news_post' news_post.id %}">Edit</a>
+{% endblock %}
