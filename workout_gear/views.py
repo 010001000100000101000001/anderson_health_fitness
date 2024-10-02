@@ -76,10 +76,13 @@ def gear_detail(request, item_id):
 
     # Get all reviews associated with this gear item
     reviews = ProductReview.objects.filter(gear_item=gear_item)
+    average_rating = reviews.aggregate(
+        avg_rating=Avg('rating'))['avg_rating'] or 0
 
     context = {
         'gear_item': gear_item,
         'reviews': reviews,
+        'average_rating': average_rating,
     }
     return render(request, 'workout_gear/gear_detail.html', context)
 
