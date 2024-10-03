@@ -25,7 +25,7 @@ def add_news_post(request):
             return redirect('news_list')
     else:
         form = NewsPostForm()
-    return render(request, 'news/news_form.html', {'form': form})
+    return render(request, 'news/news_form.html', {'form': form, 'form_title': 'Add News Post'})
 
 @login_required
 def edit_news_post(request, post_id):
@@ -38,4 +38,4 @@ def edit_news_post(request, post_id):
             return redirect('news_detail', post_id=news_post.id)
     else:
         form = NewsPostForm(instance=news_post)
-    return render(request, 'news/news_form.html', {'form': form})
+    return render(request, 'news/news_form.html', {'form': form, 'form_title': 'Edit News Post'})
