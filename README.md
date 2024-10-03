@@ -398,6 +398,22 @@ Mobile: iphone & android:
 | Search Results                 | Displays products matching search criteria                         | Enter search term        | Relevant products displayed                   | Pass     |
 | No Results Message             | Shows message when no products match the search                    | Enter non-existent product | "No results" message displayed               | Pass     |
 
+### Reviews Section
+
+| Feature Tested                 | Expected Outcome                                                   | Testing Performed        | Actual Outcome                                | Result   |
+|------------------------------- |--------------------------------------------------------------------|--------------------------|-----------------------------------------------|----------|
+| Add Review                     | Allows a logged-in user to submit a review                         | Submit review form       | Review added and displayed on product page    | Pass     |
+| Edit Review                    | Allows a user to edit their existing review                        | Edit review and submit   | Review updated and changes reflected          | Pass     |
+| Delete Review                  | Allows a user to delete their existing review                      | Delete review            | Review removed from product page              | Pass     |
+| Prevent Duplicate Review       | Prevents the same user from submitting multiple reviews on a product | Attempt to submit multiple reviews | Duplicate review prevented, feedback given  | Pass     |
+| Average Rating Calculation     | Displays the correct average rating for the product                | Submit multiple reviews  | Average rating is calculated and displayed correctly | Pass     |
+| Review Display Formatting      | Reviews display correctly with username, rating, and comment       | View product page        | Reviews are formatted and displayed correctly | Pass     |
+
+
+In this project, I began building a news section aimed at keeping users up-to-date with Anderson Health & Fitness’s latest developments, fitness tips, and special promotions. The idea was to provide a space for content that goes beyond just products, adding value to the user experience by offering insightful and relevant information that complements our workout gear. This news section was envisioned as a lively, interactive feature where users could find everything from new product launches to expert advice on achieving their fitness goals.
+
+Despite making a solid start, I couldn't fully implement or test this feature before the current project deadline. The basic structure is in place – including preliminary layouts and placeholder content – but it still requires further work to seamlessly integrate with the rest of the application. More testing is needed to make sure it is functional and visible.
+Given more time I am confident I can complete this section. When revisiting the news section, I plan to focus on refining its design, incorporating dynamic content management so that updates can be made easily, and conducting extensive testing to ensure that it not only looks great but also performs smoothly. For now, it remains an exciting work-in-progress that I look forward to completing soon!
 
 ### Stripe Webhooks
 
