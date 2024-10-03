@@ -210,3 +210,17 @@ def edit_product(request, item_id):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_id):
+    """ Delete a product from the store """
+    product = get_object_or_404(GearItem, pk=product_id)
+    if request.method == 'POST':
+        product.delete()
+        messages.success(request, 'Product deleted successfully!')
+        return redirect('gear_list')  # Redirect to the product list after deletion
+
+    context = {
+        'product': product,
+    }
+    return render(request, 'workout_gear/delete_product.html', context)
