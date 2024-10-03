@@ -187,3 +187,26 @@ def add_product(request):
     }
     return render(request, template, context)
 
+
+def edit_product(request, item_id):
+    """ Edit a product in the store """
+    gear_item = get_object_or_404(GearItem, pk=item_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=gear_item)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect('gear_detail', item_id=item_id)
+        else:
+            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+    else:
+        form = ProductForm(instance=gear_item)
+        messages.info(request, f'You are editing {gear_item.name}')
+
+    template = 'workout_gear/edit_product.html'
+    context = {
+        'form': form,
+        'gear_item': gear_item,
+    }
+
+    return render(request, template, context)
