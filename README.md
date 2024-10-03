@@ -410,6 +410,24 @@ Mobile: iphone & android:
 | Review Display Formatting      | Reviews display correctly with username, rating, and comment       | View product page        | Reviews are formatted and displayed correctly | Pass     |
 
 
+### Email Confirmation Testing
+
+| Feature Tested                 | Expected Outcome                                                     | Testing Performed           | Actual Outcome                              | Result   |
+|------------------------------- |---------------------------------------------------------------------|-----------------------------|---------------------------------------------|----------|
+| Registration Email Sent        | Confirmation email is sent to the user’s email upon registration    | Register using the app      | Confirmation email received                 | Pass     |
+| Email Confirmation Link        | Clicking the link confirms the email and activates the account      | Click the link in the email | Account successfully activated              | Pass     |
+| Invalid Email Format           | Entering an invalid email prevents registration                     | Register with invalid email | Registration not completed, error shown     | Pass     |
+| Test with `generator.email`    | Registration with a temporary email from `generator.email`          | Register using `generator.email` | Confirmation email successfully received | Pass     |
+| Confirmation Email Resend      | Resending the confirmation email if the first one is lost/expired   | Click "Resend Email" button | New confirmation email received             | Pass     |
+
+
+![image](https://github.com/user-attachments/assets/e4aede78-fcea-4c6a-8fbd-586b7bdbf37d)
+
+
+![image](https://github.com/user-attachments/assets/842a5338-db0e-4bb1-8c09-40c3c29ff160)
+
+
+
 In this project, I began building a news section aimed at keeping users up-to-date with Anderson Health & Fitness’s latest developments, fitness tips, and special promotions. The idea was to provide a space for content that goes beyond just products, adding value to the user experience by offering insightful and relevant information that complements our workout gear. This news section was envisioned as a lively, interactive feature where users could find everything from new product launches to expert advice on achieving their fitness goals.
 
 Despite making a solid start, I couldn't fully implement or test this feature before the current project deadline. The basic structure is in place – including preliminary layouts and placeholder content – but it still requires further work to seamlessly integrate with the rest of the application. More testing is needed to make sure it is functional and visible.
