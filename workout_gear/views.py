@@ -44,7 +44,6 @@ def gear_list(request):
         'categories': categories,
         'gear_items': gear_items,
         'current_sorting': current_sorting,
-
     }
     return render(request, 'workout_gear/workout_gear.html', context)
 
@@ -81,21 +80,23 @@ def gear_detail(request, item_id):
     average_rating = reviews.aggregate(
         avg_rating=Avg('rating'))['avg_rating'] or 0
 
-    # Initialize the ProductForm
-    if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()  # Save the product
-            messages.success(request, "Product has been added successfully.")
-            return redirect('gear_detail', item_id=item_id)
-    else:
-        form = ProductForm()
+    # Check if user has already reviewed
+    has_reviewed = False
+    if request.user.is_authenticated:
+        has_reviewed = ProductReview.objects.filter(
+            gear_item=gear_item,
+            user=request.user
+        ).exists()
+
+    # Initialize review form only if user hasn't reviewed
+    review_form = ProductReviewForm() if request.user.is_authenticated and not has_reviewed else None
 
     context = {
         'gear_item': gear_item,
         'reviews': reviews,
         'average_rating': average_rating,
-        'form': form,
+        'review_form': review_form,  # Changed from 'form' to 'review_form'
+        'has_reviewed': has_reviewed,  # Added new context variable
     }
     return render(request, 'workout_gear/gear_detail.html', context)
 
@@ -171,7 +172,7 @@ def add_product(request):
         return redirect('gear_list')
 
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES) 
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, "Product has been added successfully.")
