@@ -6,7 +6,8 @@
 <div class="container header-container">
     <div class="row">
         <div class="col">
-            <h1>Edit Product: {{ product.name }}</h1>
+            <h1>Product Management</h1>
+            <h2 class="text-muted">Edit {{ gear_item.name }}</h2>
         </div>
     </div>
 </div>
@@ -14,25 +15,56 @@
 
 {% block content %}
 <div class="container mt-5">
+    <!-- Back Button -->
     <div class="row mb-3">
         <div class="col">
-            <a href="{% url 'gear_detail' product.id %}" class="btn btn-outline-secondary">
-                <i class="fa-solid fa-square-arrow-left"></i> Back to Product Detail
+            <a href="{% url 'gear_detail' gear_item.id %}" class="btn btn-outline-secondary">
+                <i class="fa-solid fa-square-arrow-left"></i> Back
             </a>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <h2>Edit Product Details</h2>
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <div class="text-right">
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <!-- Staff Only Section -->
+    {% if user.is_staff %}
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4">Edit Product Details</h2>
+                        <form method="POST" enctype="multipart/form-data" class="form">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <div class="text-end mt-4">
+                                <a class="btn btn-secondary" href="{% url 'gear_detail' gear_item.id %}">
+                                    Cancel
+                                </a>
+                                <button class="btn btn-primary ms-2" type="submit">
+                                    <i class="fas fa-save"></i> Save Changes
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
+    {% else %}
+        <div class="row">
+            <div class="col text-center">
+                <p class="alert alert-warning">You do not have permission to access this page.</p>
+            </div>
+        </div>
+    {% endif %}
 </div>
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        // Image preview handling
+        $('#new-image').change(function() {
+            var file = $('#new-image')[0].files[0];
+            if (file) {
+                $('#filename').text(`Image will be set to: ${file.name}`);
+            }
+        });
+    </script>
 {% endblock %}
