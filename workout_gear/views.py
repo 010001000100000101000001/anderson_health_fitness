@@ -89,7 +89,11 @@ def gear_detail(request, item_id):
         ).exists()
 
     # Initialize review form only if user hasn't reviewed
-    review_form = ProductReviewForm() if request.user.is_authenticated and not has_reviewed else None
+    review_form = (
+        ProductReviewForm()
+        if request.user.is_authenticated and not has_reviewed
+        else None
+    )
 
     context = {
         'gear_item': gear_item,
@@ -165,6 +169,7 @@ def submit_review(request, item_id):
 
 
 @login_required
+@user_passes_test(lambda u: u.is_staff)  # Staff check
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
@@ -178,7 +183,9 @@ def add_product(request):
             messages.success(request, "Product has been added successfully.")
             return redirect('gear_list')
         else:
-            messages.error(request, "Failed to add product. Please ensure the form is valid.")
+            messages.error(
+                request,
+                "Failed to add product. Please ensure the form is valid.")
     else:
         form = ProductForm()
 
@@ -189,8 +196,14 @@ def add_product(request):
     return render(request, template, context)
 
 
+@login_required
+@user_passes_test(lambda u: u.is_staff)  # Staff check
 def edit_product(request, item_id):
     """ Edit a product in the store """
+    if not request.user.is_superuser:  # Superuser check
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect('gear_list')
+
     gear_item = get_object_or_404(GearItem, pk=item_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=gear_item)
@@ -199,7 +212,9 @@ def edit_product(request, item_id):
             messages.success(request, 'Successfully updated product!')
             return redirect('gear_detail', item_id=item_id)
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.')
     else:
         form = ProductForm(instance=gear_item)
         messages.info(request, f'You are editing {gear_item.name}')
@@ -209,19 +224,24 @@ def edit_product(request, item_id):
         'form': form,
         'gear_item': gear_item,
     }
-
     return render(request, template, context)
 
 
-def delete_product(request, product_id):
+@login_required
+@user_passes_test(lambda u: u.is_staff)  # Staff check
+def delete_product(request, item_id):
     """ Delete a product from the store """
-    product = get_object_or_404(GearItem, pk=product_id)
+    if not request.user.is_superuser:  # Superuser check
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect('gear_list')
+
+    gear_item = get_object_or_404(GearItem, pk=item_id)
     if request.method == 'POST':
-        product.delete()
+        gear_item.delete()
         messages.success(request, 'Product deleted successfully!')
-        return redirect('gear_list')  # Redirect to the product list after deletion
+        return redirect('gear_list')
 
     context = {
-        'product': product,
+        'gear_item': gear_item,
     }
     return render(request, 'workout_gear/delete_product.html', context)
