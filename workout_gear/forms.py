@@ -8,7 +8,8 @@ class ProductForm(forms.ModelForm):
 
     class Meta:
         model = GearItem
-        fields = '__all__'
+        # Exclude 'rating' from the product form as it is handled via customer reviews
+        exclude = ['rating']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
