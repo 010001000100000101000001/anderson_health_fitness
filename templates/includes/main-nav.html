@@ -17,6 +17,21 @@
             </ul>
         </li>
 
+        {% if user.is_staff %}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="product-management-link" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-cog"></i> Product Management
+            </a>
+            <ul class="dropdown-menu border-0" aria-labelledby="product-management-link">
+                <li><a class="dropdown-item" href="{% url 'add_product' %}"><i class="fas fa-plus"></i> Add New
+                        Product</a></li>
+                <li><a class="dropdown-item" href="{% url 'gear_list' %}"><i class="fas fa-edit"></i> Manage
+                        Products</a></li>
+            </ul>
+        </li>
+        {% endif %}
+
         <!-- News Link -->
         <li class="nav-item">
             <a class="nav-link" href="{% url 'news_list' %}">News</a>
