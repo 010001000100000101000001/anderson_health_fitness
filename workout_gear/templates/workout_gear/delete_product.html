@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
         <div class="col">
-            <h1>Delete Product: {{ product.name }}</h1>
+            <h1>Product Management</h1>
+            <h2 class="text-muted">Delete {{ gear_item.name }}</h2>
         </div>
     </div>
 </div>
@@ -15,23 +17,52 @@
 <div class="container mt-5">
     <div class="row mb-3">
         <div class="col">
-            <a href="{% url 'gear_detail' product.id %}" class="btn btn-outline-secondary">
-                <i class="fa-solid fa-square-arrow-left"></i> Back to Product Detail
+            <a href="{% url 'gear_detail' item_id=gear_item.id %}" class="btn btn-outline-secondary">
+                <i class="fa-solid fa-square-arrow-left"></i> Back
             </a>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12">
-            <h2>Are you sure you want to delete this product?</h2>
-            <p><strong>Product Name:</strong> {{ product.name }}</p>
-            <p><strong>Price:</strong> €{{ product.cost }}</p>
-            <p>This action cannot be undone.</p>
-            <form method="POST">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-danger">Delete Product</button>
-            </form>
+    <!-- Staff Only Section -->
+    {% if user.is_staff %}
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="card-title text-danger mb-4">Delete Product</h2>
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle"></i> Warning: This action cannot be undone.
+                        </div>
+                        
+                        <div class="product-details mb-4">
+                            <p><strong>Product Name:</strong> {{ gear_item.name }}</p>
+                            <p><strong>Category:</strong> {{ gear_item.category.friendly_name }}</p>
+                            <p><strong>Price:</strong> €{{ gear_item.cost }}</p>
+                            <p><strong>Stock:</strong> {{ gear_item.stock_quantity }}</p>
+                        </div>
+
+                        <!-- Action URL -->
+                        <form method="POST" action="{% url 'delete_product' item_id=gear_item.id %}" class="form">
+                            {% csrf_token %}
+                            <div class="text-end mt-4">
+                                <a class="btn btn-secondary" href="{% url 'gear_detail' item_id=gear_item.id %}">
+                                    Cancel
+                                </a>
+                                <button type="submit" class="btn btn-danger ms-2">
+                                    <i class="fas fa-trash"></i> Delete Product
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    {% else %}
+        <div class="row">
+            <div class="col text-center">
+                <p class="alert alert-warning">You do not have permission to access this page.</p>
+            </div>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}
