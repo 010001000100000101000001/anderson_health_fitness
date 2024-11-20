@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% extends "base.html" %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'news/news.css' %}">
 
@@ -11,7 +10,7 @@
     <p><strong>Published on:</strong> {{ news_post.created_at|date:"F j, Y" }}</p>
 
     <!-- Edit button (visible to the author of the post or staff users) -->
-    {% if user.is_authenticated and (user == news_post.author or user.is_staff) %}
+    {% if user.is_authenticated and user == news_post.author or user.is_staff %}
     <a href="{% url 'edit_news_post' news_post.id %}" class="btn btn-primary mt-3">Edit</a>
     {% endif %}
 </div>
