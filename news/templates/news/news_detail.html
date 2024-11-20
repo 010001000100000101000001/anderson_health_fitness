@@ -1,17 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
+
 <link rel="stylesheet" href="{% static 'news/news.css' %}">
 
 {% block content %}
-<div class="container news-detail-container">
-    <h1>{{ news_post.title }}</h1>
-    <p>{{ news_post.content }}</p>
-    <p><strong>Author:</strong> {{ news_post.author }}</p>
-    <p><strong>Published on:</strong> {{ news_post.created_at|date:"F j, Y" }}</p>
+<!-- Wrapper div with padding to push content down -->
+<div class="content-wrapper" style="padding-top: 150px;">
+    <div class="container news-detail-container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- Bootstrap Card for detailed view -->
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h1 class="card-title">{{ news_post.title }}</h1>
+                        <p class="card-text">{{ news_post.content }}</p>
+                        <p><strong>Author:</strong> {{ news_post.author }}</p>
+                        <p><strong>Published on:</strong> {{ news_post.created_at|date:"F j, Y" }}</p>
 
-    <!-- Edit button (visible to the author of the post or staff users) -->
-    {% if user.is_authenticated and user == news_post.author or user.is_staff %}
-    <a href="{% url 'edit_news_post' news_post.id %}" class="btn btn-primary mt-3">Edit</a>
-    {% endif %}
+                        <!-- Edit button (visible to the author of the post or staff users) -->
+                        {% if user.is_authenticated and user == news_post.author %}
+                            <a href="{% url 'edit_news_post' news_post.id %}" class="btn btn-warning mt-3">Edit</a>
+                        {% elif user.is_staff %}
+                            <a href="{% url 'edit_news_post' news_post.id %}" class="btn btn-warning mt-3">Edit</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

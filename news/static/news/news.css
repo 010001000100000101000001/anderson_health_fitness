@@ -1,55 +1,31 @@
-/* Adjusting the top margin for the form */
-.news-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 200px !important; /* Adjust for larger spacing */
-    padding: 20px !important;
-    background-color: #fff !important; /* Ensure white background */
-    border-radius: 8px !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+/* Ensure proper spacing for news detail container */
+.container.news-detail-container {
+    margin-top: 150px !important;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling the list of news posts */
-.news-list-container {
-    margin-top: 50px !important;
-    padding: 20px !important;
-    background-color: #fff !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+/* Styling for the news post title */
+.news-detail-container h1 {
+    font-size: 2rem;
+    color: #333;
 }
 
-/* Styling the individual news post titles */
-.news-list-container h2 {
-    font-size: 1.5rem !important;
-    color: #333 !important;
-    margin-bottom: 20px !important;
+/* Styling for news post content */
+.news-detail-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
-/* Link styling for news posts */
-.news-list-container a {
-    color: #007bff !important;
-    text-decoration: none !important;
-    font-weight: bold !important;
-}
-
-.news-list-container a:hover {
-    text-decoration: underline !important;
-}
-
-/* Adding padding and margin to news content */
-.news-content {
-    margin-top: 20px !important;
-    line-height: 1.6 !important;
-}
-
-/* Styling for the submit button */
-.btn-primary {
-    margin-top: 20px !important;
-    font-size: 1rem !important;
-    padding: 10px 20px !important;
-    border-radius: 5px !important;
-    background-color: #007bff !important;
-    color: #fff !important;
-    border: none !important;
+/* Styling for buttons */
+.btn-warning {
+    margin-top: 20px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ffc107; /* Warning button color */
+    color: #fff;
+    border: none;
 }
