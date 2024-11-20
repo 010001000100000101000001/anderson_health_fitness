@@ -5,27 +5,33 @@
 <link rel="stylesheet" href="{% static 'news/news.css' %}">
 
 {% block content %}
-<div class="container news-list-container">
-    <h2>Latest News</h2>
-    
+<div class="container news-list-container mt-5">
+    <h2 class="mb-4">Latest News</h2>
+
     <!-- Add News Post Button (visible to logged-in users only) -->
     {% if user.is_authenticated %}
     <div class="mb-3 text-end">
         <a href="{% url 'add_news_post' %}" class="btn btn-primary">Add News Post</a>
     </div>
     {% endif %}
-    
-    {% if news_posts %}
-    <ul>
-        {% for post in news_posts %}
-        <li>
-            <a href="{% url 'news_detail' post.id %}">{{ post.title }}</a>
-            <p>{{ post.created_at|date:"F j, Y" }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p>No news posts available at the moment.</p>
-    {% endif %}
+
+    <div class="row">
+        {% if news_posts %}
+            {% for post in news_posts %}
+            <div class="col-md-4 mb-4">
+                <!-- Bootstrap Card for each news post -->
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text text-muted">{{ post.created_at|date:"F j, Y" }}</p>
+                        <a href="{% url 'news_detail' post.id %}" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+        <p>No news posts available at the moment.</p>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}
