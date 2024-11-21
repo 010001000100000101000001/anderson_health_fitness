@@ -24,6 +24,13 @@ def add_news_post(request):
         if form.is_valid():
             news_post = form.save(commit=False)
             news_post.author = request.user
+
+            # Set status to 'approved' for staff users and 'pending' for others
+            if request.user.is_staff:
+                news_post.status = 'approved'
+            else:
+                news_post.status = 'pending'
+
             news_post.save()
             return redirect('news_list')
     else:
