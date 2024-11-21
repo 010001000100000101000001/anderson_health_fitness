@@ -73,3 +73,17 @@ def delete_news_post(request, post_id):
         return redirect('news_list')
     else:
         return redirect('news_detail', post_id=news_post.id)
+
+
+@login_required
+@user_passes_test(lambda u: u.is_staff)
+def approve_news_post(request, post_id):
+    """ View for staff users to approve a pending news post. """
+    news_post = get_object_or_404(NewsPost, id=post_id)
+
+    # Approve the post
+    if news_post.status == 'pending':
+        news_post.status = 'approved'
+        news_post.save()
+
+    return redirect('news_list')
