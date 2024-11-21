@@ -7,6 +7,16 @@
 <!-- Wrapper div with padding to push content down -->
 <div class="content-wrapper" style="padding-top: 150px;">
     <div class="container news-detail-container">
+        <!-- Back Button -->
+        <div class="row mb-3">
+            <div class="col">
+                <a href="javascript:history.back()" class="btn btn-outline-primary back-button">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </a>
+            </div>
+        </div>
+
+        <!-- News Post Content -->
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <!-- Bootstrap Card for detailed view -->
@@ -19,9 +29,9 @@
 
                         <!-- Edit button (visible to the author of the post or staff users) -->
                         {% if user.is_authenticated and user == news_post.author %}
-                            <a href="{% url 'edit_news_post' news_post.id %}" class="btn btn-warning mt-3">Edit</a>
+                        <a href="{% url 'edit_news_post' news_post.id %}" class="btn btn-warning mt-3">Edit</a>
                         {% elif user.is_staff %}
-                            <a href="{% url 'edit_news_post' news_post.id %}" class="btn btn-warning mt-3">Edit</a>
+                        <a href="{% url 'edit_news_post' news_post.id %}" class="btn btn-warning mt-3">Edit</a>
                         {% endif %}
                     </div>
                 </div>
