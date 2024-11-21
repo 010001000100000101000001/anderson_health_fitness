@@ -1,17 +1,20 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import NewsPost
 from .forms import NewsPostForm
+
 
 def news_list(request):
     """ View to list all news posts. """
     news_posts = NewsPost.objects.all().order_by('-created_at')
     return render(request, 'news/news_list.html', {'news_posts': news_posts})
 
+
 def news_detail(request, post_id):
     """ View to show a detailed view of a single news post. """
     news_post = get_object_or_404(NewsPost, id=post_id)
     return render(request, 'news/news_detail.html', {'news_post': news_post})
+
 
 @login_required
 def add_news_post(request):
@@ -25,7 +28,10 @@ def add_news_post(request):
             return redirect('news_list')
     else:
         form = NewsPostForm()
-    return render(request, 'news/news_form.html', {'form': form, 'form_title': 'Add News Post'})
+    return render(
+        request, 'news/news_form.html',
+        {'form': form, 'form_title': 'Add News Post'})
+
 
 @login_required
 def edit_news_post(request, post_id):
@@ -38,4 +44,20 @@ def edit_news_post(request, post_id):
             return redirect('news_detail', post_id=news_post.id)
     else:
         form = NewsPostForm(instance=news_post)
-    return render(request, 'news/news_form.html', {'form': form, 'form_title': 'Edit News Post'})
+    return render(
+        request, 'news/news_form.html',
+        {'form': form, 'form_title': 'Edit News Post'})
+
+
+@login_required
+@user_passes_test(lambda u: u.is_staff or u.is_authenticated)
+def delete_news_post(request, post_id):
+    """ View to delete a news post. """
+    news_post = get_object_or_404(NewsPost, id=post_id)
+
+    # Only allow the author or staff users to delete the post
+    if request.user == news_post.author or request.user.is_staff:
+        news_post.delete()
+        return redirect('news_list')
+    else:
+        return redirect('news_detail', post_id=news_post.id)
