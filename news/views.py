@@ -6,7 +6,12 @@ from .forms import NewsPostForm
 
 def news_list(request):
     """ View to list all news posts. """
-    news_posts = NewsPost.objects.all().order_by('-created_at')
+    if request.user.is_staff:
+        news_posts = NewsPost.objects.all().order_by('-created_at')
+    else:
+        news_posts = NewsPost.objects.filter(
+            status='approved').order_by('-created_at')
+
     return render(request, 'news/news_list.html', {'news_posts': news_posts})
 
 
