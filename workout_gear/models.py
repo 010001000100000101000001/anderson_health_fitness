@@ -29,7 +29,6 @@ class GearItem(models.Model):
     stock_quantity = models.PositiveIntegerField(default=0)
     weight = models.CharField(max_length=20, null=True, blank=True)
     material_type = models.CharField(max_length=100, null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
     image_file = models.ImageField(upload_to='gear_images/', null=True, blank=True)
     highlight = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
