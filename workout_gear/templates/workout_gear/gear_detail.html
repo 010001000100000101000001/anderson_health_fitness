@@ -17,8 +17,8 @@
     <!-- Back Button -->
     <div class="row mb-3">
         <div class="col">
-            <a href="javascript:history.back()" class="btn btn-outline-secondary back-button">
-                <i class="fa-solid fa-square-arrow-left"></i> Back
+            <a href="javascript:history.back()" class="btn btn-outline-primary back-button">
+                <i class="fa-solid fa-arrow-left"></i> Back
             </a>
         </div>
     </div>
@@ -28,9 +28,9 @@
         <!-- Product Image -->
         <div class="col-12 col-md-6 mb-4">
             {% if gear_item.image_file %}
-                <img src="{{ gear_item.image_file.url }}" alt="{{ gear_item.name }}" class="img-fluid rounded shadow">
+            <img src="{{ gear_item.image_file.url }}" alt="{{ gear_item.name }}" class="img-fluid rounded shadow">
             {% else %}
-                <p>No image available for this item.</p>
+            <p>No image available for this item.</p>
             {% endif %}
         </div>
 
@@ -51,21 +51,21 @@
 
     <!-- Staff-only Product Management Section -->
     {% if user.is_staff %}
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="p-4 bg-light rounded shadow">
-                    <h2>Product Management</h2>
-                    <div class="d-flex gap-2">
-                        <a href="{% url 'edit_product' gear_item.id %}" class="btn btn-warning">
-                            <i class="fas fa-edit"></i> Edit Product
-                        </a>
-                        <a href="{% url 'delete_product' gear_item.id %}" class="btn btn-danger">
-                            <i class="fas fa-trash"></i> Delete Product
-                        </a>
-                    </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="p-4 bg-light rounded shadow">
+                <h2>Product Management</h2>
+                <div class="d-flex gap-2">
+                    <a href="{% url 'edit_product' gear_item.id %}" class="btn btn-warning">
+                        <i class="fas fa-edit"></i> Edit Product
+                    </a>
+                    <a href="{% url 'delete_product' gear_item.id %}" class="btn btn-danger">
+                        <i class="fas fa-trash"></i> Delete Product
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
     {% endif %}
 
     <!-- Reviews Section -->
@@ -76,22 +76,22 @@
 
                 <!-- Average Rating Display -->
                 {% if reviews %}
-                    <div class="mb-3">
-                        <strong>Average Rating: </strong>
-                        <span>{{ average_rating|floatformat:1 }} / 5</span>
-                    </div>
-                    <ul class="list-group mb-4">
-                        {% for review in reviews %}
-                            <li class="list-group-item">
-                                <strong>{{ review.user.username }}</strong> rated it
-                                <strong>{{ review.rating }} / 5</strong>
-                                <p>{{ review.comment }}</p>
-                                <small class="text-muted">Reviewed on {{ review.created_at|date:"F j, Y" }}</small>
-                            </li>
-                        {% endfor %}
-                    </ul>
+                <div class="mb-3">
+                    <strong>Average Rating: </strong>
+                    <span>{{ average_rating|floatformat:1 }} / 5</span>
+                </div>
+                <ul class="list-group mb-4">
+                    {% for review in reviews %}
+                    <li class="list-group-item">
+                        <strong>{{ review.user.username }}</strong> rated it
+                        <strong>{{ review.rating }} / 5</strong>
+                        <p>{{ review.comment }}</p>
+                        <small class="text-muted">Reviewed on {{ review.created_at|date:"F j, Y" }}</small>
+                    </li>
+                    {% endfor %}
+                </ul>
                 {% else %}
-                    <p>No reviews yet. Be the first to review this item!</p>
+                <p>No reviews yet. Be the first to review this item!</p>
                 {% endif %}
             </div>
         </div>
@@ -103,30 +103,30 @@
             <div class="p-4 bg-light rounded shadow submit-review-section">
                 <h3>Submit a Review</h3>
                 {% if user.is_authenticated %}
-                    {% if not has_reviewed %}
-                        <form method="post" action="{% url 'submit_review' gear_item.id %}" class="mt-4">
-                            {% csrf_token %}
-                            <div class="form-group mb-3">
-                                {{ review_form.rating|as_crispy_field }}
-                            </div>
-                            <div class="form-group mb-3">
-                                {{ review_form.comment|as_crispy_field }}
-                            </div>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-star"></i> Submit Review
-                            </button>
-                        </form>
-                    {% else %}
-                        <div class="alert alert-info">
-                            <i class="fas fa-info-circle"></i> You have already reviewed this product.
-                        </div>
-                    {% endif %}
-                {% else %}
-                    <div class="alert alert-warning">
-                        <i class="fas fa-exclamation-triangle"></i> Please 
-                        <a href="{% url 'account_login' %}?next={{ request.path }}">log in</a> 
-                        to submit a review.
+                {% if not has_reviewed %}
+                <form method="post" action="{% url 'submit_review' gear_item.id %}" class="mt-4">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        {{ review_form.rating|as_crispy_field }}
                     </div>
+                    <div class="form-group mb-3">
+                        {{ review_form.comment|as_crispy_field }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-star"></i> Submit Review
+                    </button>
+                </form>
+                {% else %}
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> You have already reviewed this product.
+                </div>
+                {% endif %}
+                {% else %}
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle"></i> Please
+                    <a href="{% url 'account_login' %}?next={{ request.path }}">log in</a>
+                    to submit a review.
+                </div>
                 {% endif %}
             </div>
         </div>

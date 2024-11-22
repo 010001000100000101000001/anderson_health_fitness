@@ -3,80 +3,80 @@
 {% load crispy_forms_tags %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col">
-                <h1>Product Management</h1>
-                <h2 class="text-muted">Add New Product</h2>
-            </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+            <h1>Product Management</h1>
+            <h2 class="text-muted">Add New Product</h2>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
-        <!-- Back Button -->
-        <div class="row mb-3">
-            <div class="col">
-                <a href="{% url 'gear_list' %}" class="btn btn-outline-secondary">
-                    <i class="fa-solid fa-square-arrow-left"></i> Back
-                </a>
+<div class="container mt-5">
+    <!-- Back Button -->
+    <div class="row mb-3">
+        <div class="col">
+            <a href="{% url 'gear_list' %}" class="btn btn-outline-primary back-button">
+                <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+        </div>
+    </div>
+
+    <!-- Staff Only Warning -->
+    {% if user.is_staff %}
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">Add New Product</h2>
+                    <form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data" class="form">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="text-end mt-4">
+                            <a class="btn btn-secondary" href="{% url 'gear_list' %}">
+                                Cancel
+                            </a>
+                            <button class="btn btn-primary ms-2" type="submit">
+                                <i class="fas fa-plus"></i> Add Product
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-
-        <!-- Staff Only Warning -->
-        {% if user.is_staff %}
-            <div class="row">
-                <div class="col-12 col-md-8 offset-md-2">
-                    <div class="card shadow">
-                        <div class="card-body">
-                            <h2 class="card-title mb-4">Add New Product</h2>
-                            <form method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data" class="form">
-                                {% csrf_token %}
-                                {{ form|crispy }}
-                                <div class="text-end mt-4">
-                                    <a class="btn btn-secondary" href="{% url 'gear_list' %}">
-                                        Cancel
-                                    </a>
-                                    <button class="btn btn-primary ms-2" type="submit">
-                                        <i class="fas fa-plus"></i> Add Product
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {% else %}
-            <div class="row">
-                <div class="col text-center">
-                    <p class="alert alert-warning">You do not have permission to access this page.</p>
-                </div>
-            </div>
-        {% endif %}
     </div>
+    {% else %}
+    <div class="row">
+        <div class="col text-center">
+            <p class="alert alert-warning">You do not have permission to access this page.</p>
+        </div>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        // Image preview handling
-        $('#new-image').change(function() {
-            var file = $('#new-image')[0].files[0];
-            if (file) {
-                $('#filename').text(`Image will be set to: ${file.name}`);
-            }
-        });
+{{ block.super }}
+<script type="text/javascript">
+    // Image preview handling
+    $('#new-image').change(function () {
+        var file = $('#new-image')[0].files[0];
+        if (file) {
+            $('#filename').text(`Image will be set to: ${file.name}`);
+        }
+    });
 
-        // Form validation enhancement
-        $(document).ready(function() {
-            $('form').on('submit', function() {
-                if (!$('#new-image').val() && !$('#id_image_url').val()) {
-                    alert('Please provide either an image file or image URL');
-                    return false;
-                }
-                return true;
-            });
+    // Form validation enhancement
+    $(document).ready(function () {
+        $('form').on('submit', function () {
+            if (!$('#new-image').val() && !$('#id_image_url').val()) {
+                alert('Please provide either an image file or image URL');
+                return false;
+            }
+            return true;
         });
-    </script>
+    });
+</script>
 {% endblock %}
