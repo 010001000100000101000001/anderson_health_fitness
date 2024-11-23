@@ -4,13 +4,12 @@
 <link rel="stylesheet" href="{% static 'news/news.css' %}">
 
 {% block content %}
-<!-- Wrapper div with padding to push content down -->
 <div class="content-wrapper" style="padding-top: 150px;">
     <div class="container news-detail-container">
         <!-- Back Button -->
         <div class="row mb-3">
             <div class="col">
-                <a href="javascript:history.back()" class="btn btn-outline-primary back-button">
+                <a href="{% url 'news_list' %}" class="btn btn-outline-primary back-button">
                     <i class="fa-solid fa-arrow-left"></i> Back
                 </a>
             </div>
@@ -23,49 +22,47 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h1 class="card-title">{{ news_post.title }}</h1>
-                        <p class="card-text">{{ news_post.content }}</p>
+                        <p>{{ news_post.content }}</p>
                         <p><strong>Author:</strong> {{ news_post.author }}</p>
                         <p><strong>Published on:</strong> {{ news_post.created_at|date:"F j, Y" }}</p>
 
                         <!-- Action Buttons -->
                         <div class="mt-3 d-flex gap-2">
                             {% if user.is_authenticated %}
-                            <!-- Edit Button -->
-                            {% if user == news_post.author or user.is_staff %}
-                            <a href="{% url 'edit_news_post' news_post.id %}" class="btn btn-warning btn-sm">
-                                <i class="fa-solid fa-pen"></i> Edit
-                            </a>
-                            {% endif %}
+                                {% if user == news_post.author or user.is_staff %}
+                                <!-- Edit Button -->
+                                <a href="{% url 'edit_news_post' news_post.id %}" class="btn btn-warning btn-sm">
+                                    Edit
+                                </a>
 
-                            <!-- Delete Button -->
-                            {% if user == news_post.author or user.is_staff %}
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#deleteConfirmModal">
-                                <i class="fa-solid fa-trash"></i> Delete
-                            </button>
-                            {% endif %}
-
-                            {% include 'news/includes/delete_confirmation_modal.html' %}
-
-                            <!-- Approve Button -->
-                            {% if user.is_staff and news_post.status == "pending" %}
-                            <a href="{% url 'approve_news_post' news_post.id %}" class="btn btn-success btn-sm">
-                                <i class="fa-solid fa-check"></i> Approve
-                            </a>
-                            {% endif %}
+                                <!-- Delete Button -->
+                                <button type="button" class="btn btn-danger btn-sm"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#deleteConfirmModal">Delete</button>
+                                {% endif %}
                             {% endif %}
                         </div>
+
+                        {% include 'news/includes/delete_confirmation_modal.html' %}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const deleteForm = document.getElementById('deleteForm');
-            if (deleteForm) {
-                deleteForm.action = "{% url 'delete_news_post' news_post.id %}";
-            }
-        });
+
+        <!-- JavaScript -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const deleteForm = document.getElementById('deleteForm');
+                const deleteButton = document.querySelector('[data-bs-target="#deleteConfirmModal"]');
+
+                if (deleteButton) {
+                    deleteButton.addEventListener('click', function () {
+                        deleteForm.action = "{% url 'delete_news_post' news_post.id %}";
+                    });
+                }
+            });
         </script>
-    {% endblock %}
+
+    </div>
+</div>
+{% endblock %}
