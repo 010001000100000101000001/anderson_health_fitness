@@ -60,4 +60,12 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const deleteForm = document.getElementById('deleteForm');
+            if (deleteForm) {
+                deleteForm.action = "{% url 'delete_news_post' news_post.id %}";
+            }
+        });
+        </script>
     {% endblock %}
