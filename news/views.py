@@ -64,15 +64,17 @@ def edit_news_post(request, post_id):
 @login_required
 @user_passes_test(lambda u: u.is_staff or u.is_authenticated)
 def delete_news_post(request, post_id):
-    """ View to delete a news post. """
     news_post = get_object_or_404(NewsPost, id=post_id)
-
-    # Only allow the author or staff users to delete the post
-    if request.user == news_post.author or request.user.is_staff:
+    
+    # Check permissions
+    if not (request.user == news_post.author or request.user.is_staff):
+        return redirect('news_detail', post_id=news_post.id)
+    
+    if request.method == 'POST':
         news_post.delete()
         return redirect('news_list')
-    else:
-        return redirect('news_detail', post_id=news_post.id)
+        
+    return redirect('news_detail', post_id=post_id)
 
 
 @login_required
