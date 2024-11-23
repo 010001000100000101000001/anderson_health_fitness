@@ -40,6 +40,13 @@
                                     data-bs-toggle="modal"
                                     data-bs-target="#deleteConfirmModal">Delete</button>
                                 {% endif %}
+
+                                <!-- Approve Button -->
+                                {% if user.is_staff and news_post.status == "pending" %}
+                                <a href="{% url 'approve_news_post' news_post.id %}" class="btn btn-success btn-sm">
+                                    Approve
+                                </a>
+                                {% endif %}
                             {% endif %}
                         </div>
 
@@ -49,7 +56,6 @@
             </div>
         </div>
 
-        <!-- JavaScript -->
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 const deleteForm = document.getElementById('deleteForm');
