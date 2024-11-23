@@ -39,10 +39,13 @@
 
                             <!-- Delete Button -->
                             {% if user == news_post.author or user.is_staff %}
-                            <a href="{% url 'delete_news_post' news_post.id %}" class="btn btn-danger btn-sm">
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#deleteConfirmModal">
                                 <i class="fa-solid fa-trash"></i> Delete
-                            </a>
+                            </button>
                             {% endif %}
+
+                            {% include 'news/includes/delete_confirmation_modal.html' %}
 
                             <!-- Approve Button -->
                             {% if user.is_staff and news_post.status == "pending" %}
