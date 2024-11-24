@@ -29,3 +29,6 @@ urlpatterns = [
     path('profiles/', include('profiles.urls')),
     path('news/', include('news.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Custom 404 error handler
+handler404 = 'anderson_health_fitness.views.handler404'
