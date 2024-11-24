@@ -32,3 +32,5 @@ urlpatterns = [
 
 # Custom 404 error handler
 handler404 = 'anderson_health_fitness.views.handler404'
+# Custom 404 error handler
+handler500 = 'anderson_health_fitness.views.handler500'
