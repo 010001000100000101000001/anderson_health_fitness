@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <!-- Logo -->
+    <img src="{% static 'media/Anderson-Health-Fitness-Logo.webp' %}" 
+         alt="Anderson Health & Fitness Logo" 
+         class="mb-4" 
+         style="max-width: 200px;">
+
+    <!-- Error Message -->
+    <h1 class="display-4">Sorry! Page Not Found</h1>
+    <p class="lead">We can't seem to find the page you're looking for.</p>
+
+    <!-- Back to Homepage Button -->
+    <a href="{% url 'home' %}" class="btn btn-primary mt-3">Back to Homepage</a>
+</div>
+{% endblock %}
