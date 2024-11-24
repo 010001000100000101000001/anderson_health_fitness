@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Bootstrap Card -->
+            <div class="card shadow-lg p-4">
+                <div class="card-body text-center">
+                    <!-- Error Message -->
+                    <h1 class="display-4 text-danger fw-bold">500</h1>
+                    <h2 class="mb-4">Oops! Something Went Wrong</h2>
+                    <p class="lead text-muted mb-4">
+                        We're experiencing some technical issues. Please try again later.
+                    </p>
+
+                    <!-- Back to Homepage Button -->
+                    <a href="{% url 'home' %}" class="btn btn-primary btn-lg px-4">
+                        Back to Homepage
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
