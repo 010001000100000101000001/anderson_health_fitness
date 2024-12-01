@@ -3,6 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%;
     font-family: 'Poppins', sans-serif; /* Applying Poppins font */
     color: #555;
 }
@@ -11,7 +12,9 @@ body, html {
 body {
     background: url('/media/home-page-hero-gym-anderson-health-fitness.webp') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Ensuring the navbar and its container fill the entire width */
@@ -191,6 +194,17 @@ body {
     color: #0056b3;
     text-decoration: underline;
 }
+
+.content-wrapper { 
+    flex :1 ; 
+ } 
+ 
+ footer { 
+    background-color:#343a40 ; 
+    color:white ; 
+    padding :20 px ; 
+    text-align:center ; 
+ }
 
 /* Product Detail Page */
 /* Style the Add to Cart button */
