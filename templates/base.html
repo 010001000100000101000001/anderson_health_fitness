@@ -93,6 +93,23 @@
   {% block content %}
   {% endblock %}
 
+  <!-- Newsletter Signup Banner -->
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h5>Subscribe to our Newsletter</h5>
+          <form method="POST" action="#" class="">
+            {% csrf_token %}
+            <input type="email" name="{{ form.email.name }}" placeholder="{{ form.email.label }}" required
+              class="{{ form.email.widget.attrs.class }}">
+            <button type="submit" class="btn btn-primary mt-2">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   {% block postloadjs %}
   <script>
     document.addEventListener('DOMContentLoaded', function () {
