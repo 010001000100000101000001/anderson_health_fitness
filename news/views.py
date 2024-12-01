@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib import messages
 from .models import NewsPost
 from .forms import NewsPostForm
 
@@ -35,6 +36,7 @@ def add_news_post(request):
                 news_post.status = 'approved'
             else:
                 news_post.status = 'pending'
+                messages.info(request, "Your post is awaiting approval.")
 
             news_post.save()
             return redirect('news_list')
@@ -49,31 +51,46 @@ def add_news_post(request):
 def edit_news_post(request, post_id):
     """ View to edit an existing news post. """
     news_post = get_object_or_404(NewsPost, id=post_id)
+
+    # Check if the user is the author or staff
+    if request.user != news_post.author and not request.user.is_staff:
+        return redirect('news_detail', post_id=news_post.id)
+
     if request.method == 'POST':
         form = NewsPostForm(request.POST, instance=news_post)
         if form.is_valid():
-            form.save()
+            news_post = form.save(commit=False)
+
+            # Always set status to 'pending' for non-staff users after editing
+            if not request.user.is_staff:
+                news_post.status = 'pending'
+                messages.info(
+                    request, "Your edited post is awaiting approval.")
+
+            news_post.save()
             return redirect('news_detail', post_id=news_post.id)
     else:
         form = NewsPostForm(instance=news_post)
+
     return render(
         request, 'news/news_form.html',
-        {'form': form, 'form_title': 'Edit News Post'})
+        {'form': form, 'form_title': 'Edit News Post'}
+    )
 
 
 @login_required
 @user_passes_test(lambda u: u.is_staff or u.is_authenticated)
 def delete_news_post(request, post_id):
     news_post = get_object_or_404(NewsPost, id=post_id)
-    
+
     # Check permissions
     if not (request.user == news_post.author or request.user.is_staff):
         return redirect('news_detail', post_id=news_post.id)
-    
+
     if request.method == 'POST':
         news_post.delete()
         return redirect('news_list')
-        
+
     return redirect('news_detail', post_id=post_id)
 
 
