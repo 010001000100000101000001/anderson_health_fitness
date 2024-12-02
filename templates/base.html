@@ -100,8 +100,7 @@
           <h5>Subscribe to our Newsletter</h5>
           <form method="POST" action="{% url 'subscribe' %}" class="">
             {% csrf_token %}
-            <input type="email" name="{{ form.email.name }}" placeholder="{{ form.email.label }}" required
-              class="{{ form.email.widget.attrs.class }}">
+            <input type="email" name="email" placeholder="Enter your email" class="{{ form.email.widget.attrs.class }}">
             <button type="submit" class="btn btn-primary mt-2">Subscribe</button>
           </form>
         </div>
