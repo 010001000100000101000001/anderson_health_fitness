@@ -12,6 +12,7 @@ This is my fifth project in Code Institute Diploma in Software Development with 
 - [Introduction](#introduction)
 - [Epics and User Stories](#epics-and-user-stories)
 - [Marketing Strategy](#marketing-strategy)
+- [Facebook Page](#facebook-page)
 - [Wire Fames](#wire-frames)
 - [Database Schema](#database-schema)
 - [Features](#features)
@@ -198,6 +199,21 @@ Promote new arrivals through all marketing channels.
 Track website traffic, social media engagement, and sales data to refine strategies.
 Use analytics tools to understand customer behavior and preferences.
 Encourage reviews and testimonials on products and services and use this customer feedback to constantly improve.
+
+## Facebook Page
+
+![image](https://github.com/user-attachments/assets/aa64b0e5-8741-4d7c-9b09-7aff0a9331d0)
+
+
+![image](https://github.com/user-attachments/assets/173b7adb-8cd4-4649-8b0a-dc6b20cf31b8)
+
+
+![image](https://github.com/user-attachments/assets/65344a30-d7ac-4c9d-ad67-4c1d12c831ac)
+
+
+
+
+
 
 ## Wire Frames
 
