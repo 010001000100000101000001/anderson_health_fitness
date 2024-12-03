@@ -197,8 +197,7 @@ Expand product lines to include popular fitness gear and apparel.
 Promote new arrivals through all marketing channels.
 Track website traffic, social media engagement, and sales data to refine strategies.
 Use analytics tools to understand customer behavior and preferences.
-Customer Feedback
-Encourage reviews and testimonials on products and services.
+Encourage reviews and testimonials on products and services and use this customer feedback to constantly improve.
 
 ## Wire Frames
 
