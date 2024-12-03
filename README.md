@@ -358,7 +358,12 @@ Mobile: iphone & android:
   ![image](https://github.com/user-attachments/assets/8abb2dc7-c401-4579-b3a2-6734d1b864ca)
 
 
-- **500 Error Page**
+- **404 Error Page**:
+
+  ![image](https://github.com/user-attachments/assets/20a17eec-2294-467f-8e10-40674f0392ea)
+
+
+- **500 Error Page**:
 
   ![image](https://github.com/user-attachments/assets/6fa899db-8ea2-47f8-a7c9-0d86c69363ab)
 
