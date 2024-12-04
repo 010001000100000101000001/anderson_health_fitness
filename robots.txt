@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Disallow: /add-product/
+Sitemap: /https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/sitemap.xml

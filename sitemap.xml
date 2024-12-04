@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/3/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/4/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/5/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/cart/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/3/?sort=name&amp;direction=asc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/3/?sort=name&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/3/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/3/?sort=price&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/3/?sort=rating&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/19/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/20/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/21/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/22/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/23/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/24/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/25/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/26/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/29/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/4/?sort=name&amp;direction=asc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/4/?sort=name&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/4/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/4/?sort=price&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/4/?sort=rating&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/4/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/5/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/6/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/5/?sort=name&amp;direction=asc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/5/?sort=name&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/5/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/5/?sort=price&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/category/5/?sort=rating&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/2/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/3/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/7/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/8/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/9/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/10/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/11/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/12/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/13/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/14/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/15/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/16/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/17/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/18/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/?sort=name&amp;direction=asc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/?sort=name&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/?sort=price&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/gear/?sort=rating&amp;direction=desc</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/post/15/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/post/14/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/post/13/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/post/12/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/post/11/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/post/10/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/post/9/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/post/8/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/post/6/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/news/post/3/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/19/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/20/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/21/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/22/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/23/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/24/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/25/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/26/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/29/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/4/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/5/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/6/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/2/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/3/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/7/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/8/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/9/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/10/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/11/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/12/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/13/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/14/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/15/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/16/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/17/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=/gear/18/</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F19%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F20%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F21%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F22%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F23%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F24%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F25%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F26%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F29%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F4%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F5%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F6%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F2%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F3%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F7%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F8%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F9%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F10%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F11%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F12%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F13%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F14%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F15%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F16%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F17%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/signup/?next=%2Fgear%2F18%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F19%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F20%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F21%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F22%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F23%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F24%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F25%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F26%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F29%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F4%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F5%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F6%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F2%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F3%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F7%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F8%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F9%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F10%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F11%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F12%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F13%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F14%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F15%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F16%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F17%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+<url>
+  <loc>https://anderson-health-fitness-a9ed3634ac2d.herokuapp.com/accounts/login/?next=%2Fgear%2F18%2F</loc>
+  <lastmod>2024-12-04T09:09:50+00:00</lastmod>
+  <priority>0.33</priority>
+</url>
+
+
+</urlset>
