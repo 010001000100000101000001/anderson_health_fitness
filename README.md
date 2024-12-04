@@ -455,11 +455,46 @@ Mobile: iphone & android:
 | Feature Tested                 | Expected Outcome                                                   | Testing Performed        | Actual Outcome                                | Result   |
 |------------------------------- |--------------------------------------------------------------------|--------------------------|-----------------------------------------------|----------|
 | Add Review                     | Allows a logged-in user to submit a review                         | Submit review form       | Review added and displayed on product page    | Pass     |
-| Edit Review                    | Allows a user to edit their existing review                        | Edit review and submit   | Review updated and changes reflected          | Pass     |
-| Delete Review                  | Allows a user to delete their existing review                      | Delete review            | Review removed from product page              | Pass     |
 | Prevent Duplicate Review       | Prevents the same user from submitting multiple reviews on a product | Attempt to submit multiple reviews | Duplicate review prevented, feedback given  | Pass     |
 | Average Rating Calculation     | Displays the correct average rating for the product                | Submit multiple reviews  | Average rating is calculated and displayed correctly | Pass     |
-| Review Display Formatting      | Reviews display correctly with username, rating, and comment       | View product page        | Reviews are formatted and displayed correctly | Pass     |
+| Review Display Formatting      | Reviews display correctly with username, rating, comment and date  | View product page        | Reviews are formatted and displayed correctly | Pass     |
+
+
+#### News Section
+
+| Feature Tested                      | Expected Outcome                                                                                         | Testing Performed                                                                 | Actual Outcome                                           | Result |
+|-------------------------------------|---------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|-----------------------------------------------------------|--------|
+| Create Post                         | Allows staff to create a news post                                                                      | Staff user creates a new post                                                     | Post created successfully                                | Pass   |
+| Edit Post                           | Allows staff to edit an existing news post                                                              | Staff user edits a post                                                           | Post updated successfully                                | Pass   |
+| Delete Post                         | Allows staff to delete a news post                                                                      | Staff user deletes a post                                                         | Post deleted successfully                                | Pass   |
+| Non-Staff Post Approval             | Posts from non-staff require approval before being visible                                              | Non-staff user submits a post                                                     | Post visible only to staff until approved                 | Pass   |
+| Approved Post Re-approval           | Edited approved posts require re-approval                                                               | Staff edits an approved post                                                      | Post requires re-approval                                 | Pass   |
+
+
+#### Product Management Section
+
+| Feature Tested                      | Expected Outcome                                                                                         | Testing Performed                                                                 | Actual Outcome                                           | Result |
+|-------------------------------------|---------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|-----------------------------------------------------------|--------|
+| Create Product                      | Allows staff to create a new product                                                                     | Staff user creates a new product                                                  | Product created successfully                              | Pass   |
+| Edit Product                        | Allows staff to edit an existing product                                                                 | Staff user edits a product                                                        | Product updated successfully                              | Pass   |
+| Delete Product                      | Allows staff to delete a product                                                                         | Staff user deletes a product                                                      | Product deleted successfully                              | Pass   |
+| Image Upload                        | Allows image upload for products                                                                         | Staff uploads an image for a product                                              | Image uploaded and displayed correctly                     | Pass   |
+
+
+#### Email Subscription
+
+| Feature Tested          | Expected Outcome                                      | Testing Performed                      | Actual Outcome                            | Result |
+|-------------------------|-------------------------------------------------------|----------------------------------------|--------------------------------------------|--------|
+| Subscribe to Newsletter | User receives a thank you message upon subscribing    | Submit a valid email address           | "Thank you for subscribing!" message shown | Pass   |
+| Email Validation        | Prevents submission of invalid email addresses        | Enter invalid email address            | 
+
+
+#### Error Pages
+
+| Feature Tested          | Expected Outcome                                      | Testing Performed                      | Actual Outcome                            | Result |
+|-------------------------|-------------------------------------------------------|----------------------------------------|--------------------------------------------|--------|
+| 404 Error Page          | Displays custom 404 error page when page not found    | Navigate to a non-existent URL         | Custom 404 error page displayed            | Pass   |
+| 500 Error Page          | Displays custom 500 error page on server error        | Trigger a server error                 | Custom 500 error page displayed            | Pass   |
 
 
 ### Email Confirmation Testing
