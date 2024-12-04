@@ -8,7 +8,7 @@ def index(request):
     if request.method == "POST":
         form = NewsletterSignupForm(request.POST)
         if form.is_valid():
-            # Simulate saving the email or sending it to a mailing list service (mailchimp)
+            # Simulate saving the email or sending it to a mailing list service
             email = form.cleaned_data['email']
             messages.success(
                 request, f"Thank you for signing up with {email}!")
