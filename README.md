@@ -486,7 +486,7 @@ Mobile: iphone & android:
 | Feature Tested          | Expected Outcome                                      | Testing Performed                      | Actual Outcome                            | Result |
 |-------------------------|-------------------------------------------------------|----------------------------------------|--------------------------------------------|--------|
 | Subscribe to Newsletter | User receives a thank you message upon subscribing    | Submit a valid email address           | "Thank you for subscribing!" message shown | Pass   |
-| Email Validation        | Prevents submission of invalid email addresses        | Enter invalid email address            | 
+| Email Validation        | Prevents submission of invalid email addresses        | Enter invalid email address            | Prevents submission of invalid email address | Pass |
 
 
 #### Error Pages
