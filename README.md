@@ -236,6 +236,18 @@ Mobile: iphone & android:
 
 ## Database Schema
 
+![image](https://github.com/user-attachments/assets/a18df6b4-d9e6-425b-9a8f-74227e5d3d6b)
+
+![image](https://github.com/user-attachments/assets/f73bd03b-364f-4a11-a78e-46fa921f2959)
+
+![image](https://github.com/user-attachments/assets/932167b4-3202-4438-83d2-bcb2725edb06)
+
+![Uploading image.png…]()
+
+
+
+
+
 ### GearCategory
 
 | Attribute         | Data Type   | Description                                                                                  |
