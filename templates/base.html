@@ -12,7 +12,7 @@
   {% endblock %}
 
   <!-- SEO Metadata -->
-  <title>{% block title %}Anderson Health & Fitness{% endblock %}</title>
+  <title>{% block title %}Anderson Health & Fitness {% block extra_title %}{% endblock %}{% endblock %}</title>
   <meta name="description"
     content="{% block description %}Discover premium fitness merchandise and join our vibrant community at Anderson Health & Fitness. Stay updated with the latest trends and products.{% endblock %}">
   <meta name="keywords"
@@ -51,8 +51,6 @@
 
   {% block extra_js %}
   {% endblock %}
-
-  <title>Anderson Health & Fitness {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>
