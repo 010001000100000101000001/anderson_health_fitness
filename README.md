@@ -275,18 +275,32 @@ Mobile: iphone & android:
 ---
 
 
+## NewsPost
+
+| Attribute    | Data Type   | Description                      |
+|--------------|-------------|----------------------------------|
+| **ID**       | int (PK)    | Primary key                      |
+| **author_id**| int (FK)    | Foreign key to User              |
+| **title**    | varchar(200)| Post title                       |
+| **content**  | text        | Post content                     |
+| **created_at**| datetime   | Creation timestamp               |
+| **updated_at**| datetime   | Last update timestamp            |
+| **status**   | varchar(10) | Status of the post               |
+
+
+---
+
+
 ### ProductReview
 
-| Attribute          | Data Type           | Description                                                                                 |
-|--------------------|---------------------|---------------------------------------------------------------------------------------------|
-| **id**             | AutoField           | Auto-generated unique primary key for each review.                                           |
-| **gear_item**      | ForeignKey          | Links the review to a 'GearItem'. If the gear item is deleted, all related reviews will be deleted too (CASCADE). |
-| **user**           | ForeignKey          | Links the review to a 'User'. If the user is deleted, all related reviews will be deleted too (CASCADE). |
-| **rating**         | PositiveIntegerField | The rating given by the user to the gear item. Must be a number between 1 and 5.             |
-| **comment**        | TextField           | The written review or comment about the gear item.                                           |
-| **created_at**     | DateTimeField       | The date and time when the review was first created. This is automatically set when the review is submitted. |
-| **updated_at**     | DateTimeField       | The date and time when the review was last updated. This is automatically updated whenever changes are made to the review. |
 
+| Attribute      | Data Type   | Description                      |
+|----------------|-------------|----------------------------------|
+| **ID**         | int (PK)    | Primary key                      |
+| **GearItem**   | int (FK)    | Foreign key to GearItem          |
+| **user**       | int (FK)    | Foreign key to User              |
+| **rating**     | int         | Rating between 1 and 5           |
+| **comment**    | text        | Review comment                   |
 
 #### Relationships:
 - Many-to-One with 'GearItem' (A gear item can have many reviews, but a review belongs to one gear item)
