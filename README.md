@@ -263,7 +263,6 @@ Mobile: iphone & android:
 | **stock_quantity** | PositiveIntegerField | The number of how many products that are kept in stock. The default value is 0, and it must be a positive integer.              |
 | **weight**         | CharField           | The item's weight (for example, "2kg"). 20 characters at most in length. This is an optional field that can be left empty. |
 | **material_type**  | CharField           | The item's composition (for example, "Cotton"). 100 characters is the maximum length allowed. This is an optional field that can be left empty. |
-| **image_url**      | URLField            | The web address at which the products image is hosted. Ten twenty-four characters maximum. This is an optional field that can be left empty. |
 | **image_file**     | ImageField          | Uploading an image file for the product is possible with ImageField. The folder titled "gear_images/" contains the images. This is an optional field that can be left empty. |
 | **highlight**      | BooleanField        | A true/false value to indicate whether the item should be highlighted. A number that indicates whether or not the item should be highlighted (for example, on a page featuring featured products). False is the default. |
 | **created_on**     | DateTimeField       | The time and date of the products initial creation. At the time the item is created, this is automatically set. |
