@@ -242,7 +242,8 @@ Mobile: iphone & android:
 
 ![image](https://github.com/user-attachments/assets/932167b4-3202-4438-83d2-bcb2725edb06)
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/fd15d882-11b8-4a38-b607-302066ceeadb)
+
 
 
 
