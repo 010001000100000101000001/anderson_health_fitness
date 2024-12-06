@@ -38,15 +38,14 @@
                             alt="{{ item.gear_item.name|default:'No Name' }}" class="img-thumbnail me-3"
                             style="max-width: 75px;">
                         <div>
-                            <div>
-                                <strong>{{ item.product.name }}</strong>
-                                <p class="text-muted mb-0">Quantity: {{ item.quantity }}</p>
-                                <p class="text-muted mb-0">Price: €{{ item.gear_item.cost }}</p>
-                            </div>
+                            <strong>{{ item.product.name }}</strong>
+                            <p class="text-muted mb-0">Quantity: {{ item.quantity }}</p>
+                            <p class="text-muted mb-0">Price: €{{ item.gear_item.cost }}</p>
                         </div>
-                        <span class="badge bg-success rounded-pill">Subtotal:
-                            €{{ item.lineitem_total|floatformat:2 }}</span>
-                </li>
+                    </div>
+                    <span class="badge bg-success rounded-pill">Subtotal:
+                        €{{ item.lineitem_total|floatformat:2 }}</span>
+                </li> <!-- Properly closed li -->
                 {% endfor %}
             </ul>
 
@@ -70,8 +69,8 @@
                 <h4 class="mb-0">Delivery Cost: €{{ order.delivery_cost|floatformat:2 }}</h4>
                 <h3 class="mt-2">Grand Total: €{{ order.grand_total|floatformat:2 }}</h3>
             </div>
-        </div>
-    </div>
+        </div> <!-- Properly closed col-12 -->
+    </div> <!-- Properly closed row -->
 
     <!-- Action Buttons -->
     <div class="row mt-5">
@@ -86,7 +85,7 @@
             {% else %}
             <a href="{% url 'home' %}" class="btn btn-success mt-3 text-white mt-3">Continue Shopping</a>
             {% endif %}
-        </div>
-    </div>
-</div>
+        </div> <!-- Properly closed col -->
+    </div> <!-- Properly closed row -->
+</div> <!-- Properly closed container -->
 {% endblock %}
