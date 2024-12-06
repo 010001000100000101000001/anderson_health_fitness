@@ -4,11 +4,12 @@ from crispy_forms.layout import Submit
 from .models import GearCategory, GearItem
 from .models import ProductReview
 
+
 class ProductForm(forms.ModelForm):
 
     class Meta:
         model = GearItem
-        # Exclude 'rating' from the product form as it is handled via customer reviews
+        # Exclude 'rating' from the product form as it is handled via reviews
         exclude = ['rating']
 
     def __init__(self, *args, **kwargs):
@@ -23,7 +24,8 @@ class ProductForm(forms.ModelForm):
 
 class ProductReviewForm(forms.ModelForm):
     """
-    Form for submitting a review for a specific gear item, with rating and comment fields.
+    Form for submitting a review for a specific gear item,
+    with rating and comment fields.
     """
     class Meta:
         model = ProductReview

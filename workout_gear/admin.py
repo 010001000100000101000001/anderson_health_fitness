@@ -1,11 +1,13 @@
 from django.contrib import admin
 from .models import GearCategory, GearItem
 
+
 # Admin configuration for GearCategory
 @admin.register(GearCategory)
 class GearCategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'friendly_name')
     search_fields = ('name', 'friendly_name')
+
 
 # Admin configuration for GearItem
 @admin.register(GearItem)
