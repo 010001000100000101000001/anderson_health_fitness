@@ -351,7 +351,7 @@ body {
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content .btn-primary:hover {
     background-color: #0056b3;
-    border-color: #0056b3;
+    border-color: #023d7c;
 }
 
 /* Adjust form-group margin */
