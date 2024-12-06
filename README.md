@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This is my fifth project in Code Institute Diploma in Software Development with eCommerce. The Anderson Health & Fitness project is an e-commerce application designed to allow users to browse, search, and purchase workout gear. The application also includes user authentication, shopping cart functionality, user profile management and a section for users to leave product reviews. The application is built with Django and follows best practices for user interface design, focusing on user-friendliness and mobile responsiveness. The application is styled using Bootstrap 5 and utilizes the Stripe payment gateway for secure transactions.
+This is my fifth project in Code Institute Diploma in Software Development with eCommerce. The Anderson Health & Fitness project is an e-commerce application designed to allow users to browse, search, and purchase workout gear. The application also includes user authentication, shopping cart functionality, user profile management and a section for users to leave product reviews. The application is built with Django and follows best practices for user interface design, focusing on user-friendliness and mobile responsiveness. The application is styled using Bootstrap 5 and utilizes the Stripe payment gateway for secure transactions. We have a News section where logged in users are encouraged to leave news posts also but they can be moderated by staff only. We also have a section for staff only access emails can Add, Edit or Delete new products.
 
 
 ## Table of Contents
