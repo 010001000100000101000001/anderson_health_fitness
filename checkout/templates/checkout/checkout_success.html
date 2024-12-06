@@ -34,14 +34,18 @@
                 {% for item in order.order_lineitems.all %}
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div class="d-flex align-items-center">
-                        <img src="{{ item.gear_item.image_file.url }} and {{ item.gear_item.name }}" alt="{{ item.product.name }}" class="img-thumbnail me-3" style="max-width: 75px;">
+                        <img src="{{ item.gear_item.image_file.url|default:'/media/gear_images/placeholder-for-no-product-image.webp' }}"
+                            alt="{{ item.gear_item.name|default:'No Name' }}" class="img-thumbnail me-3"
+                            style="max-width: 75px;">
                         <div>
-                            <strong>{{ item.product.name }}</strong>
-                            <p class="text-muted mb-0">Quantity: {{ item.quantity }}</p>
-                            <p class="text-muted mb-0">Price: €{{ item.gear_item.cost }}</p>
+                            <div>
+                                <strong>{{ item.product.name }}</strong>
+                                <p class="text-muted mb-0">Quantity: {{ item.quantity }}</p>
+                                <p class="text-muted mb-0">Price: €{{ item.gear_item.cost }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <span class="badge bg-success rounded-pill">Subtotal: €{{ item.lineitem_total|floatformat:2 }}</span>
+                        <span class="badge bg-success rounded-pill">Subtotal:
+                            €{{ item.lineitem_total|floatformat:2 }}</span>
                 </li>
                 {% endfor %}
             </ul>
@@ -73,14 +77,14 @@
     <div class="row mt-5">
         <div class="col text-center">
             {% if from_profile %}
-                <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
-                    <span class="icon mr-2">
-                        <i class="fas fa-angle-left"></i>
-                    </span>
-                    <span class="text-uppercase">Back to Profile</span>
-                </a>
+            <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+                <span class="icon mr-2">
+                    <i class="fas fa-angle-left"></i>
+                </span>
+                <span class="text-uppercase">Back to Profile</span>
+            </a>
             {% else %}
-                <a href="{% url 'home' %}" class="btn btn-success mt-3 text-white mt-3">Continue Shopping</a>
+            <a href="{% url 'home' %}" class="btn btn-success mt-3 text-white mt-3">Continue Shopping</a>
             {% endif %}
         </div>
     </div>
