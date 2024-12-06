@@ -34,6 +34,7 @@
                 {% for item in order.order_lineitems.all %}
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div class="d-flex align-items-center">
+                        ITEM URL: [ {{ item.gear_item.image_file }} ]
                         <img src="{{ item.product.image_file.url }}" alt="{{ item.product.name }}" class="img-thumbnail me-3" style="max-width: 75px;">
                         <div>
                             <strong>{{ item.product.name }}</strong>
